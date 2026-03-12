@@ -41,6 +41,6 @@
     display: flex;
     margin-bottom: 20px;
  }
- ul li.item-menu a.text-link{
-    margin-left: 20px;
+ ul li.item-menu a .txt-link{
+    margin-left: 40px;
  }
