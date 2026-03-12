@@ -17,7 +17,7 @@ Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a si
 ### **Frontend (Web)**
 *   **Framework:** ![Next JS](https://img.shields.io/badge/Next-black?style=plastic&logo=next.js&logoColor=white). 
 *   **Estilização:** ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=plastic&logo=tailwind-css&logoColor=white). 
-*   **Gerenciamento de Estado:** ![React Query](https://img.shields.io/badge/-React%20Query-FF4154?style=plastic&logo=react%20query&logoColor=white).
+*   **Gerenciamento de Estado:** ![React](https://img.shields.io/badge/-React-FF4154?style=plastic&logo=react&logoColor=white).
 
 ### **Mobile**
 *   **Tecnologia:** ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) ou ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=plastic&logo=Flutter&logoColor=white). 
