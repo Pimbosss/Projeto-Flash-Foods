@@ -13,28 +13,33 @@
            <i class="bi bi-list"></i>
            <ul>
             <li class="item-menu">
-                <a href="#"></a>
+                <a href="#">
                 <span class="icon"><i class="bi bi-house"></i></span>
                 <span class="txt-link">Home</span>
+                </a>
             </li>
              <li class="item-menu">
-                <a href="#"></a>
+                <a href="#">
                 <span class="icon"><i class="bi bi-cart4"></i></i></span>
                 <span class="txt-link">Meu Carrinho</span>
+            </a>
             </li>
              <li class="item-menu">
-                <a href="#"></a>
+                <a href="#">
                 <span class="icon"><i class="bi bi-fork-knife"></i></span>
                 <span class="txt-link">Refeições</span>
+                </a>
             </li>
              <li class="item-menu">
-                <a href="#"></a>
+                <a href="#">
                 <span class="icon"><i class="bi bi-question-octagon"></i></i></span>
                 <span class="txt-link">Ajuda</span>
+            </a>
             </li> <li class="item-menu">
-                <a href="#"></a>
+                <a href="#">
                 <span class="icon"><i class="bi bi-person"></i></span>
                 <span class="txt-link">Perfil</span>
+                </a>
             </li>
            </ul>
 
