@@ -2,7 +2,7 @@
 
 ### Resumo
 
-Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a situação dos entregadores.
+Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a situação dos entregadores(foco em taxas menores ou repasse imediato para o entregador).
 
 #
 
