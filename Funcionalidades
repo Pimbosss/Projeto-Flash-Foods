@@ -1,0 +1,23 @@
+1. Funcionalidades 
+
+•	Integração de Pagamento via PIX Instantâneo: Sistema de checkout que permite a liquidação imediata do valor da entrega para a conta do entregador assim que o cliente confirma o recebimento.
+•	Carteira Digital do Entregador: Painel onde o colaborador visualiza o saldo em tempo real, histórico de corridas e o detalhamento transparente das taxas (ex: "X para plataforma, Y para você").
+•	Botão de Saque Rápido: Funcionalidade para transferência do saldo acumulado para a conta bancária do entregador sem janelas de espera de 7 ou 15 dias.
+•	Painel de Transparência Ética: Para o cliente, um indicador no app que mostra o quanto do valor pago pela entrega está indo diretamente para o bolso do entregador.
+
+2. Funcionalidades para o Entregador 
+
+•	Geolocalização e Roteirização: Integração com mapas (Google Maps/Waze) para otimização de rotas.
+•	Gestão de Disponibilidade: Botão "Ficar Online/Offline" para controle de jornada.
+•	Histórico de Ganhos: Relatórios diários, semanais e mensais para organização financeira do colaborador.
+
+3. Funcionalidades para o Cliente 
+
+•	Catálogo de Restaurantes: Filtros por categoria, preço, tempo de entrega e avaliação.
+•	Carrinho e Checkout: Suporte a múltiplos métodos de pagamento (Cartão, PIX, Vale-Refeição).
+•	Acompanhamento em Tempo Real: Status do pedido (Em preparo, saiu para entrega, Entregue).
+
+4. Funcionalidades para o Restaurante 
+
+•	Gestor de Cardápio: Interface para pausar itens esgotados, alterar preços e descrições.
+•	Gestão de Pedidos: Recepção de pedidos com alerta sonoro e impressão de comandas
