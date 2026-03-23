@@ -3,20 +3,25 @@
 1. Foco no Entregador 
 
 1.1	Repasse Imediato: Como entregador, quero receber o valor da entrega logo após a conclusão do pedido, para que eu tenha fluxo de caixa imediato para minhas necessidades diárias.
-1.2	Transparência de Taxas: Como entregador, quero visualizar o detalhamento de quanto a plataforma reteve e quanto eu ganhei em cada corrida, para ter certeza de que o repasse é justo.
-1.3	Segurança e Suporte: Como entregador, quero ter um canal de suporte rápido em caso de problemas na rota, para que eu não seja prejudicado por fatores externos ao meu trabalho.
+1.2 Configuração de Carteira Digital: Como entregador, quero cadastrar minha chave Pix ou conta bancária para receber os valores.
+1.3 Solicitação de Saque: Como entregador, quero um botão "Sacar Agora" para transferir o saldo disponível para minha conta.
+1.4	Transparência de Taxas: Como entregador, quero visualizar o detalhamento de quanto a plataforma reteve e quanto eu ganhei em cada corrida, para ter certeza de que o repasse é justo.
+1.5	Segurança e Suporte: Como entregador, quero ter um canal de suporte rápido em caso de problemas na rota, para que eu não seja prejudicado por fatores externos ao meu trabalho.
+1.6 Histórico de Repasses: Como entregador, quero ver o status de cada transferência (pendente, concluída, erro) para controle financeiro
 
 2. Foco no Cliente 
 
 2.1	Seleção de Pedido: Como cliente, quero navegar pelos cardápios e filtrar restaurantes por tempo de entrega ou categoria, para encontrar minha refeição rapidamente.
 2.2	Consumo Ético: Como cliente, quero ver um selo ou indicador de que aquela plataforma valoriza o entregador, para que eu possa apoiar serviços mais justos socialmente.
 2.3	Rastreamento Real-Time: Como cliente, quero acompanhar o deslocamento do entregador no mapa em tempo real, para me preparar para receber o pedido. 
+2.4 Busca por Ingredientes: Como cliente, quero buscar termos como "sem glúten" ou "vegano" para encontrar pratos específicos.
+2.5 Favoritos: Como cliente, quero "favoritar" restaurantes para acessá-los rapidamente na próxima compra.
 
 3. Foco no Restaurante 
 
 3.1	Gestão de Pedidos: Como dono de restaurante, quero receber notificações instantâneas de novos pedidos e atualizar o status da preparação, para manter o fluxo da cozinha organizado.
-3.2	Conciliação Financeira: Como gestor financeiro do restaurante, quero relatórios claros de vendas e taxas de entrega, para facilitar o fechamento de caixa mensal.
-
+3.2 Gestão de Estoque Imediata: Como dono de restaurante, quero desativar um item do cardápio instantaneamente caso o ingrediente acabe.
+3.3	Conciliação Financeira: Como gestor financeiro do restaurante, quero relatórios claros de vendas e taxas de entrega, para facilitar o fechamento de caixa mensal.
 
 
 
