@@ -20,4 +20,4 @@
 4. Funcionalidades para o Restaurante 
 
 •	Gestor de Cardápio: Interface para pausar itens esgotados, alterar preços e descrições.
-•	Gestão de Pedidos: Recepção de pedidos com alerta sonoro e impressão de comandas
+•	Gestão de Pedidos: Aviso de recebimento de pedido, preparo, e entregue para o entregador.
