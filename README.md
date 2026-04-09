@@ -34,5 +34,9 @@ Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a si
 #
 
 
-###NOMES:
-Heitor Mariottini, Erick Fialho, Gabriel Brandão, Felipe Gabriel, Renan Câmara
+### NOMES:
+Heitor Mariottini,  
+Erick Fialho,  
+Gabriel Brandão,   
+Felipe Gabriel,   
+Renan Câmara.  
