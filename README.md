@@ -2,8 +2,9 @@
 
 ### Resumo
 
-Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a situação dos entregadores(foco em taxas menores ou repasse imediato para o entregador).
-
+O projeto consiste no desenvolvimento de uma plataforma de delivery que 
+prioriza a eficiência e a transparência com o entregador. Com foco em não 
+apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte. 
 #
 
 ## 🛠️ Infraestrutura Técnica
@@ -29,8 +30,14 @@ Plataforma de delivery de comida, com ênfase nos colaboradores, melhorando a si
 *   **Busca:** ![MeilSearch](https://img.shields.io/badge/-MeiliSearch-005571?style=plastic&logo=meilisearch) ou ![Elasticsearch](https://img.shields.io/badge/elasticsearch-%230377CC.svg?style=plastic&logo=elasticsearch&logoColor=white).
 
 
-### **WIREFRAME**
-[Wireframe](https://www.figma.com/make/4ZyPSo3L0dtPdw8A1qRuRc/Flash-Foods?p=f&t=xYYmx1StTpjVlvsl-0&fullscreen=1)
+### **Projeto links**
+[Definição do Projeto](https://github.com/Pimbosss/Projeto-Flash-Foods/blob/main/Projeto/Defini%C3%A7%C3%A3oDoProjeto.pdf)  
+[Entrevista](https://github.com/Pimbosss/Projeto-Flash-Foods/blob/main/Projeto/Entrevista_Problemas.pdf)  
+[Wireframe](https://www.figma.com/make/4ZyPSo3L0dtPdw8A1qRuRc/Flash-Foods?p=f&t=xYYmx1StTpjVlvsl-0&fullscreen=1)  
+[Wireframe Simples](https://github.com/Pimbosss/Projeto-Flash-Foods/tree/main/Projeto/wireframe)  
+[Diagrama de Caso de Uso](https://github.com/Pimbosss/Projeto-Flash-Foods/tree/main/Projeto/DiagramaCasoDeUso)    
+[Diagrama de Sequencia](https://github.com/Pimbosss/Projeto-Flash-Foods/tree/main/Projeto/DiagramaDeSequencia)  
+[Diagrama de Estado](https://github.com/Pimbosss/Projeto-Flash-Foods/tree/main/Projeto/DiagramaDeEstado)  
 #
 
 
