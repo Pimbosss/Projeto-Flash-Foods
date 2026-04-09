@@ -27,4 +27,82 @@ sequenceDiagram
     C-->>A: Confirma Recebimento do Pedido
     E->>A: Finaliza Entrega no App
 ```
- 
+##
+### 1. Dispatch inteligente (sem espera no restaurante)
+
+```mermaid
+
+    sequenceDiagram
+    participant App as App/user
+    participant Restaurante
+    participant Entregador as App/entregador
+
+    Restaurante->>App: Atualiza status (em preparo)
+    App->>App: Calcula tempo de preparo (ETA)
+
+    Restaurante->>App: Atualiza status (quase pronto)
+    App->>App: Calcula tempo de deslocamento do entregador
+
+    App->>Entregador: Envia corrida (timing otimizado)
+    Entregador->>Restaurante: Chega próximo do horário ideal
+
+    Restaurante->>App: Pedido pronto
+    Restaurante-->>Entregador: Entrega imediata
+
+    Entregador->>App: Confirma retirada
+
+
+```
+
+##
+### 3. Cálculo correto de distância e ganho
+
+```mermaid
+
+    sequenceDiagram
+    participant App as App/entregador
+    participant Entregador
+    participant Sistema as Motor de Rotas
+
+    Entregador->>App: Solicita corridas disponíveis
+
+    App->>Sistema: Calcula rota completa
+    Sistema-->>App: Distância total (entregador → restaurante → cliente)
+    Sistema-->>App: Tempo estimado
+
+    App->>App: Calcula valor + R$/km
+
+    App-->>Entregador: Exibe corrida completa
+    Note right of Entregador: Valor: R$6,50\nDistância: 6,6 km\nTempo: 18 min
+
+    Entregador->>App: Aceita corrida (decisão informada)    
+
+
+```
+
+##
+### 3. Notificações automáticas ao cliente
+
+```mermaid
+
+    sequenceDiagram
+    participant App as App/entregador
+    participant Entregador
+    participant Cliente as App/user
+
+    Entregador->>App: Confirma retirada do pedido
+
+    App-->>Cliente: Notificação "Pedido saiu para entrega 🚴"
+    App-->>Cliente: Mostra rastreamento em tempo real
+
+    App->>App: Atualiza ETA dinamicamente
+
+    App-->>Cliente: Notificação "Chegando em 2 minutos"
+
+    Entregador->>Cliente: Entrega pedido
+    Entregador->>App: Confirma entrega
+
+    App-->>Cliente: Notificação "Pedido entregue"
+
+
+```
