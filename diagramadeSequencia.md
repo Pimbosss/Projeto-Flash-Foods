@@ -70,10 +70,10 @@ sequenceDiagram
     Sistema-->>App: Distância total (entregador → restaurante → cliente)
     Sistema-->>App: Tempo estimado
 
-    App->>App: Calcula valor + R$/km
+    App->>App: Calcula valor + R$/km = 2,50 reais
 
     App-->>Entregador: Exibe corrida completa
-    Note right of Entregador: Valor: R$6,50\nDistância: 6,6 km\nTempo: 18 min
+    Note right of Entregador: Valor: R$16,50 <br/> Distância: 6,6 km <br/> Tempo: 18 min
 
     Entregador->>App: Aceita corrida (decisão informada)    
 
