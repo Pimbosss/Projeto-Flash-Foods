@@ -29,7 +29,7 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 *   **Não-Relacional (Cache):** ![MongoDb](https://img.shields.io/badge/MongoDb-%23316192.svg?style=plastic&logo=MongoDb&logoColor=white).
 *   **Busca:** ![MeilSearch](https://img.shields.io/badge/-MeiliSearch-005571?style=plastic&logo=meilisearch) ou ![Elasticsearch](https://img.shields.io/badge/elasticsearch-%230377CC.svg?style=plastic&logo=elasticsearch&logoColor=white).
 
-
+#
 ### **Projeto links**
 [Definição do Projeto](https://github.com/Pimbosss/Projeto-Flash-Foods/blob/main/Projeto/Defini%C3%A7%C3%A3oDoProjeto.pdf)  
 [Entrevista](https://github.com/Pimbosss/Projeto-Flash-Foods/blob/main/Projeto/Entrevista_Problemas.pdf)  
