@@ -1,0 +1,169 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:#f5f6f7;
+    color:#1f2937;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+    background:white;
+    border-bottom:1px solid #eee;
+    
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.cart{
+    background:#ff5a3c;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+/* ENDEREÇO */
+.address{
+    background:#f1f5f9;
+    padding:15px 50px;
+    color:#6b7280;
+}
+
+/* BUSCA */
+.search-area{
+    padding:25px 50px;
+}
+
+.search-area input{
+    width:100%;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+    margin-bottom:15px;
+}
+
+/* CATEGORIAS */
+.categories{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.categories button{
+    border:none;
+    background:#e5e7eb;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.categories .active{
+    background:#ff6a00;
+    color:white;
+}
+
+/* CONTAINER */
+.container{
+    padding:20px 50px;
+}
+
+.container h2{
+    margin-bottom:20px;
+}
+
+/* RESTAURANTES */
+.restaurant-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.restaurant-card{
+    background:white;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    background:#ff7a1a;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+/* PRATOS */
+.food-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.food-img{
+    height:140px;
+    background:linear-gradient(45deg,#ff8a3d,#ff5a3c);
+    color:white;
+    font-size:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.food-card h3{
+    padding:15px 15px 5px;
+}
+
+.food-card p{
+    padding:0 15px;
+    color:#6b7280;
+    font-size:14px;
+}
+
+.price-area{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+
+.price-area button{
+    background:#ff6a00;
+    border:none;
+    color:white;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+}
