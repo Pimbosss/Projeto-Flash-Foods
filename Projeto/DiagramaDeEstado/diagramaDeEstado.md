@@ -1,9 +1,6 @@
 ### Diagrama de Estado
 -Diagrama de Estado que explica o ciclo de vida da entrega, mostrando as etapas pela qual ele passa até ser entregue.
 
-
-
-
 ```mermaid
 
 stateDiagram-v2
