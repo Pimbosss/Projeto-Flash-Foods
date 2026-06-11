@@ -47,25 +47,25 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 Preço estimado 500-700 mil reais
 Início - 1/07/2026
 
-1º semana dia 1 a dia 8 de julho: login, criar conta.
-2º semana dia 9 a dia 16 de julho: Área do entregador.
-3º semana dia 17 a 24 de julho: Pedir Agora.
-4º semana dia 25 a 1 de agosto: Endereço do cliente, Barra de pesquisa dos produtos.
-5º semana dia 2 a 9 de agosto: Filtro de produtos, Carrinho de produtos.
-6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento.
-7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline.
-8º semana dia 26 a 2 de setembro: entregas disponíveis, aceitar entrega.
-9º semana dia 3 a 10 de setembro: Informações da Entrega, Ligar ao cliente, gps, marcar como entregue
+1º semana dia 1 a dia 8 de julho: login, criar conta. 
+2º semana dia 9 a dia 16 de julho: Área do entregador. 
+3º semana dia 17 a 24 de julho: Pedir Agora. 
+4º semana dia 25 a 1 de agosto: Endereço do cliente, Barra de pesquisa dos produtos. 
+5º semana dia 2 a 9 de agosto: Filtro de produtos, Carrinho de produtos. 
+6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento. 
+7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline. 
+8º semana dia 26 a 2 de setembro: entregas disponíveis, aceitar entrega. 
+9º semana dia 3 a 10 de setembro: Informações da Entrega, Ligar ao cliente, gps, marcar como entregue 
 10º semana dia 11 a 18 de setembro: gestão de pedidos, 
-11º semana dia 19 a 26 de setembro:
-12º semana dia 27 a 4 de outubro:
+11º semana dia 19 a 26 de setembro: 
+12º semana dia 27 a 4 de outubro: 
 
 
 Mile Stones 
-1º a 3º semana: Página Inicial
-4º a 6º semana: Página do Cliente
-7º a 9º semana: Página do Entregador
-10º a 12º semana: Página do Restaurante
+1º a 3º semana: Página Inicial 
+4º a 6º semana: Página do Cliente 
+7º a 9º semana: Página do Entregador 
+10º a 12º semana: Página do Restaurante 
 
 
 ### NOMES:
