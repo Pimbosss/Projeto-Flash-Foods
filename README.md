@@ -61,7 +61,7 @@ Início - 1/07/2026
 12º semana dia 27 a 4 de outubro:    
 
 
-Mile Stones 
+**Mile Stones**    
 1º a 3º semana: Página Inicial    
 4º a 6º semana: Página do Cliente   
 7º a 9º semana: Página do Entregador    
