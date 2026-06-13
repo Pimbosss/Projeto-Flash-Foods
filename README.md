@@ -44,8 +44,58 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 
 #
 ### **Projeto**
-Preço estimado 500-700 mil reais
-Início - 1/07/2026
+**Equipe de Desenvolvimento (12 meses)**  
+| Cargo	| Custo Mensal Médio |  
+| :-- | :--: |
+| Gerente de Projeto / Product Owner |	R$ 12.000  |
+| Desenvolvedor Backend (2 profissionais) |	R$ 18.000 |  
+| Desenvolvedor Mobile (2 profissionais) | R$ 18.000 | 
+| Designer UX/UI | R$ 7.000  |
+| Analista de Testes (QA) |	R$ 6.000 | 
+| Total Mensal | R$ 61.000 | 
+|Custo anual da equipe | R$ 732.000 |  
+
+**Infraestrutura Tecnológica**  
+| Serviço	| Custo Mensal Médio |
+| :-- | :--: |
+| Servidores em Nuvem	| R$ 2.500 | 
+| Banco de Dados Gerenciado |	R$ 800 |  
+| APIs de Mapas e Geolocalização | R$ 1.500 |  
+| Monitoramento e Logs | R$ 300 | 
+| Backup e Segurança | R$ 400 |  
+| Total Mensal |	R$ 5.500 | 
+|Custo anual de infraestrutura | R$ 66.000 |  
+
+**Ferramentas e Licenças**  
+| Serviço |	Custo Mensal Médio | 
+| :--| :--: |
+|Ferramentas de Design e Prototipação | R$ 500 |  
+|Ferramentas de Gestão de Projetos |	R$ 300 | 
+|Licenças de Desenvolvimento |	R$ 700 | 
+|Publicação de Aplicativos |	R$ 200 | 
+|Total Mensal |	R$ 1.700 | 
+|Custo anual | R$ 20.400 | 
+
+**Custos Operacionais**  
+|Item	| Custo Mensal Médio|
+| :-- | :--: |
+|Marketing e Divulgação |	R$ 4.200 |  
+|Serviços Jurídicos e Contábeis |	R$ 1.000 |  
+|Reserva para Manutenção e Suporte |	R$ 2.500 | 
+|Total Mensal	| R$ 7.700 |  
+|Custo anual | R$ 92.400 |  
+
+**Resumo Geral**  
+|Categoria | Valor Anual |
+| :-- | :--: |
+|Equipe de Desenvolvimento | R$ 732.000|  
+|Infraestrutura Tecnológica |	R$ 66.000|  
+|Ferramentas e Licenças |	R$ 20.400|  
+|Custos Operacionais |	R$ 92.400|  
+|Reserva para Imprevistos |	R$ 39.200|  
+|Investimento Total Estimado (12 meses) |	R$ 950.000|  
+
+Início - 1/07/2026  
 
 1º semana dia 1 a dia 8 de julho: Login, criar conta.    
 2º semana dia 9 a dia 16 de julho: Área do entregador.    
