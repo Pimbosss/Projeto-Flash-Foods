@@ -102,13 +102,13 @@ Início - 1/07/2026
 3º semana dia 17 a 24 de julho: Pedir Agora.    
 4º semana dia 25 a 1 de agosto: Endereço do cliente, Barra de pesquisa dos produtos, favoritos,.    
 5º semana dia 2 a 9 de agosto: Filtro de produtos, Carrinho de produtos, rastreamento Real-Time, restaurantes proximos.    
-6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento, avaliações.    
-7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline.    
-8º semana dia 26 a 2 de setembro: Entregas disponíveis, aceitar entrega, ganhar por entrega, código.    
+6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento, avaliações, consumo ético.    
+7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline, solicitação de saque.    
+8º semana dia 26 a 2 de setembro: Entregas disponíveis, aceitar entrega, ganhar por entrega, código, carteira digital.    
 9º semana dia 3 a 10 de setembro: Informações da Entrega, Ligar ao cliente, gps, marcar como entregue   
 10º semana dia 11 a 18 de setembro: Restaurante verificado, Gestão de pedidos, gestão de estoque   
-11º semana dia 19 a 26 de setembro: Total de vendas por produto, imagens ilustrativas,  
-12º semana dia 27 a 4 de outubro: informacção nutricional,       
+11º semana dia 19 a 26 de setembro: Total de vendas por produto, imagens ilustrativas, minutos para chegar.     
+12º semana dia 27 a 4 de outubro: informacção nutricional, trafego pago.       
 
 
 **Mile Stones**    
