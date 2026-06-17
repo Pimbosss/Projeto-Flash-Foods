@@ -97,18 +97,18 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 
 Início - 1/07/2026  
 
-1º semana dia 1 a dia 8 de julho: Login, criar conta.    
+1º semana dia 1 a dia 8 de julho: Login, criar conta, Como Funciona.    
 2º semana dia 9 a dia 16 de julho: Área do entregador.    
 3º semana dia 17 a 24 de julho: Pedir Agora.    
-4º semana dia 25 a 1 de agosto: Endereço do cliente, Barra de pesquisa dos produtos, favoritos,.    
-5º semana dia 2 a 9 de agosto: Filtro de produtos, Carrinho de produtos, rastreamento Real-Time, restaurantes proximos.    
-6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento, avaliações, consumo ético.    
-7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline, solicitação de saque.    
-8º semana dia 26 a 2 de setembro: Entregas disponíveis, aceitar entrega, ganhar por entrega, código, carteira digital.    
-9º semana dia 3 a 10 de setembro: Informações da Entrega, Ligar ao cliente, gps, marcar como entregue   
-10º semana dia 11 a 18 de setembro: Restaurante verificado, Gestão de pedidos, gestão de estoque   
-11º semana dia 19 a 26 de setembro: Total de vendas por produto, imagens ilustrativas, minutos para chegar.     
-12º semana dia 27 a 4 de outubro: informacção nutricional, trafego pago.       
+4º semana dia 25 a 1 de agosto: Endereço do cliente, Barra de pesquisa dos produtos, favoritos, busca por ingredientes, Adicionar Pratos Ao Carrinho.    
+5º semana dia 2 a 9 de agosto: Filtro de produtos, Carrinho de produtos, rastreamento Real-Time, restaurantes proximos, Histórico.    
+6º semana dia 10 a 17 de agosto: Adicionar produtos ao carrinho, pagamento, avaliações, consumo ético, Mensagem, Categoria Bebida.    
+7º semana dia 18 a 25 de agosto: Informações gerais do entregador, botão online e offline, solicitação de saque, transparencia de taxas, Histórico de Repasses.    
+8º semana dia 26 a 2 de setembro: Entregas disponíveis, ganhar por entrega, código, carteira digital, Escolha de rota, Segurança e Suporte.    
+9º semana dia 3 a 10 de setembro: Informações da Entrega, Ligar ao cliente, gps, marcar como entregue, ganho por entrega, repasse imediato, aceitar entrega.                   
+10º semana dia 11 a 18 de setembro: Restaurante verificado, Gestão de pedidos, gestão de estoque.       
+11º semana dia 19 a 26 de setembro: Total de vendas por produto, imagens ilustrativas, minutos para chegar.        
+12º semana dia 27 a 4 de outubro: informacção nutricional, trafego pago, Conciliação Financeira, controle de vendas, .          
 
 
 **Mile Stones**    
