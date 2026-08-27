@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flash Foods</title>
+
+<link rel="stylesheet" href="style2.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo"><a href="index.html">⚡ Flash Foods</a></div>
+
+    <button class="cart">🛒 Carrinho</button>
+</header>
+
+
+<!-- ================= ENDEREÇO ================= -->
+<section class="address">
+    📍 Digite seu endereço de entrega...
+</section>
+
+
+<!-- ================= BUSCA ================= -->
+<section class="search-area">
+
+    <input type="text" placeholder="🔎 Buscar pratos ou restaurantes...">
+
+    <div class="categories">
+        <button class="active">Todos</button>
+        <button>Pizza</button>
+        <button>Hambúrguer</button>
+        <button>Japonesa</button>
+        <button>Bebida</button>
+        <button>Mexicana</button>
+        <button>Massa</button>
+    </div>
+
+</section>
+
+
+<!-- ================= RESTAURANTES ================= -->
+<section class="container">
+
+<h2>Restaurantes</h2>
+
+<div class="restaurant-grid">
+
+    <div class="restaurant-card">
+        <div class="icon">P</div>
+        <h3>Pizza Express</h3>
+        <p>Pizzaria</p>
+        <span>⏱ 25-35 min ⭐ 4.8</span>
+    </div>
+
+    <div class="restaurant-card">
+        <div class="icon">B</div>
+        <h3>Burger King</h3>
+        <p>Hamburgueria</p>
+        <span>⏱ 20-30 min ⭐ 4.6</span>
+    </div>
+
+    <div class="restaurant-card">
+        <div class="icon">S</div>
+        <h3>Sushi House</h3>
+        <p>Japonesa</p>
+        <span>⏱ 30-40 min ⭐ 4.9</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRATOS ================= -->
+<section class="container">
+
+<h2>Pratos Disponíveis</h2>
+
+<div class="food-grid">
+
+    <div class="food-card">
+        <div class="food-img">P</div>
+        <h3>Pizza Margherita</h3>
+        <p>Molho de tomate, mussarela e manjericão</p>
+        <div class="price-area">
+            <strong>R$ 42.90</strong>
+            <button>+ Adicionar</button>
+        </div>
+    </div>
+
+    <div class="food-card">
+        <div class="food-img">P</div>
+        <h3>Pizza Calabresa</h3>
+        <p>Molho de tomate, mussarela e calabresa</p>
+        <div class="price-area">
+            <strong>R$ 45.90</strong>
+            <button>+ Adicionar</button>
+        </div>
+    </div>
+
+    <div class="food-card">
+        <div class="food-img">W</div>
+        <h3>Whopper</h3>
+        <p>Hambúrguer grelhado com queijo, alface e tomate</p>
+        <div class="price-area">
+            <strong>R$ 28.90</strong>
+            <button>+ Adicionar</button>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+</body>
+</html>

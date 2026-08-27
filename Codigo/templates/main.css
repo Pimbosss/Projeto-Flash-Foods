@@ -1,0 +1,328 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #101828;
+}
+
+
+#conteudo {
+  min-height: calc(100vh - 80px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+#principal {
+  width: 100%;
+  max-width: 900px;
+}
+
+
+#info {
+  display: inline-block;
+
+  background: #fff7ed;
+  color: #f97316;
+
+  padding: 10px 18px;
+  border-radius: 30px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  margin-bottom: 28px;
+}
+
+
+#badge {
+  display: inline-block;
+  background: #fff7ed;
+  color: #f97316;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+h1 span {
+  color: #ff6900;
+}
+
+h1 {
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 800;
+
+  color: #101828;
+
+  max-width: 850px;
+  margin: 0 auto 24px;
+}
+
+/* Deixa "justas" laranja */
+h1 {
+  color: #101828;
+}
+
+
+
+#info2 {
+  max-width: 850px;
+
+  margin: 0 auto 34px;
+
+  color: #344563;
+
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+#buttons button {
+  height: 60px;
+
+  padding: 0 32px;
+
+  border-radius: 32px;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+
+#buttons button:first-child {
+  background: #ff6900;
+  color: white;
+
+  border: 2px solid #ff6900;
+}
+
+#buttons button:first-child:hover {
+  background: #e85d00;
+  border-color: #e85d00;
+
+  transform: translateY(-2px);
+}
+
+
+
+
+#buttons button:last-child {
+  background: white;
+  color: #344054;
+
+  border: 2px solid #d0d5dd;
+}
+
+#buttons button:last-child:hover {
+  border-color: #ff6900;
+  color: #ff6900;
+
+  transform: translateY(-2px);
+}
+
+
+
+@media (max-width: 768px) {
+
+  #conteudo {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  #info2 {
+    font-size: 17px;
+  }
+
+  #buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 34px;
+  }
+
+  #info {
+    font-size: 12px;
+  }
+
+  #info2 {
+    font-size: 16px;
+  }
+}
+
+
+
+#como-funciona {
+    /* Faz a seção ocupar a tela inteira */
+    width: 100vw;
+
+    /* Se estiver dentro de um container centralizado,
+       força a seção a começar na borda esquerda da tela */
+    margin-left: calc(50% - 50vw);
+
+    background-color: #f8f9fa;
+
+    padding: 80px 40px;
+
+    text-align: center;
+
+    margin-top: 70px;
+}
+
+/* Título */
+#como-funciona h1 {
+    margin: 0 auto 14px;
+
+    color: #071d3b;
+
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Subtítulo */
+#como-funciona > p {
+    margin: 0 0 65px;
+
+    color: #36516f;
+
+    font-size: 20px;
+}
+
+/* Lista */
+#como-funciona ol {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 45px;
+
+    list-style: none;
+}
+
+/* Cada item */
+#como-funciona li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Círculo do ícone */
+#como-funciona .badge {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff0d9;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    margin: 0 0 20px;
+}
+
+/* Título do passo */
+#como-funciona li h3 {
+    margin: 0 0 12px;
+
+    color: #071d3b;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Texto */
+#como-funciona li p {
+    max-width: 250px;
+
+    margin: 0;
+
+    color: #36516f;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    #como-funciona ol {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    #como-funciona {
+        padding: 60px 20px;
+        margin-top: 40px;
+    }
+
+    #como-funciona h1 {
+        font-size: 30px;
+    }
+
+    #como-funciona > p {
+        font-size: 17px;
+        margin-bottom: 45px;
+    }
+
+    #como-funciona ol {
+        grid-template-columns: 1fr;
+    }
+
+}

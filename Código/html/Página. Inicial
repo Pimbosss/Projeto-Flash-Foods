@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Foods</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonte Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">
+            ⚡ <span>Flash Foods</span>
+        </div>
+
+        <nav class="menu">
+            <a href="#">Como Funciona</a>
+            <a href="#">Para Entregadores</a>
+            <a href="#">Restaurantes</a>
+            <a href="#">Área do Entregador</a>
+        </nav>
+
+        <div class="actions">
+            <a href="#" class="login">Entrar</a>
+            <button class="btn-primary">Fazer Pedido</button>
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="tag">
+            ⚡ Delivery que valoriza o entregador
+        </div>
+
+        <h1>
+            Entrega rápida com <span>condições justas</span>
+        </h1>
+
+        <p>
+            Receba suas comidas favoritas em minutos, sabendo que cada entregador
+            tem garantia de ganhos justos, seguro completo e suporte 24/7.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="btn-primary big" onclick="window.location.href='index2.html'">📦 Pedir Agora</button>
+            <button class="btn-outline" onclick="window.location.href='index3.html'">🚴 Seja um Entregador</button>
+        </div>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área do Entregador - Flash Foods</title>
+
+<link rel="stylesheet" href="style3.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo"><a href="index.html">⚡ Flash Foods</a></div>
+
+    <div class="status">
+        Área do Entregador
+        <span class="online">Online</span>
+    </div>
+</header>
+
+
+<!-- ================= DASHBOARD ================= -->
+<section class="dashboard">
+
+<div class="stats">
+
+    <div class="card">
+        <p>Ganhos Hoje</p>
+        <h2>R$ 187.50</h2>
+        <span class="green">+ R$ 42.50 vs ontem</span>
+    </div>
+
+    <div class="card">
+        <p>Entregas Hoje</p>
+        <h2>12</h2>
+        <span>Meta: 15 entregas</span>
+    </div>
+
+    <div class="card">
+        <p>Avaliação</p>
+        <h2>4.9 ⭐</h2>
+        <span>2.453 avaliações</span>
+    </div>
+
+    <div class="card">
+        <p>Tempo Online</p>
+        <h2>5h 32m</h2>
+        <span>Desde 09:00</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ENTREGAS ================= -->
+<section class="deliveries">
+
+<h2>Entregas Disponíveis</h2>
+
+<div class="delivery-grid">
+
+    <!-- CARD -->
+    <div class="delivery-card highlight">
+
+        <div class="delivery-info">
+            <h3>Pizza Express</h3>
+            <p>João Silva</p>
+            <small>📍 Rua das Flores, 123</small>
+
+            <div class="details">
+                <span>📏 2.5 km</span>
+                <span>📦 2 itens</span>
+            </div>
+        </div>
+
+        <div class="payment">
+            <h3>R$ 15.50</h3>
+            <span>pagamento</span>
+        </div>
+
+        <button class="accept">🚴 Aceitar Entrega</button>
+
+    </div>
+
+
+    <!-- CARD -->
+    <div class="delivery-card">
+
+        <div class="delivery-info">
+            <h3>Burger King</h3>
+            <p>Maria Santos</p>
+            <small>📍 Av. Central, 456</small>
+
+            <div class="details">
+                <span>📏 1.8 km</span>
+                <span>📦 1 item</span>
+            </div>
+        </div>
+
+        <div class="payment">
+            <h3>R$ 13.00</h3>
+            <span>pagamento</span>
+        </div>
+
+        <button class="accept">🚴 Aceitar Entrega</button>
+
+    </div>
+
+</div>
+
+</section>
+
+</body>
+</html>

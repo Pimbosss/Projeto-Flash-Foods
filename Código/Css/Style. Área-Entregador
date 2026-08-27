@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+body{
+    background:#f6f7f8;
+    color:#1f2937;
+}
+
+/* NAVBAR */
+.navbar{
+    background:white;
+    padding:18px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #eee;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.status{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    font-weight:500;
+}
+
+.online{
+    background:#22c55e;
+    color:white;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+/* DASHBOARD */
+.dashboard{
+    padding:30px 50px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.card p{
+    color:#6b7280;
+    margin-bottom:10px;
+}
+
+.card h2{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+.green{
+    color:#16a34a;
+}
+
+/* ENTREGAS */
+.deliveries{
+    padding:10px 50px 40px;
+}
+
+.deliveries h2{
+    margin-bottom:20px;
+}
+
+.delivery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.delivery-card{
+    background:white;
+    border-radius:14px;
+    padding:25px;
+    position:relative;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.highlight{
+    border:2px solid #ff7a1a;
+}
+
+.delivery-info h3{
+    margin-bottom:5px;
+}
+
+.delivery-info p{
+    color:#6b7280;
+}
+
+.delivery-info small{
+    display:block;
+    margin:10px 0;
+    color:#9ca3af;
+}
+
+.details{
+    display:flex;
+    gap:15px;
+    color:#6b7280;
+}
+
+.payment{
+    position:absolute;
+    right:25px;
+    top:25px;
+    text-align:right;
+    color:#16a34a;
+}
+
+.accept{
+    width:100%;
+    margin-top:20px;
+    background:#ff7a1a;
+    border:none;
+    color:white;
+    padding:14px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.accept:hover{
+    background:#e56710;
+}

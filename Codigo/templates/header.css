@@ -62,7 +62,7 @@ header {
     color: #ff6500;
 }
 
-#buttons {
+#buttons1 {
     margin-left: auto;
     margin-top: 9px;
     display: flex;
@@ -70,7 +70,7 @@ header {
     gap: 14px;
 }
 
-#buttons button {
+#buttons1 button {
     border: none;
     background: transparent;
     color: #18233b;
@@ -82,17 +82,19 @@ header {
     white-space: nowrap;
 
     padding: 11px 16px;
+
+    transition: all 0.2s ease;
 }
 
 
-#buttons button:nth-child(1) {
+#buttons1 button:nth-child(1) {
     border: 1px solid #d9dce3;
     border-radius: 25px;
     padding: 11px 20px;
 }
 
 
-#buttons button:nth-child(2) {
+#buttons1 button:nth-child(2) {
     border: 1px solid #d9dce3;
     border-radius: 25px;
     padding: 11px 20px;
@@ -101,13 +103,13 @@ header {
 
 
 
-#buttons button:nth-child(3) {
+#buttons1 button:nth-child(3) {
     border: 1px solid #d9dce3;
     border-radius: 25px;
     padding: 11px 20px;
 }
 
-#buttons button:nth-child(3)::before {
+#buttons1 button:nth-child(3)::before {
     content: "↪";
     margin-right: 8px;
     font-size: 18px;
@@ -116,7 +118,7 @@ header {
 
 
 
-#buttons button:nth-child(4) {
+#buttons1 button:nth-child(4) {
     border: 1px solid #d9dce3;
     background-color: #ff6500;
     color: white;
@@ -125,28 +127,32 @@ header {
     padding: 12px 27px;
 }
 
-#buttons button:nth-child(1):hover {
+#buttons1 button:nth-child(1):hover {
     color: #ff6500;
     border-color: gray;
+    transform: translateY(-2px);
 }
 
 
-#buttons button:nth-child(2):hover {
+#buttons1 button:nth-child(2):hover {
     color: #ff6500;
     border-color: gray;
+    transform: translateY(-2px);
 }
 
 
-#buttons button:nth-child(3):hover {
+#buttons1 button:nth-child(3):hover {
     color: #ff6500;
     border-color: gray;
+    transform: translateY(-2px);
 }
 
 
 
-#buttons button:nth-child(4):hover {
+#buttons1 button:nth-child(4):hover {
     background-color: #e95700;
     border-color: gray;
+    transform: translateY(-2px);
 }
 
 
@@ -160,7 +166,7 @@ header {
         font-size: 13px;
     }
 
-    #buttons {
+    #buttons1 {
         gap: 5px;
     }
 

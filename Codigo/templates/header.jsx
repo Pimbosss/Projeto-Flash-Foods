@@ -1,4 +1,5 @@
 import "/templates/header.css"
+
 export default function Header(){
   return(
     <header>
@@ -11,7 +12,7 @@ export default function Header(){
           <a href="#">Para entregadores</a>
           <a href="#">Restaurantes</a>
         </div>
-        <div id="buttons">
+        <div id="buttons1">
           <button>Área do Entregador</button>
           <button>Meu Restaurante</button>
           <button>Entrar</button>
