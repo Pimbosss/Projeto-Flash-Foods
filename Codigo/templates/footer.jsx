@@ -1,8 +1,8 @@
 import "/templates/footer.css"
 
 
-export default function Footer(){
-    return(
+export default function Footer() {
+    return (
         <footer>
             <div id="titulo2">
                 <h1>Flash Foods</h1>

@@ -4,6 +4,22 @@ header {
     background-color: #fff;
     border-bottom: 1px solid #e5e5e5;
     font-family: Arial, Helvetica, sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+.logo a {
+    color: #071d38;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #071d38;
+    text-decoration: none;
 }
 
 #cabeçalho {

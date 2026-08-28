@@ -1,16 +1,28 @@
 import "/templates/header.css"
+import centralizar from "/src/functions/function1.jsx"
 
-export default function Header(){
-  return(
+export default function Header() {
+  return (
     <header>
-      <div id = "cabeçalho">
+      <div id="cabeçalho">
         <div id="titulo">
-          <h1>Flash Foods</h1>
+          <h1 className="logo">
+            <a href="">Flash Foods</a>
+          </h1>
         </div>
         <div id="links">
-          <a href="#">Como funciona</a>
-          <a href="#">Para entregadores</a>
-          <a href="#">Restaurantes</a>
+          <a
+            href="#comofunciona"
+            onClick={(event) => centralizar(event, 'comofunciona')}
+          >
+            Como funciona
+          </a>
+          <a href="#para-entregadores"
+            onClick={(event) => centralizar(event, 'para-entregadores')}
+          >Para entregadores</a>
+          <a href="#restaurantes1"
+            onClick={(event) => centralizar(event, 'restaurantes')}
+          >Restaurantes</a>
         </div>
         <div id="buttons1">
           <button>Área do Entregador</button>
