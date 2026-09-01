@@ -15,7 +15,7 @@ footer {
 /* Flash Foods */
 #titulo2 h1 {
     margin: 0 0 18px;
-
+    text-align: left;
     color: #fff;
     font-size: 24px;
     font-weight: 700;
@@ -24,18 +24,19 @@ footer {
 #titulo2 h1::before {
     content: "⚡";
     color: #ff6b00;
+    
     margin-right: 10px;
 }
 
 #titulo2 p {
     max-width: 290px;
-
+    text-align: left;
     color: #9aa8bc;
     font-size: 15px;
     line-height: 1.55;
 }
 
-/* Títulos */
+
 footer h4 {
     margin: 0 0 18px;
 
@@ -44,7 +45,7 @@ footer h4 {
     font-weight: 700;
 }
 
-/* Links */
+
 footer a {
     display: block;
 
@@ -98,7 +99,7 @@ footer a:hover {
     }
 }
 
-/* Celular */
+
 @media (max-width: 480px) {
     footer {
         grid-template-columns: 1fr;
