@@ -1,4 +1,5 @@
 import "/templates/header.css"
+import { Link } from "react-router-dom";
 import centralizar from "/src/functions/function1.jsx"
 
 export default function Header() {
@@ -27,7 +28,9 @@ export default function Header() {
         <div id="buttons1">
           <button>Área do Entregador</button>
           <button>Meu Restaurante</button>
-          <button>Entrar</button>
+          <Link to="/login">
+            <button>Entrar</button>
+          </Link>
           <button>Fazer Pedido</button>
         </div>
       </div>
