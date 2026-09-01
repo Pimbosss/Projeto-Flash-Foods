@@ -29,7 +29,7 @@ body {
 
 #principal {
   width: 100%;
-  /* max-width: 900px; */
+  max-width: 900px;
 }
 
 
@@ -213,11 +213,10 @@ h1 {
 
 
 #como-funciona {
-  /* Faz a seção ocupar a tela inteira */
+ 
   width: 100vw;
 
-  /* Se estiver dentro de um container centralizado,
-       força a seção a começar na borda esquerda da tela */
+  
   margin-left: calc(50% - 50vw);
 
   background-color: #f8f9fa;
@@ -229,7 +228,7 @@ h1 {
   margin-top: 70px;
 }
 
-/* Título */
+
 #como-funciona h1 {
   margin: 0 auto 14px;
 
@@ -240,7 +239,7 @@ h1 {
   line-height: 1.2;
 }
 
-/* Subtítulo */
+
 #como-funciona>p {
   margin: 0 0 65px;
 
@@ -249,7 +248,7 @@ h1 {
   font-size: 20px;
 }
 
-/* Lista */
+
 #como-funciona ol {
   width: 100%;
   max-width: 1200px;
@@ -265,14 +264,14 @@ h1 {
   list-style: none;
 }
 
-/* Cada item */
+
 #como-funciona li {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Círculo do ícone */
+
 #como-funciona .badge {
   width: 64px;
   height: 64px;
@@ -290,7 +289,7 @@ h1 {
   margin: 0 0 20px;
 }
 
-/* Título do passo */
+
 #como-funciona li h3 {
   margin: 0 0 12px;
 
@@ -300,7 +299,7 @@ h1 {
   font-weight: 700;
 }
 
-/* Texto */
+
 #como-funciona li p {
   max-width: 250px;
 
@@ -312,10 +311,6 @@ h1 {
   line-height: 1.5;
 }
 
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
 
 @media (max-width: 900px) {
 
