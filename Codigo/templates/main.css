@@ -29,7 +29,7 @@ body {
 
 #principal {
   width: 100%;
-  max-width: 900px;
+  /* max-width: 900px; */
 }
 
 
@@ -69,14 +69,14 @@ h1 {
   font-size: 58px;
   line-height: 1.05;
   font-weight: 800;
-
+  text-align: center;
   color: #101828;
 
   max-width: 850px;
   margin: 0 auto 24px;
 }
 
-/* Deixa "justas" laranja */
+
 h1 {
   color: #101828;
 }
@@ -85,7 +85,7 @@ h1 {
 
 #info2 {
   max-width: 850px;
-
+  text-align: center;
   margin: 0 auto 34px;
 
   color: #344563;
