@@ -1,17 +1,49 @@
+import "./Login.css";
+import { useNavigate, Link } from "react-router-dom";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
 export default function Login() {
-    return (
-        <div id="container" >
+    const navigate = useNavigate();
 
-            <div>
-                <input type="text" id="usuario" placeholder="Usuário" />
-                <input type="text" id="usuario" placeholder="Senha" />
-                <input type="button" value="Logar" />
-                <Link to="/">
-                    <a>X</a>
-                </Link>
+    return (
+
+        <div className="login-page">
+
+            <div className="login-box">
+
+                <button
+                    className="fechar"
+                    onClick={() => navigate("/")}
+                >
+                    ✕
+                </button>
+
+                <h1>Entrar</h1>
+                <p>Entre na sua conta Flash</p>
+
+                <form>
+                    <label>Email ou CPF</label>
+                    <input
+                        type="email"
+                        placeholder="Digite seu email ou CPF"
+                    />
+
+                    <label>Senha</label>
+                    <input
+                        type="password"
+                        placeholder="Digite sua senha"
+                    />
+
+                    <button type="submit">
+                        Entrar
+                    </button>
+                </form>
+
+                <p className="cadastro">
+                    Ainda não tem uma conta?{" "}
+                    <Link to="/Cadastro">
+                        Criar conta
+                    </Link>
+                </p>
             </div>
 
         </div>
