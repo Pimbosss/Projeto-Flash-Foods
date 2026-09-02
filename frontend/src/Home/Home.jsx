@@ -35,25 +35,25 @@ export default function Home() {
                     <ol>
 
                         <li>
-                            <p class="badge">📍</p>
+                            <p className="badge">📍</p>
                             <h3>1. Escolha</h3>
                             <p>Selecione seu restaurante favorito e monte seu pedido</p>
                         </li>
 
                         <li>
-                            <p class="badge">📦</p>
+                            <p className="badge">📦</p>
                             <h3>2. Confirme</h3>
                             <p>Revise e confirme seu pedido com pagamento seguro</p>
                         </li>
 
                         <li>
-                            <p class="badge">🚲</p>
+                            <p className="badge">🚲</p>
                             <h3>3. Acompanhe</h3>
                             <p>Veja em tempo real o entregador chegando até você</p>
                         </li>
 
                         <li>
-                            <p class="badge">⭐</p>
+                            <p className="badge">⭐</p>
                             <h3>4. Aproveite</h3>
                             <p>Receba sua comida quentinha e avalie a experiência</p>
                         </li>
@@ -67,13 +67,13 @@ export default function Home() {
             <div id="info-entregador">
                 <section id="para-entregadores">
 
-                    <h1 class="titulo-entregadores">
+                    <h1 className="titulo-entregadores">
                         Condições Justas Para <span>Nossos Entregadores</span>
                     </h1>
                     <p>Acreditamos que quem entrega merece o melhor</p>
-                    <div class="cards-entregadores">
-                        <div class="card-entregador">
-                            <p class="badge2 badge-verde">$</p>
+                    <div className="cards-entregadores">
+                        <div className="card-entregador">
+                            <p className="badge2 badge-verde">$</p>
 
                             <h1>Ganho Garantido</h1>
 
@@ -90,8 +90,8 @@ export default function Home() {
                             </ul>
                         </div>
 
-                        <div class="card-entregador">
-                            <p class="badge2 badge-azul">🛡️</p>
+                        <div className="card-entregador">
+                            <p className="badge2 badge-azul">🛡️</p>
 
                             <h1>Seguro Completo</h1>
 
@@ -107,8 +107,8 @@ export default function Home() {
                             </ul>
                         </div>
 
-                        <div class="card-entregador">
-                            <p class="badge2 badge-roxo">❤️</p>
+                        <div className="card-entregador">
+                            <p className="badge2 badge-roxo">❤️</p>
 
                             <h1>Benefícios Extras</h1>
 

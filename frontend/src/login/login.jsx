@@ -1,8 +1,54 @@
 import "./Login.css";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+
+const baseUrl = "http://localhost:3001/users";
+
+const initialState = {
+    email: "",
+    password: "",
+};
 
 export default function Login() {
     const navigate = useNavigate();
+
+    const [credentials, setCredentials] = useState({ ...initialState });
+
+    const updatedField = (event) => {
+        const { name, value } = event.target;
+        setCredentials({ ...credentials, [name]: value });
+    };
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        console.log("Botão clicado! Dados digitados:", credentials);
+        if (!credentials.email || !credentials.password) {
+            alert("Todos os campos são obrigatórios!");
+            return;
+        }
+
+        axios.get(`${baseUrl}?email=${credentials.email}`)
+            .then(resp => {
+                const usuarioEncontrado = resp.data
+                if (usuarioEncontrado.length === 0) {
+                    alert("Usuário não encontrado!");
+                    return;
+                }
+                const usuario = usuarioEncontrado[0];
+                if(usuario.password == credentials.password) {
+                    alert("Login realizado com sucesso!");
+                    setCredentials(initialState);
+                    navigate("/Home");
+                } else {
+                    alert("Senha incorreta!");
+                }
+            })
+            .catch(err => {
+                console.error("Erro ao realizar login:", err);
+                alert("Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde.");
+            })
+    }
 
     return (
 
@@ -20,16 +66,22 @@ export default function Login() {
                 <h1>Entrar</h1>
                 <p>Entre na sua conta Flash</p>
 
-                <form>
-                    <label>Email ou CPF</label>
+                <form onSubmit={handleLogin}>
+                    <label>Email</label>
                     <input
                         type="email"
-                        placeholder="Digite seu email ou CPF"
+                        name="email"
+                        value={credentials.email}
+                        onChange={updatedField}
+                        placeholder="Digite seu email"
                     />
 
                     <label>Senha</label>
                     <input
                         type="password"
+                        name="password"
+                        value={credentials.password}
+                        onChange={updatedField}
                         placeholder="Digite sua senha"
                     />
 

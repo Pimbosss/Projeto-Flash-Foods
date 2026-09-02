@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./Home/Home";
-import Login from "./Login/Login";
+import Login from "./login/login";
 import Cadastro from "./Cadastro/Cadastro";
 
 export default function AppRoutes() {

@@ -1,6 +1,6 @@
 import "./Cadastro.css";
-import { Link , useNavigate} from "react-router-dom";
-import React, { useState, useEffect } from "react";   
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const baseUrl = "http://localhost:3001/users";
@@ -14,8 +14,8 @@ const initialState = {
 
 export default function Cadastro() {
     const navigate = useNavigate();
-    
-    const [user, setUser] = useState({...initialState});
+
+    const [user, setUser] = useState({ ...initialState });
     const [list, setList] = useState([]);
 
     useEffect(() => {
@@ -42,6 +42,11 @@ export default function Cadastro() {
             alert("Senha incorreta! Por favor, digite a mesma senha nos campos de senha e confirmação.");
             return;
         }
+        const emailExiste = list.some(u => u.email.toLowerCase() === user.email.toLowerCase());
+        if (emailExiste) {
+            alert("Este e-mail já está cadastrado!");
+            return; 
+        }
 
         const nextId = list.length > 0 ? Math.max(...list.map(u => parseInt(u.id))) + 1 : 1;
 
@@ -58,13 +63,13 @@ export default function Cadastro() {
                 alert("Cadastro realizado com sucesso!");
                 setUser(initialState);
                 navigate("/Login");
-             })
-             .catch(error => {
+            })
+            .catch(error => {
                 console.error("Erro ao salvar usuário:", error);
                 alert("Ocorreu um erro ao realizar o cadastro. Por favor, tente novamente.");
             });
-        
-            
+
+
     }
 
     return (
