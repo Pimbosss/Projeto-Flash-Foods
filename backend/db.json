@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "teste@flashfoods.com",
+      "cpf": "123.456.789-00",
+      "phone": "11999999999",
+      "password": "123"
+    },
+    {
+      "id": "_lyam4a7orQ",
+      "email": "renan@gmail.com",
+      "cpf": "12334567890",
+      "phone": "909010190",
+      "password": "12345"
+    },
+    {
+      "id": "VZKmzt2zRQQ",
+      "email": "azul@gmail.com",
+      "cpf": "32189471912",
+      "phone": "47829174928",
+      "password": "branco"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
