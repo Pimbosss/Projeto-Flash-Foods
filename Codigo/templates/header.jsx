@@ -28,8 +28,8 @@ export default function Header() {
         <div id="buttons1">
           <button>Área do Entregador</button>
           <button>Meu Restaurante</button>
-          <Link to="/login">
-            <button>Entrar</button>
+          <Link to="/Login">
+            <button>↪ Entrar</button>
           </Link>
           <button>Fazer Pedido</button>
         </div>

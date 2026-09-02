@@ -1,15 +1,14 @@
 import './Main.css'
 import Header from "./header.jsx"
 
-export default function Main(props){
-    return(
+export default function Main(props) {
+    return (
         <>
-        <Header/>
-        <main>
-            <div>
+            <Header />
+
+            <main id={props.id}>
                 {props.children}
-            </div>
-        </main>
+            </main>
         </>
     )
 }
