@@ -118,9 +118,9 @@ body {
 #como-funciona {
   width: 100%;
   background-color: #f8f9fa;
-  padding: 80px 20px;
-  text-align: center;
-  margin-top: 70px;
+  padding: 50px 20px;
+  text-align: center; 
+  /* margin-top: 70px; */
 }
 
 #como-funciona section {

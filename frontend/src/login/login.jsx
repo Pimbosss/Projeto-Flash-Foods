@@ -38,8 +38,12 @@ export default function Login() {
                 const usuario = usuarioEncontrado[0];
                 if(usuario.password == credentials.password) {
                     alert("Login realizado com sucesso!");
+                    localStorage.setItem("flashfoods:user", JSON.stringify({
+                        id: usuario.id,
+                        email: usuario.email
+                    }));
                     setCredentials(initialState);
-                    navigate("/Home");
+                    window.location.href = "/Home"; // Redireciona para a página Home após o login bem-sucedido
                 } else {
                     alert("Senha incorreta!");
                 }

@@ -171,6 +171,52 @@ header {
     transform: translateY(-2px);
 }
 
+/* ==========================================
+   Ajustes para o Header do Usuário Logado
+   ========================================== */
+
+/* Garante que tudo dentro do bloco de botões fique alinhado lado a lado e centralizado verticalmente */
+#buttons1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Joga os botões para o canto direito */
+  gap: 12px; /* Cria um espaçamento padrão entre o nome, a foto e o botão */
+}
+
+/* Estilização do texto "Olá, fulano" */
+.user-greeting {
+  font-family: sans-serif; /* Use a mesma fonte do projeto de vocês */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff; /* Ajuste a cor se o fundo do header não for escuro */
+}
+
+/* Estilização da foto redonda de perfil */
+.profile-avatar {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Efeito sutil quando passar o mouse por cima da foto de perfil */
+.profile-avatar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Estilização do botão "Sair" (Caso queiram uma cor de alerta/destaque) */
+.btn-logout {
+  background-color: #dc3545; /* Vermelho padrão de alerta, mude se preferir */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background-color: #c82333; /* Vermelho mais escuro no hover */
+}
 
 @media (max-width: 1000px) {
 
