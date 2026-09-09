@@ -51,7 +51,7 @@ export default function Perfil() {
                 <div className="perfil-card">
                     <div className="avatar-section">
                         <h2>Meu Perfil Flash</h2>
-                        <p style={{ color: "#ffc107" }}>Logado como: {userData.email}</p>
+                        <p style={{ color: "#f97316" }}>Logado como: {userData.email}</p>
                     </div>
 
                     <hr />
