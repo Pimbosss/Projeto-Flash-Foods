@@ -1,0 +1,423 @@
+.Pedir-page {
+    min-height: 100vh;
+    background: #f7f8fa;
+    color: #071b3a;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Pedir-page * {
+    box-sizing: border-box;
+}
+
+.Pedir-page .header {
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 16px max(calc((100% - 1216px) / 2), 20px);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 16px;
+}
+
+.Pedir-page #filtro-pratos .limpar-filtros {
+    background: #ff6500;
+    color: white;
+}
+
+.Pedir-page #filtro-pratos .limpar-filtros:hover {
+    background: #e95700;
+    transform: scale(1.03);
+}
+
+.Pedir-page .logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.Pedir-page #titulo1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #071b3a;
+    position: relative;
+    padding-left: 40px;
+    margin: 0;
+    line-height: 1;
+}
+
+.Pedir-page #titulo1::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6500;
+    font-size: 32px;
+}
+.Pedir-page .carrinho {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Pedir-page #carrinho {
+    border: none;
+    background: #ff6500;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 11px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Pedir-page #carrinho:hover {
+    background: #e95700;
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.Pedir-page .contador-carrinho {
+    margin-left: 8px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 10px;
+    background: white;
+    color: #ff6500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.Pedir-page .endereço {
+    grid-column: 1 / 3;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.Pedir-page .icone-localizacao {
+    position: absolute;
+    left: 16px;
+    color: #ff6500;
+    font-size: 19px;
+    z-index: 2;
+}
+
+.Pedir-page #endereço {
+    width: 100%;
+    height: 48px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: #f7f8fa;
+    padding: 0 125px 0 45px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s ease, background 0.2s ease;
+}
+
+.Pedir-page #endereço:focus {
+    border: 1px solid #ff6500;
+    background: white;
+}
+
+.Pedir-page #endereço::placeholder {
+    color: #7a8799;
+}
+
+.Pedir-page .endereço button {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    height: 36px;
+    padding: 0 18px;
+    border: none;
+    border-radius: 9px;
+    background: #ff6500;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Pedir-page .endereço button:hover {
+    background: #e95700;
+    transform: scale(1.04);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.Pedir-page #pratos-restaurantes {
+    max-width: 1216px;
+    margin: 24px auto 28px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e3e5e8;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.Pedir-page #pratos {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccd3dc;
+    border-radius: 10px;
+    padding: 0 18px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.Pedir-page #pratos:focus {
+    border-color: #ff6500;
+}
+
+.Pedir-page #filtro-pratos {
+    display: flex;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.Pedir-page #filtro-pratos button {
+    border: none;
+    background: #f0f1f3;
+    color: #102447;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.Pedir-page #filtro-pratos button:hover {
+    transform: scale(1.03);
+}
+
+.Pedir-page #filtro-pratos button.filtro-ativo {
+    background: #ff6500;
+    color: white;
+}
+
+.Pedir-page #filtro-pratos button.filtro-ativo:hover {
+    background: #e95700;
+}
+
+.Pedir-page #restaurantes2 {
+    max-width: 1216px;
+    margin: 0 auto 35px;
+}
+
+.Pedir-page #restaurantes3 > h1,
+.Pedir-page #titulo-prato {
+    font-size: 23px;
+    margin-bottom: 16px;
+    color: #071b3a;
+}
+
+.Pedir-page .cards-restaurantes1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.Pedir-page .card-restaurante {
+    background: white;
+    border-radius: 15px;
+    padding: 16px;
+    min-height: 187px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Pedir-page .card-restaurante:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.Pedir-page .card-restaurante h1 {
+    width: 64px;
+    height: 64px;
+    background: #ff6500;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.Pedir-page .card-restaurante p:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.Pedir-page .card-restaurante p:nth-of-type(2) {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    font-size: 14px;
+}
+
+.Pedir-page .card-restaurante p:nth-of-type(3) {
+    color: #738096;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.Pedir-page .card-restaurante p:nth-of-type(4) {
+    color: #66758c;
+    font-size: 14px;
+}
+
+.Pedir-page .pratos {
+    max-width: 1216px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.Pedir-page .cards-pratos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.Pedir-page .card-prato {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    min-height: 322px;
+    position: relative;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Pedir-page .card-prato:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.Pedir-page .card-prato > h1 {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #ff8500, #ff5200);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.Pedir-page .card-prato > p:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 18px 16px 5px;
+}
+
+.Pedir-page .card-prato > p:nth-of-type(2) {
+    position: absolute;
+    top: 178px;
+    right: 16px;
+    font-size: 14px;
+}
+
+.Pedir-page .card-prato > p:nth-of-type(3) {
+    font-size: 14px;
+    color: #748198;
+    margin: 0 16px 12px;
+}
+
+.Pedir-page .card-prato > p:nth-of-type(4) {
+    font-size: 14px;
+    color: #53627a;
+    line-height: 1.4;
+    margin: 0 16px 25px;
+}
+
+.Pedir-page .card-prato > p:nth-of-type(5) {
+    font-size: 19px;
+    font-weight: bold;
+    margin: 0 16px;
+}
+
+.Pedir-page .card-prato > button {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    border: none;
+    background: #ff6500;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.Pedir-page .card-prato > button:hover {
+    background: #e95700;
+    transform: scale(1.06);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.Pedir-page .nenhum-resultado {
+    color: #738096;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .Pedir-page .cards-restaurantes1,
+    .Pedir-page .cards-pratos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Pedir-page #pratos-restaurantes,
+    .Pedir-page #restaurantes2,
+    .Pedir-page .pratos {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Pedir-page .cards-restaurantes1,
+    .Pedir-page .cards-pratos {
+        grid-template-columns: 1fr;
+    }
+
+    .Pedir-page .header {
+        padding: 15px 20px;
+    }
+
+    .Pedir-page #pratos-restaurantes {
+        margin: 15px;
+        padding: 18px;
+    }
+
+    .Pedir-page #restaurantes2,
+    .Pedir-page .pratos {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .Pedir-page #endereço {
+        padding-right: 110px;
+    }
+
+    .Pedir-page .endereço button {
+        padding: 0 14px;
+    }
+}

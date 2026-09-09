@@ -1,0 +1,18 @@
+# Cache do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Dependências (Essas pastas são gigantes e o npm instala tudo de novo)
+**/node_modules/
+
+# Arquivos de Build do Vite (Front-end)
+**/dist/
+**/dist-ssr/
+*.local
+
+# Configurações de IDEs
+.vscode/
+.idea/
+
+# Banco de Dados de Desenvolvimento (Opcional - Leia abaixo)
+**/flash-foods-back/db.json

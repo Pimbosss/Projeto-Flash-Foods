@@ -171,6 +171,37 @@ header {
     transform: translateY(-2px);
 }
 
+/* ==========================================
+   Ajustes para o Header do Usuário Logado
+   ========================================== */
+
+/* Garante que tudo dentro do bloco de botões fique alinhado lado a lado e centralizado verticalmente */
+#buttons1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Joga os botões para o canto direito */
+  gap: 12px; /* Cria um espaçamento padrão entre o nome, a foto e o botão */
+}
+
+/* Estilização do texto "Olá, fulano" */
+.user-greeting {
+  font-family: sans-serif; /* Use a mesma fonte do projeto de vocês */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff; /* Ajuste a cor se o fundo do header não for escuro */
+}
+
+/* Estilização da foto redonda de perfil */
+.profile-avatar {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Efeito sutil quando passar o mouse por cima da foto de perfil */
+.profile-avatar:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
 
 @media (max-width: 1000px) {
 
@@ -212,3 +243,23 @@ header {
     }
 
 }
+
+#buttons1 #btn-logout {
+    border: 1px solid #d9dce3;
+    
+    color: #18233b;
+    border-radius: 25px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+#buttons1 #btn-logout:hover {
+     color: #ff6500;
+    border-color: gray;
+    transform: translateY(-2px);
+}
+
