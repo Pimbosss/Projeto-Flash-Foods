@@ -61,6 +61,11 @@ export default function Perfil() {
                             <label>E-mail</label>
                             <input type="text" value={userData.email} disabled />
                         </div>
+                        <div className="info-group">
+                            <label>Nome</label>
+                            <input type="text" value={userData.name || "Não informado"} disabled />
+                        </div>
+
 
                         <div className="info-group">
                             <label>CPF</label>

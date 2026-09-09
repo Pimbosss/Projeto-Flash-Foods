@@ -7,6 +7,7 @@ const baseUrl = "http://localhost:3001/users";
 const initialState = {
     email: "",
     cpf: "",
+    name: "",
     phone: "",
     password: "",
     confirmPassword: "",
@@ -48,11 +49,12 @@ export default function Cadastro() {
             return; 
         }
 
-        const nextId = list.length > 0 ? Math.max(...list.map(u => parseInt(u.id))) + 1 : 1;
+        const nextId = list.length > 0 ? Math.max(...list.map(u => parseInt(u.id))) + 1 : 1; // não ta funcionando 
 
         const userToSave = {
             id: String(nextId),
             email: user.email,
+            name: user.name,
             cpf: user.cpf,
             phone: user.phone,
             password: user.password
@@ -95,6 +97,15 @@ export default function Cadastro() {
                         value={user.email}
                         onChange={updatedField}
                         placeholder="Digite seu email"
+                    />
+                     <label htmlFor="nome">Nome</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name" // IMPORTANTE: igual à chave do objeto
+                        value={user.name}
+                        onChange={updatedField}
+                        placeholder="Digite seu Nome"
                     />
 
                     <label htmlFor="cpf">CPF</label>

@@ -56,7 +56,7 @@ export default function Header() {
           {user ? (
            
             <>
-              <span className="user-greeting" style={{ color: "white", marginRight: "15px" }}>
+              <span className="user-greeting" style={{ color: "black", marginRight: "15px" }}>
                 Olá, {user.email.split('@')[0]}
               </span>
               <img 
