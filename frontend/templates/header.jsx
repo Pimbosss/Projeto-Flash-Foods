@@ -2,6 +2,7 @@ import "/templates/header.css"
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import centralizar from "/src/functions/function1.jsx"
+import { FaRegUserCircle } from "react-icons/fa";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -59,13 +60,13 @@ export default function Header() {
               <span className="user-greeting" style={{ color: "black", marginRight: "15px" }}>
                 Olá, {user.email.split('@')[0]}
               </span>
-              <img 
+              <FaRegUserCircle 
                 src="https://flaticon.com" 
                 alt="Perfil" 
                 onClick={() => navigate("/Perfil")}
-                style={{ width: '35px', borderRadius: '50%', cursor: 'pointer', marginRight: '15px', verticalAlign: 'middle' }}
-              />
-              <button onClick={handleLogout} className="btn-logout">
+                style={{ width:'35px', borderRadius: '50%', cursor: 'pointer', marginRight: '15px', verticalAlign: 'middle', height: "30px" }} />
+              
+              <button onClick={handleLogout} id="btn-logout">
                 Sair
               </button>
             </>

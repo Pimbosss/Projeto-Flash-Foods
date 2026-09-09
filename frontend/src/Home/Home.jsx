@@ -1,5 +1,5 @@
 import Main from '/templates/Main'
-
+import { Link, useNavigate } from "react-router-dom";
 export default function Home() {
     return (
         <>
@@ -18,7 +18,7 @@ export default function Home() {
                     </p>
 
                     <div id="buttons">
-                        <button>Pedir Agora</button>
+                        <Link to="/Pedir-agora"  ><button  >Pedir Agora</button></Link>
                         <button>Seja um Entregador</button>
                         <button>Restaurante</button>
                     </div>

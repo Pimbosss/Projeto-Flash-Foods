@@ -17,12 +17,20 @@
       "password": "admin"
     },
     {
+<<<<<<< HEAD
       "id": "G97BuN1KSC4",
       "email": "renan@gmail.com",
       "name": "Renan",
       "cpf": "000000000000",
       "phone": "000000000000",
       "password": "admin"
+=======
+      "id": "S-N1UKyfhUQ",
+      "email": "heitor@gmail.com",
+      "cpf": "17723784918",
+      "phone": "1699087678",
+      "password": "12345678"
+>>>>>>> 94ad4ca72c8babacab66cd08d2d78faf73eb1017
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
