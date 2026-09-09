@@ -105,7 +105,7 @@ export default function Cadastro() {
                         name="name" // IMPORTANTE: igual à chave do objeto
                         value={user.name}
                         onChange={updatedField}
-                        placeholder="Digite seu Nome"
+                        placeholder="Digite seu Nomel"
                     />
 
                     <label htmlFor="cpf">CPF</label>
