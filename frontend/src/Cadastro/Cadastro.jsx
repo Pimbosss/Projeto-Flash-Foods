@@ -7,6 +7,7 @@ const baseUrl = "http://localhost:3001/users";
 const initialState = {
     email: "",
     cpf: "",
+    name: "",
     phone: "",
     password: "",
     confirmPassword: "",
@@ -53,6 +54,7 @@ export default function Cadastro() {
         const userToSave = {
             id: String(nextId),
             email: user.email,
+            name: user.name,
             cpf: user.cpf,
             phone: user.phone,
             password: user.password
@@ -95,6 +97,15 @@ export default function Cadastro() {
                         value={user.email}
                         onChange={updatedField}
                         placeholder="Digite seu email"
+                    />
+                    <label htmlFor="nome">Email</label>
+                    <input
+                        type="name"
+                        id="name"
+                        name="name" // IMPORTANTE: igual à chave do objeto
+                        value={user.name}
+                        onChange={updatedField}
+                        placeholder="Digite seu Nome"
                     />
 
                     <label htmlFor="cpf">CPF</label>

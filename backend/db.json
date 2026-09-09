@@ -3,6 +3,7 @@
     {
       "id": "1",
       "email": "teste@flashfoods.com",
+      "name": "teste",
       "cpf": "123.456.789-00",
       "phone": "11999999999",
       "password": "123"
@@ -10,6 +11,7 @@
     {
       "id": "c-qpHrHTOAM",
       "email": "admin@admin.com",
+      "name": "Admin",
       "cpf": "0000000000",
       "phone": "0000000000",
       "password": "admin"
@@ -17,6 +19,7 @@
     {
       "id": "S-N1UKyfhUQ",
       "email": "heitor@gmail.com",
+      "name": "Heitor",
       "cpf": "17723784918",
       "phone": "1699087678",
       "password": "12345678"
