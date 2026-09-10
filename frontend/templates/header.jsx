@@ -29,7 +29,7 @@ export default function Header() {
             <a href="">Flash Foods</a>
           </h1>
         </div>
-        
+
         <div id="links">
           <a
             href="#comofunciona"
@@ -37,13 +37,13 @@ export default function Header() {
           >
             Como funciona
           </a>
-          <a 
+          <a
             href="#para-entregadores"
             onClick={(event) => centralizar(event, 'para-entregadores')}
           >
             Para entregadores
           </a>
-          <a 
+          <a
             href="#restaurantes1"
             onClick={(event) => centralizar(event, 'restaurantes')}
           >
@@ -55,23 +55,27 @@ export default function Header() {
           <button>Área do Entregador</button>
           <button>Meu Restaurante</button>
           {user ? (
-           
+
             <>
               <span className="user-greeting" style={{ color: "black", marginRight: "15px" }}>
-                Olá, {user.email.split('@')[0]}
+                Olá, {
+                  (user.name && user.name.trim() !== "") ? user.name.split(' ')[0] :
+                    (user.nome && user.nome.trim() !== "") ? user.nome.split(' ')[0] :
+                      user.email.split("@")[0]
+                }
               </span>
-              <FaRegUserCircle 
-                src="https://flaticon.com" 
-                alt="Perfil" 
+              <FaRegUserCircle
+                src="https://flaticon.com"
+                alt="Perfil"
                 onClick={() => navigate("/Perfil")}
-                style={{ width:'35px', borderRadius: '50%', cursor: 'pointer', marginRight: '15px', verticalAlign: 'middle', height: "30px" }} />
-              
+                style={{ width: '35px', borderRadius: '50%', cursor: 'pointer', marginRight: '15px', verticalAlign: 'middle', height: "30px" }} />
+
               <button onClick={handleLogout} id="btn-logout">
                 Sair
               </button>
             </>
           ) : (
-            
+
             <>
               <Link to="/Login">
                 <button>Entrar</button>
