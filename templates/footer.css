@@ -1,0 +1,114 @@
+footer {
+    width: 100%;
+    margin-top: auto;
+
+    background-color: #0d1728;
+    color: #fff;
+
+    padding: 38px max(30px, 11%) 0;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    column-gap: 70px;
+}
+
+/* Flash Foods */
+#titulo2 h1 {
+    margin: 0 0 18px;
+
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#titulo2 h1::before {
+    content: "⚡";
+    color: #ff6b00;
+    margin-right: 10px;
+}
+
+#titulo2 p {
+    max-width: 290px;
+
+    color: #9aa8bc;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* Títulos */
+footer h4 {
+    margin: 0 0 18px;
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Links */
+footer a {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: #9aa8bc;
+    font-size: 15px;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+footer a:hover {
+    color: #ff6b00;
+}
+
+/* Copyright */
+#direitos {
+    grid-column: 1 / -1;
+
+    margin-top: 24px;
+    padding: 35px 0 40px;
+
+    border-top: 1px solid #202c3d;
+
+    text-align: center;
+}
+
+#direitos p {
+    margin: 0;
+
+    color: #9aa8bc;
+    font-size: 15px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+
+        padding: 35px 8% 0;
+    }
+
+    #titulo {
+        grid-column: 1 / -1;
+    }
+
+    #direitos {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+    footer {
+        grid-template-columns: 1fr;
+        gap: 28px;
+
+        padding: 35px 25px 0;
+    }
+
+    #titulo,
+    #direitos {
+        grid-column: auto;
+    }
+}
