@@ -19,7 +19,7 @@ export default function Home() {
 
                     <div id="buttons">
                         <Link to="/Pedir-agora"  ><button  >Pedir Agora</button></Link>
-                        <button>Seja um Entregador</button>
+                        <Link to="/Area-E"><button  >Seja um Entregador</button></Link>
                         <button>Restaurante</button>
                     </div>
                 </div>

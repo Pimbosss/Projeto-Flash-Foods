@@ -20,6 +20,20 @@
       "cpf": "17723784918",
       "phone": "1699087678",
       "password": "12345678"
+    },
+    {
+      "id": "kUUxIRohk6Q",
+      "email": "felipao1432@gmail.com",
+      "cpf": "51403768811",
+      "phone": "1699087678",
+      "password": "fe290101"
+    },
+    {
+      "id": "ANKp_M_ABU0",
+      "email": "gabriel@sexohot.gmail.com",
+      "cpf": "558703487209847",
+      "phone": "43567890132",
+      "password": "12345"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
