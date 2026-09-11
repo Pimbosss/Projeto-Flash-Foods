@@ -17,38 +17,32 @@
       "password": "admin"
     },
     {
-  <<<<<<< HEAD
+ 
       "id": "G97BuN1KSC4",
       "email": "renan@gmail.com",
       "name": "Renan",
       "cpf": "000000000000",
       "phone": "000000000000",
       "password": "admin"
-  =======
+    },
+
+    {
       "id": "S-N1UKyfhUQ",
       "email": "heitor@gmail.com",
       "name": "Heitor",
       "cpf": "17723784918",
       "phone": "1699087678",
       "password": "12345678"
-  <<<<<<< HEAD
+  
     },
-    {
-      "id": "kUUxIRohk6Q",
-      "email": "felipao1432@gmail.com",
-      "cpf": "51403768811",
-      "phone": "1699087678",
-      "password": "fe290101"
-    },
+
     {
       "id": "ANKp_M_ABU0",
       "email": "gabriel@sexohot.gmail.com",
       "cpf": "558703487209847",
       "phone": "43567890132",
       "password": "12345"
-  =======
-  >>>>>>> 94ad4ca72c8babacab66cd08d2d78faf73eb1017
-  >>>>>>> 889922f75e252c5a2b52c254edbdbec4d84764a7
+
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

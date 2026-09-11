@@ -1,7 +1,14 @@
 import { useEffect, useState } from "react";
 
 export default function useAreaEFunctions() {
-    const [online, setOnline] = useState(true);
+    const [online, setOnline] = useState(() => {
+        const statusSalvo = localStorage.getItem("flashfoods:online");
+
+        return statusSalvo === null
+            ? true
+            : statusSalvo === "true";
+    });
+
     const [entregaAtual, setEntregaAtual] = useState(null);
     const [gpsVisivel, setGpsVisivel] = useState(true);
     const [ganhosHoje, setGanhosHoje] = useState(0);
@@ -66,22 +73,27 @@ export default function useAreaEFunctions() {
     }, [online, inicioOnline]);
 
     function resetarTudo() {
-        setOnline(true);
-        setEntregaAtual(null);
-        setGpsVisivel(true);
+        console.log("RESETOU");
+        console.log("ONLINE ANTES:", online);
+
         setGanhosHoje(0);
         setEntregasTotais(0);
         setGanhosOntem(0);
         setTempoTotal(0);
-        setInicioOnline(Date.now());
+
+        console.log("RESET TERMINOU");
     }
 
     function alterarStatus() {
+        console.log("ALTEROU STATUS!");
+
         if (online) {
             setOnline(false);
-            setEntregasTotais(0);
+            localStorage.setItem("flashfoods:online", "false");
+            
         } else {
             setOnline(true);
+            localStorage.setItem("flashfoods:online", "true");
             setInicioOnline(Date.now() - tempoTotal);
         }
     }
@@ -90,7 +102,11 @@ export default function useAreaEFunctions() {
         const segundosTotais = Math.floor(tempo / 1000);
 
         const horas = Math.floor(segundosTotais / 3600);
-        const minutos = Math.floor((segundosTotais % 3600) / 60);
+
+        const minutos = Math.floor(
+            (segundosTotais % 3600) / 60
+        );
+
         const segundos = segundosTotais % 60;
 
         return `${String(horas).padStart(2, "0")}:${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;

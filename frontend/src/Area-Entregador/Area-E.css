@@ -63,22 +63,37 @@ body {
     color: #52627a;
 }
 
-.carrinho button {
+.status-online,
+.status-offline {
     border: none;
-
     padding: 10px 22px;
-
     border-radius: 25px;
 
-    background: #00c853;
     color: #ffffff;
 
     font-size: 13px;
     font-weight: 700;
 
     cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
+.status-online {
+    background: #00c853;
+}
+
+.status-offline {
+    background: #e53935;
+}
+
+.status-online:hover {
+    background: #00a94f;
+}
+
+.status-offline:hover {
+    background: #c62828;
+}
 .cards-entregador {
     display: grid;
 
