@@ -19,22 +19,22 @@ import useAreaEFunctions from "./Area-e-functions";
 export default function Area_e() {
 
     const {
-    online,
-    entregaAtual,
-    gpsVisivel,
-    ganhosHoje,
-    entregasTotais,
-    ganhosOntem,
-    diferencaOntem,
-    tempoTotal,
-    inicioOnline,
-    entregas,
-    alterarStatus,
-    formatarTempo,
-    aceitarEntrega,
-    finalizarEntrega,
-    resetarTudo
-} = useAreaEFunctions();
+        online,
+        entregaAtual,
+        gpsVisivel,
+        ganhosHoje,
+        entregasTotais,
+        ganhosOntem,
+        diferencaOntem,
+        tempoTotal,
+        inicioOnline,
+        entregas,
+        alterarStatus,
+        formatarTempo,
+        aceitarEntrega,
+        finalizarEntrega,
+        resetarTudo
+    } = useAreaEFunctions();
 
     return (
         <div className="entregador-page">
@@ -49,18 +49,17 @@ export default function Area_e() {
 
                 <p>Área do Entregador</p>
 
-                <div className="carrinho">
-                    <button
-                        className={
-                            online
-                                ? "status-online"
-                                : "status-offline"
-                        }
-                        onClick={alterarStatus}
-                    >
-                        {online ? "Online" : "Offline"}
-                    </button>
-                </div>
+                <button
+                    type="button"
+                    className={
+                        online
+                            ? "status-online"
+                            : "status-offline"
+                    }
+                    onClick={alterarStatus}
+                >
+                    {online ? "Online" : "Offline"}
+                </button>
 
             </div>
             <div className="area-cards" >
@@ -111,6 +110,7 @@ export default function Area_e() {
                     </div>
                 </div>
                 <button
+                    type="button"
                     className="botao-resetar"
                     onClick={resetarTudo}
                 >
@@ -357,12 +357,12 @@ export default function Area_e() {
                             </div>
 
 
-                            <button className={
-                                online
-                            }
+                            <button
+                                type="button"
+                                className="ficar-online"
                                 onClick={alterarStatus}
                             >
-                                ficar online
+                                Ficar online
                             </button>
 
                         </div>
