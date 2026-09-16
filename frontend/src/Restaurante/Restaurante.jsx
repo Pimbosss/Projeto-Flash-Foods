@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { IoMdRestaurant } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
 import { Link, NavLink, Outlet } from "react-router-dom";
@@ -6,10 +7,44 @@ import { IoLocationOutline } from "react-icons/io5";
 import "./Restaurante.css";
 
 export default function Restaurante() {
+    const [dados, setDados] = useState(() => {
+        const dadosSalvos = localStorage.getItem("dadosRestaurante");
+
+        return dadosSalvos
+            ? JSON.parse(dadosSalvos)
+            : {
+                nome: "",
+                endereco: ""
+            };
+    });
+
+    useEffect(() => {
+        const atualizarDados = () => {
+            const dadosSalvos = localStorage.getItem("dadosRestaurante");
+
+            if (dadosSalvos) {
+                setDados(JSON.parse(dadosSalvos));
+            }
+        };
+
+        window.addEventListener(
+            "dadosRestauranteAtualizados",
+            atualizarDados
+        );
+
+        return () => {
+            window.removeEventListener(
+                "dadosRestauranteAtualizados",
+                atualizarDados
+            );
+        };
+    }, []);
+
     return (
         <div id="Meu-restaurante">
 
             <div className="header">
+
                 <Link to="/" className="logo-link">
                     <h1 id="titulo1">
                         Flash Foods
@@ -18,12 +53,13 @@ export default function Restaurante() {
 
                 <div className="area-estado">
                     <p>Área do Restaurante</p>
+
                     <button id="aberto">
                         Aberto
                     </button>
                 </div>
-            </div>
 
+            </div>
 
             <div className="infos">
 
@@ -34,7 +70,7 @@ export default function Restaurante() {
                 <div className="dados-restaurante">
 
                     <h1 id="nome-restaurante">
-                        AAA
+                        {dados.nome || "AAA"}
                     </h1>
 
                     <div className="avaliacao-restaurante">
@@ -44,13 +80,14 @@ export default function Restaurante() {
 
                     <div className="endereco-restaurante">
                         <IoLocationOutline />
-                        <span>Endereço</span>
+                        <span>
+                            {dados.endereco || "Endereço"}
+                        </span>
                     </div>
 
                 </div>
 
             </div>
-
 
             <nav className="menu-restaurante">
 
@@ -66,13 +103,11 @@ export default function Restaurante() {
                     Pedidos
                 </NavLink>
 
-
                 <NavLink to="/Restaurante/perfil">
                     Perfil
                 </NavLink>
 
             </nav>
-
 
             <main className="conteudo-restaurante">
                 <Outlet />

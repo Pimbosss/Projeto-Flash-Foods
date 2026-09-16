@@ -36,6 +36,10 @@ export default function Informacoes() {
             JSON.stringify(dados)
         );
 
+        window.dispatchEvent(
+            new Event("dadosRestauranteAtualizados")
+        );
+
         alert("Alterações salvas com sucesso!");
     };
 
