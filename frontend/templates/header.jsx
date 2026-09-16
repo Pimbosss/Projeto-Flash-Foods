@@ -52,8 +52,9 @@ export default function Header() {
         </div>
 
         <div id="buttons1">
-          <button>Área do Entregador</button>
-          <button>Meu Restaurante</button>
+          <Link to="/Area-E"><button  >Área do Entregador</button></Link>
+          <Link to="/Restaurante" ><button>Meu Restaurante</button></Link>
+          
           {user ? (
 
             <>

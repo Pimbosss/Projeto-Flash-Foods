@@ -6,6 +6,7 @@ import Cadastro from "./Cadastro/Cadastro";
 import Perfil from "./perfil/Perfil";
 import Pedir from "./Pedir_agora/Pedir-agora";
 import Carrinho from "./Carrinho/Carrinho";
+import Restaurante from "./Restaurante/Restaurante";
 import { CarrinhoProvider } from "./Pedir_agora/CarrinhoContext";
 import Area_e from "./Area-Entregador/Area-E";
 
@@ -21,6 +22,7 @@ export default function AppRoutes() {
                 <Route path="/Carrinho" element={<Carrinho />} />
                 <Route path="*" element={<Navigate to="/" />} />
                 <Route path="/Area-E" element={<Area_e />}/>
+                <Route path="/Restaurante" element={<Restaurante />}/>
             </Routes>
         </CarrinhoProvider>
     );

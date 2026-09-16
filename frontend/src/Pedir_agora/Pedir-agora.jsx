@@ -204,7 +204,11 @@ export default function Pedir() {
                     </button>
                 </div>
 
-                <div className="endereço">
+            
+
+            </div>
+
+            <div className="endereço">
                     <FaLocationDot className="icone-localizacao" />
                     <input
                         type="text"
@@ -213,8 +217,6 @@ export default function Pedir() {
                     />
                     <button type="submit">Adicionar</button>
                 </div>
-
-            </div>
 
             <div id="pratos-restaurantes">
 
