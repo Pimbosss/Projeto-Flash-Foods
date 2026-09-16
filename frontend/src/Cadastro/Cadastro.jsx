@@ -98,14 +98,14 @@ export default function Cadastro() {
                         onChange={updatedField}
                         placeholder="Digite seu email"
                     />
-                    <label htmlFor="nome">Email</label>
+                    <label htmlFor="nome">Nome</label>
                     <input
                         type="name"
                         id="name"
                         name="name" // IMPORTANTE: igual à chave do objeto
                         value={user.name}
                         onChange={updatedField}
-                        placeholder="Digite seu Nomel"
+                        placeholder="Digite seu Nome"
                     />
 
                     <label htmlFor="cpf">CPF</label>

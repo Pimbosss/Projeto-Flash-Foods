@@ -1,0 +1,1256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fa;
+    color: #10213b;
+}
+
+#Meu-restaurante {
+    min-height: 100vh;
+    background: #f7f8fa;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    height: 72px;
+
+    padding: 0 11%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: #10213b;
+}
+
+#titulo1 {
+    position: relative;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    margin-left: 38px;
+}
+
+#titulo1::before {
+    content: "⚡";
+
+    position: absolute;
+
+    left: -38px;
+    top: -7px;
+
+    color: #ff7200;
+
+    font-size: 30px;
+}
+
+.area-estado {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+.area-estado p {
+    font-size: 14px;
+    color: #737b87;
+}
+
+#aberto {
+    border: none;
+
+    padding: 8px 19px;
+
+    border-radius: 20px;
+
+    background: #00c853;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* INFORMAÇÕES RESTAURANTE */
+
+.infos {
+    width: 78%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.icon {
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #fff0dc;
+
+    color: #c7b8df;
+
+    font-size: 34px;
+}
+
+.dados-restaurante {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+}
+
+#nome-restaurante {
+    font-size: 22px;
+    font-weight: 700;
+
+    margin-right: 3px;
+}
+
+.avaliacao-restaurante,
+.endereco-restaurante {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: #737b87;
+
+    font-size: 14px;
+}
+
+.avaliacao-restaurante svg {
+    color: #ffc400;
+}
+
+.endereco-restaurante svg {
+    color: #737b87;
+}
+
+
+/* CONTAINER DOS CARDS */
+
+#cards-infos {
+    width: 78%;
+    max-width: 1200px;
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* CARDS SUPERIORES */
+
+.card1,
+.card2,
+.card3,
+.card4 {
+    position: relative;
+
+    width: 100%;
+    height: 145px;
+
+    padding: 23px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 14px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+.card1 > p:first-child,
+.card2 > p:first-child,
+.card3 > p:first-child,
+.card4 > p:first-child {
+    color: #747d89;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.card1 > svg,
+.card2 > svg,
+.card3 > svg,
+.card4 > svg {
+    position: absolute;
+
+    right: 23px;
+    top: 22px;
+
+    font-size: 25px;
+}
+
+.card1 > svg {
+    color: #00c853;
+}
+
+.card2 > svg {
+    color: #ff7200;
+}
+
+.card3 > svg {
+    color: #ffc400;
+}
+
+.card4 > svg {
+    color: #287cff;
+}
+
+
+/* VALORES */
+
+.ganhos,
+.pedidos,
+.avaliacao,
+.ticket {
+    color: #10213b;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+}
+
+
+/* TEXTOS DOS CARDS */
+
+.card1 > p:last-child {
+    color: #00a94f;
+}
+
+.card2 > p:last-child {
+    color: #ff7200;
+}
+
+.card3 > p:last-child {
+    color: #737b87;
+}
+
+.card4 > p:last-child {
+    color: #287cff;
+}
+
+.card1 > p:last-child,
+.card2 > p:last-child,
+.card3 > p:last-child,
+.card4 > p:last-child {
+    font-size: 12px;
+}
+
+
+/* CARDS INFERIORES */
+
+#card-dados {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 20px;
+}
+
+
+/* MAIS VENDIDOS / PEDIDOS */
+
+.mais-vendidos,
+.pedidos-info {
+    width: 100%;
+    min-height: 290px;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 14px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+
+/* TÍTULOS */
+
+.titulo-card {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.titulo-card svg {
+    color: #ff7200;
+
+    font-size: 21px;
+
+    flex-shrink: 0;
+}
+
+.titulo-card h1 {
+    color: #10213b;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* MAIS VENDIDOS */
+
+.mais-vendidos ol {
+    list-style-position: outside;
+
+    margin-top: 22px;
+
+    padding-left: 25px;
+}
+
+.mais-vendidos li {
+    position: relative;
+
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: #27364d;
+
+    font-size: 13px;
+}
+
+.mais-vendidos li::marker {
+    color: #8a929d;
+}
+
+.mais-vendidos li svg {
+    color: #ff7200;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+.mais-vendidos li span {
+    position: relative;
+    z-index: 2;
+}
+
+.mais-vendidos li::after {
+    content: "";
+
+    position: absolute;
+
+    left: 70px;
+    right: 10px;
+    bottom: 4px;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: #eeeeef;
+}
+
+.mais-vendidos li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 70px;
+    bottom: 4px;
+
+    height: 5px;
+
+    border-radius: 10px;
+
+    background: #ff7200;
+
+    z-index: 1;
+}
+
+.mais-vendidos li:nth-child(1)::before {
+    width: 75%;
+}
+
+.mais-vendidos li:nth-child(2)::before {
+    width: 55%;
+}
+
+.mais-vendidos li:nth-child(3)::before {
+    width: 40%;
+}
+
+.mais-vendidos li:nth-child(4)::before {
+    width: 25%;
+}
+
+
+/* PEDIDOS RECENTES */
+
+.pedidos-info ol {
+    list-style: none;
+
+    margin-top: 22px;
+
+    padding: 0;
+}
+
+.pedidos-info li {
+    width: 100%;
+
+    min-height: 52px;
+
+    margin-bottom: 9px;
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.pedidos-info li > div {
+    min-width: 0;
+}
+
+.pedidos-info li h2 {
+    margin: 0 0 4px;
+
+    color: #27364d;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 18px;
+}
+
+.pedidos-info li p {
+    margin: 0;
+
+    color: #7a8491;
+
+    font-size: 11px;
+
+    line-height: 16px;
+}
+
+
+/* STATUS */
+
+.status {
+    flex-shrink: 0;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.novo {
+    color: #287cff;
+    background: #e1edff;
+}
+
+.preparando {
+    color: #ff7200;
+    background: #fff0dc;
+}
+
+.pronto {
+    color: #00a94f;
+    background: #dcf8e7;
+}
+
+.entregue {
+    color: #737b87;
+    background: #eeeeef;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 6%;
+    }
+
+    .infos,
+    #cards-infos {
+        width: 88%;
+    }
+
+    #cards-infos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #card-dados {
+        grid-column: 1 / -1;
+
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+
+    .header {
+        height: auto;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .infos {
+        width: auto;
+
+        margin: 25px 20px;
+    }
+
+    .dados-restaurante {
+        gap: 8px 12px;
+    }
+
+    #cards-infos {
+        width: auto;
+
+        margin: 0 20px 40px;
+
+        grid-template-columns: 1fr;
+    }
+
+    #card-dados {
+        grid-column: 1;
+
+        grid-template-columns: 1fr;
+    }
+
+    .mais-vendidos,
+    .pedidos-info {
+        min-height: 290px;
+    }
+}
+
+.menu-restaurante {
+    width: 78%;
+    max-width: 1200px;
+    margin: 25px auto 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.menu-restaurante a {
+    position: relative;
+
+    padding: 12px 4px;
+
+    color: #6b7280;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.menu-restaurante a:hover {
+    color: #ff7200;
+}
+
+.menu-restaurante a.active {
+    color: #ff7200;
+}
+
+.menu-restaurante a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 3px;
+
+    background-color: #ff7200;
+
+    border-radius: 3px 3px 0 0;
+}
+
+#home-produtos {
+    width: 78%;
+    max-width: 1200px;
+    margin: 30px auto 60px;
+}
+
+#home-produtos > h1:first-child {
+    display: inline-block;
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #10213b;
+}
+
+#home-produtos > button:first-of-type {
+    float: right;
+    width: 180px;
+    height: 42px;
+    border: none;
+    border-radius: 12px;
+    background: #ff7200;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#home-produtos > button:first-of-type:hover {
+    background: #e96300;
+}
+
+#home-produtos > h1:not(:first-child) {
+    clear: both;
+    margin: 28px 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #60738e;
+}
+
+.card-l,
+.card-2,
+.card-3,
+.card-4,
+.card-5 {
+    position: relative;
+    width: 602px;
+    height: 126px;
+    padding: 25px 22px 20px 94px;
+    background: #fff;
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.card-l h1,
+.card-2 h1,
+.card-3 h1,
+.card-4 h1,
+.card-5 h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #10213b;
+}
+
+.card-l > p:first-of-type,
+.card-2 > p:first-of-type,
+.card-3 > p:first-of-type,
+.card-4 > p:first-of-type,
+.card-5 > p:first-of-type {
+    position: absolute;
+    top: 25px;
+    right: 22px;
+    margin: 0;
+    color: #ff5100;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.card-l > p:nth-of-type(2),
+.card-2 > p:nth-of-type(2),
+.card-3 > p:nth-of-type(2),
+.card-4 > p:nth-of-type(2),
+.card-5 > p:nth-of-type(2) {
+    margin-top: 5px;
+    color: #657994;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.card-l > p:nth-of-type(3),
+.card-2 > p:nth-of-type(3),
+.card-3 > p:nth-of-type(3),
+.card-4 > p:nth-of-type(3),
+.card-5 > p:nth-of-type(3) {
+    position: absolute;
+    left: 94px;
+    bottom: 27px;
+    margin: 0;
+    color: #8493a9;
+    font-size: 12px;
+}
+
+.card-l > button,
+.card-2 > button,
+.card-3 > button,
+.card-4 > button,
+.card-5 > button {
+    position: absolute;
+    bottom: 25px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #8c9aae;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.card-l > button:nth-of-type(1),
+.card-2 > button:nth-of-type(1),
+.card-3 > button:nth-of-type(1),
+.card-4 > button:nth-of-type(1),
+.card-5 > button:nth-of-type(1) {
+    right: 62px;
+}
+
+.card-l > button:nth-of-type(2),
+.card-2 > button:nth-of-type(2),
+.card-3 > button:nth-of-type(2),
+.card-4 > button:nth-of-type(2),
+.card-5 > button:nth-of-type(2) {
+    right: 25px;
+}
+
+.card-l > button:nth-of-type(1):hover,
+.card-2 > button:nth-of-type(1):hover,
+.card-3 > button:nth-of-type(1):hover,
+.card-4 > button:nth-of-type(1):hover,
+.card-5 > button:nth-of-type(1):hover {
+    color: #10213b;
+}
+
+.card-l > button:nth-of-type(2):hover,
+.card-2 > button:nth-of-type(2):hover,
+.card-3 > button:nth-of-type(2):hover,
+.card-4 > button:nth-of-type(2):hover,
+.card-5 > button:nth-of-type(2):hover {
+    color: #ff3b30;
+}
+
+.switch {
+    position: absolute;
+    right: 94px;
+    bottom: 27px;
+    width: 22px;
+    height: 14px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    border: 2px solid #10cf29;
+    border-radius: 20px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: 2px;
+    top: 1px;
+    border-radius: 50%;
+    background: #10cf29;
+    transition: 0.2s;
+}
+
+.switch input:checked + .slider {
+    background: white;
+    border-color: red;
+}
+
+.switch input:checked + .slider::before {
+    transform: translateX(7px);
+    background: red;
+}
+
+
+@media (max-width: 1000px) {
+    #home-produtos {
+        width: 88%;
+    }
+
+    .card-l,
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    #home-produtos {
+        width: auto;
+        margin: 25px 20px 40px;
+    }
+
+    #home-produtos > button:first-of-type {
+        float: none;
+        display: block;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .card-l,
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+        width: 100%;
+        height: 145px;
+        padding-left: 20px;
+    }
+
+    .card-l > p:nth-of-type(3),
+    .card-2 > p:nth-of-type(3),
+    .card-3 > p:nth-of-type(3),
+    .card-4 > p:nth-of-type(3),
+    .card-5 > p:nth-of-type(3) {
+        left: 20px;
+    }
+
+    .card-l > p:nth-of-type(2),
+    .card-2 > p:nth-of-type(2),
+    .card-3 > p:nth-of-type(2),
+    .card-4 > p:nth-of-type(2),
+    .card-5 > p:nth-of-type(2) {
+        white-space: normal;
+        padding-right: 10px;
+    }
+}
+
+#produtos-r {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 13px 60px;
+    background: #f7f8fa;
+}
+
+#produtos-r > h1 {
+    margin: 0 0 25px;
+    color: #10213b;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#cards-pedido1,
+#cards-pedido2,
+#cards-pedido3,
+#cards-pedido4 {
+    width: 100%;
+    height: 85px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #e9e9e9;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+#cards-pedido1 {
+    border-left: 4px solid #287cff;
+}
+
+#cards-pedido2 {
+    border-left: 4px solid #ff7200;
+}
+
+#cards-pedido3 {
+    border-left: 4px solid #00c853;
+}
+
+#cards-pedido4 {
+    border-left: 4px solid #dfe3e8;
+}
+
+#cards-pedido1 button,
+#cards-pedido2 button,
+#cards-pedido3 button,
+#cards-pedido4 button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15px 22px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+#cards-pedido1 button > h1,
+#cards-pedido2 button > h1,
+#cards-pedido3 button > h1,
+#cards-pedido4 button > h1 {
+    margin: 0 0 5px;
+    color: #10213b;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#cards-pedido1 button > p:first-of-type,
+#cards-pedido2 button > p:first-of-type,
+#cards-pedido3 button > p:first-of-type,
+#cards-pedido4 button > p:first-of-type {
+    margin: 0;
+    color: #50637e;
+    font-size: 13px;
+}
+
+#cards-pedido1 button > p:last-of-type,
+#cards-pedido2 button > p:last-of-type,
+#cards-pedido3 button > p:last-of-type,
+#cards-pedido4 button > p:last-of-type {
+    position: absolute;
+    right: 54px;
+    top: 35px;
+    margin: 0;
+    color: #10213b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#cards-pedido1 button > svg,
+#cards-pedido2 button > svg,
+#cards-pedido3 button > svg,
+#cards-pedido4 button > svg {
+    position: absolute;
+    right: 22px;
+    top: 36px;
+    color: #8995a6;
+    font-size: 17px;
+}
+
+#cards-pedido1 button::after,
+#cards-pedido2 button::after,
+#cards-pedido3 button::after,
+#cards-pedido4 button::after {
+    position: absolute;
+    right: 130px;
+    top: 29px;
+    padding: 6px 13px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+#cards-pedido1 button::after {
+    content: "Novo";
+    color: #1764e8;
+    background: #e1edff;
+}
+
+#cards-pedido2 button::after {
+    content: "Preparando";
+    color: #e85b00;
+    background: #fff0dc;
+}
+
+#cards-pedido3 button::after {
+    content: "Pronto";
+    color: #00a94f;
+    background: #dcf8e7;
+}
+
+#cards-pedido4 button::after {
+    content: "Entregue";
+    color: #657994;
+    background: #eeeeef;
+}
+
+@media (max-width: 650px) {
+    #produtos-r {
+        padding: 25px 15px 40px;
+    }
+
+    #cards-pedido1,
+    #cards-pedido2,
+    #cards-pedido3,
+    #cards-pedido4 {
+        height: 105px;
+    }
+
+    #cards-pedido1 button,
+    #cards-pedido2 button,
+    #cards-pedido3 button,
+    #cards-pedido4 button {
+        padding: 15px;
+    }
+
+    #cards-pedido1 button::after,
+    #cards-pedido2 button::after,
+    #cards-pedido3 button::after,
+    #cards-pedido4 button::after {
+        right: 45px;
+        top: 62px;
+    }
+
+    #cards-pedido1 button > p:last-of-type,
+    #cards-pedido2 button > p:last-of-type,
+    #cards-pedido3 button > p:last-of-type,
+    #cards-pedido4 button > p:last-of-type {
+        right: 40px;
+        top: 25px;
+    }
+
+    #cards-pedido1 button > svg,
+    #cards-pedido2 button > svg,
+    #cards-pedido3 button > svg,
+    #cards-pedido4 button > svg {
+        right: 15px;
+        top: 26px;
+    }
+}
+
+#informacoes-restaurante {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 20px 60px;
+
+    background: #f7f8fa;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#informacoes-restaurante > h1 {
+    width: 674px;
+
+    margin: 0 0 25px;
+
+    color: #10213b;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form-restaurante {
+    width: 674px;
+
+    padding: 26px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+}
+
+.campo {
+    width: 100%;
+    margin-bottom: 21px;
+}
+
+.campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #10213b;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.campo input {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 16px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #10213b;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #ff7200;
+}
+
+.descricao-input {
+    width: 100% !important;
+    height: 82px !important;
+
+    padding: 12px 16px !important;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #10213b;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.descricao-input:focus {
+    border-color: #ff7200;
+}
+
+.input-icon {
+    position: relative;
+
+    width: 100%;
+}
+
+.input-icon svg {
+    position: absolute;
+
+    left: 13px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #8c9aae;
+
+    font-size: 18px;
+
+    z-index: 1;
+}
+
+.input-icon input {
+    padding-left: 36px;
+}
+
+.linha-campos {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.btn-salvar {
+    width: 100%;
+    height: 43px;
+
+    margin-top: 0;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #ff7200;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.btn-salvar:hover {
+    background: #e96300;
+}
+
+@media (max-width: 750px) {
+    #informacoes-restaurante {
+        padding: 25px 20px 50px;
+    }
+
+    #informacoes-restaurante > h1 {
+        width: 100%;
+    }
+
+    .form-restaurante {
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .linha-campos {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-restaurante {
+        padding: 22px 18px;
+    }
+}
