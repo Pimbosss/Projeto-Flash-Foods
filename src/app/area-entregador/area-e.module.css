@@ -1,0 +1,241 @@
+/* src/app/area-entregador/area.module.css */
+
+.container {
+    min-height: 100vh;
+    background-color: #f8fafd;
+    font-family: sans-serif;
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+/* 📊 Métrica superiores */
+.metricsGrid {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.metricCard {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+.metricCard span {
+    font-size: 14px;
+    color: #64748b;
+    font-Weight: 600;
+}
+
+.metricCard h2 {
+    font-size: 28px;
+    color: #0f172a;
+    margin: 8px 0 4px;
+    font-weight: 800;
+}
+
+.statusContainer {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.statusBtn {
+    background: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.mainLayout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 🚚 Estado Em Corrida (Card Laranja + GPS) */
+.runningGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 10px;
+}
+
+.orangeCard {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff4c00 100%);
+    border-radius: 24px;
+    padding: 40px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 35px rgba(255,76,0,0.15);
+    min-height: 520px;
+}
+
+.infoBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.infoBlock span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.infoBlock h2 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 4px 0 0;
+}
+
+.miniPills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.pill {
+    background: rgba(255,255,255,0.15);
+    padding: 12px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.pill span {
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    display: block;
+}
+
+/* 🗺️ Painel do Mapa GPS */
+.gpsPanel {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.mapCanvas {
+    background: #edf2f7;
+    height: 240px;
+    position: relative;
+    padding: 20px;
+}
+
+.mapGridOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+    background-size: 30px 30px;
+    opacity: 0.6;
+}
+
+.directionBanner {
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.actionsContainer {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.btnConfirm {
+    background: #00a94f;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(0,169,79,0.2);
+}
+
+.utilButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.btnUtil {
+    background: #f1f5f9;
+    border: none;
+    color: #475569;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* 📜 Estado Lista de Disponíveis (Cards Brancos) */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.cardAvailable {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.cardAvailable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(7, 27, 58, 0.04);
+}
+
+.btnAccept {
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}

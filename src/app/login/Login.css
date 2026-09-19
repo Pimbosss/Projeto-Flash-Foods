@@ -1,28 +1,4 @@
-@import "./login/Login.css";
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px; /* Recuo perfeito para o seu Header fixo! */
-  overflow-x: hidden;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #101828;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* Css do login.*/
-
-.login-page {
+/* .login-page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,4 +112,4 @@ form button[type="submit"]:hover {
 
 .cadastro a:hover {
     text-decoration: underline;
-}
+} */

@@ -1,0 +1,619 @@
+{
+  "users": [
+    {
+      "email": "renan@gmail.com",
+      "name": "Renan Camara",
+      "cpf": "00000000",
+      "phone": "19090209931",
+      "password": "admin",
+      "id": "t0ZLNL91u30"
+    },
+    {
+      "email": "admin@admin.com",
+      "name": "Admin",
+      "cpf": "00000000",
+      "phone": "19090209931",
+      "password": "admin",
+      "id": "1"
+    },
+    {
+      "name": "Entregador-admin",
+      "email": "entregador@admin.com",
+      "phone": "0000000",
+      "cpf": "0000000",
+      "cnh": "00000000",
+      "placaVeiculo": "00000000",
+      "password": "admin",
+      "tipo": "entregador",
+      "id": "1lgYPcqiJeg"
+    }
+  ],
+  "pedidos": [
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        }
+      ],
+      "subtotal": 45.9,
+      "taxaEntrega": 5,
+      "total": 50.9,
+      "status": "concluido",
+      "data": "16/09/2026, 18:01:12",
+      "id": "GW-ZPL7gpTc",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.4 km",
+      "tempo": "18 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        },
+        {
+          "id": "p5",
+          "nome": "Cappuccino",
+          "quantidade": 1,
+          "precoUnitario": 12.9
+        },
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 143.6,
+      "taxaEntrega": 5,
+      "total": 148.6,
+      "status": "concluido",
+      "data": "17/09/2026, 14:42:01",
+      "id": "1YVUTRi1i24",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.6 km",
+      "tempo": "22 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 2,
+          "precoUnitario": 45.9
+        }
+      ],
+      "subtotal": 91.8,
+      "taxaEntrega": 5,
+      "total": 96.8,
+      "status": "concluido",
+      "data": "17/09/2026, 16:11:19",
+      "id": "p9woEnproW4",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.9 km",
+      "tempo": "16 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 55.9,
+      "taxaEntrega": 5,
+      "total": 60.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:12:07",
+      "id": "QtVvXUGMX5g",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "1.6 km",
+      "tempo": "21 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 55.9,
+      "taxaEntrega": 5,
+      "total": 60.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:16:45",
+      "id": "nBajcC6omuA",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.8 km",
+      "tempo": "10 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        }
+      ],
+      "subtotal": 28.9,
+      "taxaEntrega": 5,
+      "total": 33.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:17:20",
+      "id": "aUUC-rCy0g8",
+      "restaurante": "Restaurante Whopper",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.3 km",
+      "tempo": "20 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p5",
+          "nome": "Cappuccino",
+          "quantidade": 1,
+          "precoUnitario": 12.9
+        }
+      ],
+      "subtotal": 12.9,
+      "taxaEntrega": 5,
+      "total": 17.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:17:26",
+      "id": "iqB5O3-3Hng",
+      "restaurante": "Restaurante Cappuccino",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.5 km",
+      "tempo": "21 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p4",
+          "nome": "Combo Sushi",
+          "quantidade": 1,
+          "precoUnitario": 89.9
+        }
+      ],
+      "subtotal": 89.9,
+      "taxaEntrega": 5,
+      "total": 94.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:17:32",
+      "id": "u4_w6wsbUNQ",
+      "restaurante": "Restaurante Combo",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.2 km",
+      "tempo": "18 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "t0ZLNL91u30",
+      "usuarioNome": "renan",
+      "itens": [
+        {
+          "id": "p5",
+          "nome": "Cappuccino",
+          "quantidade": 1,
+          "precoUnitario": 12.9
+        }
+      ],
+      "subtotal": 12.9,
+      "taxaEntrega": 5,
+      "total": 17.9,
+      "status": "concluido",
+      "data": "17/09/2026, 16:28:30",
+      "id": "qm-1p1pQke0",
+      "restaurante": "Restaurante Cappuccino",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.1 km",
+      "tempo": "16 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 101.8,
+      "taxaEntrega": 5,
+      "total": 106.8,
+      "status": "concluido",
+      "data": "19/09/2026, 10:17:01",
+      "id": "MsfCu9qJrf8",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "1.2 km",
+      "tempo": "16 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        },
+        {
+          "id": "p4",
+          "nome": "Combo Sushi",
+          "quantidade": 1,
+          "precoUnitario": 89.9
+        },
+        {
+          "id": "p5",
+          "nome": "Cappuccino",
+          "quantidade": 1,
+          "precoUnitario": 12.9
+        }
+      ],
+      "subtotal": 158.70000000000002,
+      "taxaEntrega": 5,
+      "total": 163.70000000000002,
+      "status": "concluido",
+      "data": "19/09/2026, 10:17:26",
+      "id": "NZ2GxGsMkNw",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.6 km",
+      "tempo": "12 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 101.8,
+      "taxaEntrega": 5,
+      "total": 106.8,
+      "status": "concluido",
+      "data": "19/09/2026, 10:28:41",
+      "id": "HTTRFjSIBJ0",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "1.9 km",
+      "tempo": "15 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        }
+      ],
+      "subtotal": 74.8,
+      "taxaEntrega": 5,
+      "total": 79.8,
+      "status": "concluido",
+      "data": "19/09/2026, 10:32:32",
+      "id": "3gROQ1VsEEU",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.9 km",
+      "tempo": "10 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        },
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        }
+      ],
+      "subtotal": 74.8,
+      "taxaEntrega": 5,
+      "total": 79.8,
+      "status": "concluido",
+      "data": "19/09/2026, 10:33:06",
+      "id": "mwZW4PvYj08",
+      "restaurante": "Restaurante Whopper",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.7 km",
+      "tempo": "18 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        }
+      ],
+      "subtotal": 101.8,
+      "taxaEntrega": 5,
+      "total": 106.8,
+      "status": "concluido",
+      "data": "19/09/2026, 12:26:25",
+      "id": "nosDjAF1fOI",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.2 km",
+      "tempo": "13 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1",
+      "usuarioNome": "admin",
+      "itens": [
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        }
+      ],
+      "subtotal": 28.9,
+      "taxaEntrega": 5,
+      "total": 33.9,
+      "status": "concluido",
+      "data": "19/09/2026, 12:38:38",
+      "id": "aqQbvj7dgek",
+      "restaurante": "Restaurante Whopper",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "3.0 km",
+      "tempo": "21 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Entregador",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        }
+      ],
+      "subtotal": 45.9,
+      "taxaEntrega": 5,
+      "total": 50.9,
+      "status": "a caminho",
+      "data": "19/09/2026, 12:39:39",
+      "id": "qc3ufxwiVOg",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.2 km",
+      "tempo": "20 min",
+      "valor": "R$ 15,00"
+    },
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Entregador",
+      "itens": [
+        {
+          "id": "p2",
+          "nome": "Pizza Calabresa",
+          "quantidade": 1,
+          "precoUnitario": 45.9
+        },
+        {
+          "id": "p1",
+          "nome": "Pizza Margherita",
+          "quantidade": 1,
+          "precoUnitario": 55.9
+        },
+        {
+          "id": "p5",
+          "nome": "Cappuccino",
+          "quantidade": 1,
+          "precoUnitario": 12.9
+        },
+        {
+          "id": "p3",
+          "nome": "Whopper",
+          "quantidade": 1,
+          "precoUnitario": 28.9
+        }
+      ],
+      "subtotal": 143.6,
+      "taxaEntrega": 5,
+      "total": 148.6,
+      "status": "concluido",
+      "data": "19/09/2026, 12:39:51",
+      "id": "_7VvFhKyQrg",
+      "restaurante": "Restaurante Pizza",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2.9 km",
+      "tempo": "14 min",
+      "valor": "R$ 15,00"
+    }
+  ],
+  "restaurantes": [],
+  "produtos": [
+    {
+      "id": "p1",
+      "nome": "Pizza Margherita",
+      "descricao": "Molho de tomate, mussarela e manjericão",
+      "preco": 55.9,
+      "categoria": "Pizza",
+      "restaurante": "Pizza Express",
+      "imagem": "🍕"
+    },
+    {
+      "id": "p2",
+      "nome": "Pizza Calabresa",
+      "descricao": "Molho de tomate,mussarela e calabresa",
+      "preco": 45.9,
+      "categoria": "Pizza",
+      "restaurante": "Pizza Express",
+      "imagem": "🍕"
+    },
+    {
+      "id": "p3",
+      "nome": "Whopper",
+      "descricao": "Hambúrguer grelhado com queijo,alface e tomate",
+      "preco": 28.9,
+      "categoria": "Hambúrguer",
+      "restaurante": "Burger King",
+      "imagem": "🍔"
+    },
+    {
+      "id": "p4",
+      "nome": "Combo Sushi",
+      "descricao": "20 peças variadas de sushi e sashimi",
+      "preco": 89.9,
+      "categoria": "Japonesa",
+      "restaurante": "Sushi House",
+      "imagem": "🍣"
+    },
+    {
+      "id": "p5",
+      "nome": "Cappuccino",
+      "descricao": "Café expresso com leite vaporizado",
+      "preco": 12.9,
+      "categoria": "Bebida",
+      "restaurante": "Café Delícia",
+      "imagem": "☕"
+    },
+    {
+      "id": "p6",
+      "nome": "Tacos Mexicanos",
+      "descricao": "Trio de tacos com carne,guacamole e salsa",
+      "preco": 35.9,
+      "categoria": "Mexicana",
+      "restaurante": "Taco Loco",
+      "imagem": "🌮"
+    },
+    {
+      "id": "p7",
+      "nome": "Lasanha Bolonhesa",
+      "descricao": "Lasanha tradicional com molho bolonhesa",
+      "preco": 38.9,
+      "categoria": "Massas",
+      "restaurante": "Pasta & Cia",
+      "imagem": "🍝"
+    },
+    {
+      "id": "p8",
+      "nome": "Carbonara",
+      "descricao": "Massa com bacon,ovos e queijo parmesão",
+      "preco": 42.9,
+      "categoria": "Massas",
+      "restaurante": "Pasta & Cia",
+      "imagem": "🍝"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

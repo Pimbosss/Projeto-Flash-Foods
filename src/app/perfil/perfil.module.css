@@ -1,0 +1,183 @@
+/* src/app/perfil/perfil.module.css */
+
+/* 🌌 Tela inteira centralizada */
+.perfilPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #000000; /* Fundo preto idêntico ao Figma do login */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ⬜ O Card Branco do Perfil (Mesmo padrão do Modal do Login) */
+.perfilBox {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ✕ Botão Fechar */
+.fechar {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.fechar:hover {
+  color: #111827;
+}
+
+/* 👤 Cabeçalho do Perfil (Avatar + Títulos) */
+.avatarHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ff6600; /* Laranja Flash */
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+.avatarHeader h1 {
+  color: #111827;
+  font-size: 24px;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+
+.avatarHeader p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* 📋 Grade de Informações */
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.infoField {
+  background-color: #f9fafb; /* Fundo cinza bem clarinho para destacar o campo */
+  border: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.infoField input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #111827;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 4px 0 0 0;
+  font-family: inherit;
+}
+
+.infoField input:focus {
+  color: #ff6600; /* O texto fica laranjinha quando o usuário clica para editar! */
+}
+
+.label {
+  color: #9ca3af;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.value {
+  color: #111827;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* ⚡ Botões de Ação */
+.acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btnEditar {
+  background-color: #ff6600;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.btnEditar:hover {
+  background-color: #e65c00;
+}
+
+.btnSair {
+  background-color: transparent;
+  color: #ef4444; /* Texto vermelho de perigo/sair */
+  border: 1px solid #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.btnSair:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+/* ⏳ Estado de Carregamento */
+.carregando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
