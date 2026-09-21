@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import styles from './perfil.module.css'
 import { api } from '@/services/api'
 import Usuario from '@/core/Usuarios'
+import HistoricoPedido from "./components/HistoricoPedidos";
 
 export default function Perfil() {
     const router = useRouter()
@@ -133,6 +134,7 @@ export default function Perfil() {
                     </div>
                 </div>
 
+                <HistoricoPedido/>
                 <div className={styles.acoes}>
                     {/* Botão de submit que dispara a gravação no json-server */}
                     <button className={styles.btnEditar} onClick={save}>

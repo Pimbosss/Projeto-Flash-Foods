@@ -35,7 +35,7 @@ export default function Cadastro() {
         setUser({ ...user, [name]: value });
     };
 
-    const save = (event: React.FormEvent) => {
+    const save = (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!user.email || !user.cpf || !user.phone || !user.password || !user.confirmPassword) {
             alert("Todos os campos são obrigatórios!");

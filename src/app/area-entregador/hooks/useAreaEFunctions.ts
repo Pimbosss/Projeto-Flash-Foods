@@ -51,39 +51,48 @@ export default function useAreaEFunctions() {
 
     useEffect(() => {
         if (typeof window !== "undefined") {
-        const sessao = localStorage.getItem("flashfoods:user");
-        
-        if (!sessao) {
-            alert("Acesso negado! Por favor, faça login para acessar o painel do entregador. 🔐");
-            window.location.href = "/login";
-            return;
-        }
+            const sessao = localStorage.getItem("flashfoods:user");
 
-        const usuarioLogado = JSON.parse(sessao);
-        
-        // Se o tipo for diferente de entregador, bloqueia a entrada e chuta de volta para a Home!
-        if (usuarioLogado.tipo !== "entregador") {
-            alert("⚠️ Acesso Negado! Esta área é exclusiva para entregadores parceiros cadastrados.");
-            window.location.href = "/";
-            return;
+            if (!sessao) {
+                alert("Acesso negado! Por favor, faça login para acessar o painel do entregador. 🔐");
+                window.location.href = "/login";
+                return;
+            }
+
+            const usuarioLogado = JSON.parse(sessao);
+
+            // Se o tipo for diferente de entregador, bloqueia a entrada e chuta de volta para a Home!
+            if (usuarioLogado.tipo !== "entregador") {
+                alert("⚠️ Acesso Negado! Esta área é exclusiva para entregadores parceiros cadastrados.");
+                window.location.href = "/";
+                return;
+            }
         }
-    }
 
         api.get("/pedidos")
             .then((resp) => {
-                // Filtra e adapta os dados para o layout do grupo
-                const pedidosAdaptados = resp.data.map((p: any) => ({
-                    ...p,
-                    // Injeta valores visuais simulados baseados no pedido real caso faltem
-                    restaurante: p.itens[0]?.nome ? `Restaurante ${p.itens[0].nome.split(' ')[0]}` : "Pizza Express",
-                    endereco: "Rua das Flores, 123 (Simulado)",
-                    enderecoRestaurante: "Av. Paulista, 900 (Simulado)",
-                    distancia: `${(Math.random() * 3 + 1).toFixed(1)} km`,
-                    tempo: `${Math.floor(Math.random() * 15 + 10)} min`,
-                    valor: `R$ ${p.taxaEntrega ? (p.taxaEntrega + 10).toFixed(2).replace(".", ",") : "15,50"}`
-                }));
+                const pedidosAdaptados = resp.data.map((p: any) => {
+                    // 🟢 1. Se o pedido já tiver um valor gravado no banco, mantém. Se não, gera a matemática dinamicamente:
+                    const kmCalculado = p.distancia
+                        ? Number(p.distancia.replace(" km", "").replace(",", "."))
+                        : Number((Math.random() * 4.3 + 1.2).toFixed(1));
 
-                // Exibe na lista apenas os pedidos que ainda estão "pendentes"
+                    // 🟢 2. Calcula o preço dinâmico real da corrida: R\$ 6,00 de taxa base + R\$ 3,00 por KM!
+                    const ganhoCorrida = 6.00 + (kmCalculado * 3.00);
+                    const valorDinamic = `R$ ${ganhoCorrida.toFixed(2).replace(".", ",")}`;
+
+                    return {
+                        ...p,
+                        restaurante: p.itens[0]?.nome ? `Restaurante ${p.itens[0].nome.split(' ')[0]}` : "Pizza Express",
+                        endereco: "Rua das Flores, 123 (Simulado)",
+                        enderecoRestaurante: "Av. Paulista, 900 (Simulado)",
+
+                        // 🟢 3. Garante que a distância gerada e o valor andem sempre de mãos dadas de forma proporcional!
+                        distancia: p.distancia || `${kmCalculado.toFixed(1).replace(".", ",")} km`,
+                        tempo: p.tempo || `${Math.floor(kmCalculado * 5)} min`,
+                        valor: p.valor || valorDinamic // 🔥 Salva o valor proporcional quebrado baseado na quilometragem!
+                    };
+                });
                 setPedidosBanco(pedidosAdaptados.filter((p: any) => p.status === "pendente"));
             })
             .catch((err) => console.error("Erro ao puxar pedidos:", err));

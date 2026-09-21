@@ -1,59 +1,17 @@
 'use client';
 import '../cadastro/cadastro.css'
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link'
-import { api } from '@/services/api'
-import Usuario from '@/core/Usuarios';
+import useCadastroEntregador from './hooks/useCadastroEntregador';
 
-const initialState: Usuario = {
-    name: "",
-    email: "",
-    phone: "",
-    cpf: "",
-    cnh: "", // 🏍️ Campo extra do entregador
-    placaVeiculo: "", // 🏍️ Campo extra do entregador
-    password: "",
-    confirmPassword: "",
-    tipo: "entregador" // 🔥 O SEGREDO: Salva travado como entregador no banco
-}
 
 export default function CadastroEntregador() {
-    const router = useRouter()
+    const {
+        updatedField,
+        save,
+        entregador,
+        router
+    } = useCadastroEntregador()
 
-    const [entregador, setEntregador] = useState<Usuario>({ ...initialState })
-
-    const updatedField = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target
-        setEntregador(prev => ({ ...prev, [name]: value }))
-    }
-
-    const save = async (e: React.SubmitEvent) => {
-        e.preventDefault()
-
-        if (!entregador.email || !entregador.name || !entregador.password || !entregador.cnh) {
-            alert("Por favor, preencha todos os campos obrigatórios! 📝");
-            return;
-        }
-
-        if (entregador.password !== entregador.confirmPassword) {
-            alert("As senhas não coincidem! ❌");
-            return;
-        }
-
-        try {
-            const { confirmPassword, ...dadosParaSalvar } = entregador
-
-            await api.post("/users", dadosParaSalvar);
-            alert("Cadastro salvo com sucesso! Faça login para ativar seu painel")
-
-            setEntregador(initialState)
-            router.push("/login")
-        } catch (error) {
-            console.error("Erro ao cadastrar o entregador", error)
-            alert("Erro ao conectar ao servidor")
-        }
-    }
     return (
         <div className="cadastro-page">
             <div className="cadastro-box">

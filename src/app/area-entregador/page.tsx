@@ -1,6 +1,6 @@
 'use client';
 
-import useAreaEFunctions, { PedidoReal } from "./useAreaEFunctions";
+import useAreaEFunctions from "./hooks/useAreaEFunctions";
 import styles from "./area-e.module.css"; // 🟢 Importa as classes seguras
 import CardsMetricas from "./components/CardsMetricas";
 import MapsGps from "./components/MapsGps";
