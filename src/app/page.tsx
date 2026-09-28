@@ -35,7 +35,9 @@ export default function Home() {
               <Link href="/cadastro-entregador">
                 <button>Seja um Entregador</button>
               </Link>
-              <button>Restaurante</button>
+              <Link href="/cadastro-restaurante">
+                <button>Restaurante</button>
+              </Link>
             </div>
           </div>
         </div>

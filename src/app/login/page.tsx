@@ -45,7 +45,8 @@ export default function Login() {
                         id: usuario.id,
                         name: usuario.name,
                         email: usuario.email,
-                        tipo: usuario.tipo || 'cliente'
+                        tipo: usuario.tipo || 'cliente',
+                        restauranteId: usuario.restauranteId
                     }));
                     setCredentials(initialState);
                     window.dispatchEvent(new Event("perfilAtualizado"))

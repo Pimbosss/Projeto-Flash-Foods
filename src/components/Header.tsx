@@ -38,7 +38,7 @@ export default function Header() {
     router.push("/");
   };
 
-  if (pathname === "/login" || pathname === "/cadastro" || pathname === "/cadastro-entregador") {
+  if (pathname === "/login" || pathname === "/cadastro" || pathname === "/cadastro-entregador" || pathname === "/cadastro-restaurante") {
     return null;
   }
 
@@ -112,7 +112,7 @@ export default function Header() {
             )}
           </button>
           <button className="btn-header-entregador" onClick={() => router.push("/area-entregador")}>Área do Entregador</button>
-          <button className="btn-header-restaurante">Meu Restaurante</button>
+          <button className="btn-header-restaurante" onClick={() => router.push("/restaurante")}>Meu Restaurante</button>
           {user ? (
             <>
               <span className="user-greeting" style={{ color: "black", marginRight: "15px" }}>

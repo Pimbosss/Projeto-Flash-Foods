@@ -18,6 +18,62 @@
       "password": "admin",
       "tipo": "entregador",
       "id": "1lgYPcqiJeg"
+    },
+    {
+      "name": "PELO AMOR DE DEUS FUNCIONA!!!!",
+      "email": "restaurante@admin.com",
+      "phone": "",
+      "cpf": "",
+      "password": "admin",
+      "tipo": "restaurante",
+      "restauranteId": "rest_U0UKUZzRtRg",
+      "id": "U0UKUZzRtRg"
+    },
+    {
+      "name": "Hamburguer-Teste",
+      "email": "hamburguer@admin.com",
+      "phone": "000",
+      "cpf": "",
+      "password": "admin",
+      "tipo": "restaurante",
+      "restauranteId": "mmczuHNDs9M",
+      "id": "T78yRR__yWQ"
+    }
+  ],
+  "restaurantes": [
+    {
+      "id": "22BwIMONn34",
+      "nome": "VAI DAR CERTO?",
+      "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
+      "usuarioId": "U0UKUZzRtRg",
+      "produtos": [
+        {
+          "id": "1790441803208",
+          "tipo": "Pizza",
+          "nome": "Pizza-teste",
+          "descricao": "teste",
+          "preco": "100",
+          "vendidos": 0,
+          "ativo": true
+        }
+      ]
+    },
+    {
+      "id": "mmczuHNDs9M",
+      "nome": "Hamburgueria",
+      "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
+      "usuarioId": "T78yRR__yWQ",
+      "produtos": [
+        {
+          "id": "1790515259960",
+          "tipo": "Lanches",
+          "nome": "Lanche",
+          "descricao": "000",
+          "preco": "100",
+          "vendidos": 0,
+          "ativo": true
+        }
+      ]
     }
   ],
   "pedidos": [
@@ -92,81 +148,6 @@
       "distancia": "3,7 km",
       "tempo": "18 min",
       "valor": "R$ 17,10"
-    }
-  ],
-  "restaurantes": [],
-  "produtos": [
-    {
-      "id": "p1",
-      "nome": "Pizza Margherita",
-      "descricao": "Molho de tomate, mussarela e manjericão",
-      "preco": 55.9,
-      "categoria": "Pizza",
-      "restaurante": "Pizza Express",
-      "imagem": "🍕"
-    },
-    {
-      "id": "p2",
-      "nome": "Pizza Calabresa",
-      "descricao": "Molho de tomate,mussarela e calabresa",
-      "preco": 45.9,
-      "categoria": "Pizza",
-      "restaurante": "Pizza Express",
-      "imagem": "🍕"
-    },
-    {
-      "id": "p3",
-      "nome": "Whopper",
-      "descricao": "Hambúrguer grelhado com queijo,alface e tomate",
-      "preco": 28.9,
-      "categoria": "Hambúrguer",
-      "restaurante": "Burger King",
-      "imagem": "🍔"
-    },
-    {
-      "id": "p4",
-      "nome": "Combo Sushi",
-      "descricao": "20 peças variadas de sushi e sashimi",
-      "preco": 89.9,
-      "categoria": "Japonesa",
-      "restaurante": "Sushi House",
-      "imagem": "🍣"
-    },
-    {
-      "id": "p5",
-      "nome": "Cappuccino",
-      "descricao": "Café expresso com leite vaporizado",
-      "preco": 12.9,
-      "categoria": "Bebida",
-      "restaurante": "Café Delícia",
-      "imagem": "☕"
-    },
-    {
-      "id": "p6",
-      "nome": "Tacos Mexicanos",
-      "descricao": "Trio de tacos com carne,guacamole e salsa",
-      "preco": 35.9,
-      "categoria": "Mexicana",
-      "restaurante": "Taco Loco",
-      "imagem": "🌮"
-    },
-    {
-      "id": "p7",
-      "nome": "Lasanha Bolonhesa",
-      "descricao": "Lasanha tradicional com molho bolonhesa",
-      "preco": 38.9,
-      "categoria": "Massas",
-      "restaurante": "Pasta & Cia",
-      "imagem": "🍝"
-    },
-    {
-      "id": "p8",
-      "nome": "Carbonara",
-      "descricao": "Massa com bacon,ovos e queijo parmesão",
-      "preco": 42.9,
-      "categoria": "Massas",
-      "restaurante": "Pasta & Cia",
-      "imagem": "🍝"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,67 +1,129 @@
-'use client'; // ⚠️ OBRIGATÓRIO: Lida com filtros, busca e clique do carrinho
+'use client';
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // Roteador oficial do Next moderno
-import { useCarrinho, Produto } from "@/context/CarrinhoContext"; // Importa seu novo carrinho global
+import { useRouter } from "next/navigation";
+import { useCarrinho } from "@/context/CarrinhoContext";
 import { FaLocationDot } from "react-icons/fa6";
-import { api } from '@/services/api'
-import './pedir_agora.css'
+import { api } from '@/services/api';
+import './pedir_agora.css';
 
-interface Restaurante {
-    id: number;
+interface RestauranteBanco {
+    id: string;
     nome: string;
     categoria: string;
-    nota: number;
-    tempo: string;
-    letra: string;
+    cnpj?: string;
+    produtos: any[];
 }
-
-const restaurantes: Restaurante[] = [
-    { id: 1, nome: "Pizza Express", categoria: "Pizza", nota: 4.8, tempo: "25-35 min", letra: "P" },
-    { id: 2, nome: "Burger King", categoria: "Hambúrguer", nota: 4.6, tempo: "20-30 min", letra: "B" },
-    { id: 3, nome: "Sushi House", categoria: "Japonesa", nota: 4.9, tempo: "30-40 min", letra: "S" },
-    { id: 4, nome: "Café Delícia", categoria: "Bebida", nota: 4.7, tempo: "15-25 min", letra: "C" },
-    { id: 5, nome: "Taco Loco", categoria: "Mexicana", nota: 4.5, tempo: "20-30 min", letra: "T" },
-    { id: 6, nome: "Pasta & Cia", categoria: "Massas", nota: 4.8, tempo: "25-35 min", letra: "P" }
-];
 
 export default function PedirAgora() {
     const router = useRouter();
-    const { adicionarAoCarrinho, quantidadeTotal } = useCarrinho();
+    const { adicionarAoCarrinho } = useCarrinho();
 
     const [categoria, setCategoria] = useState("Todos");
     const [busca, setBusca] = useState("");
-    const [restauranteSelecionado, setRestauranteSelecionado] = useState<Restaurante | null>(null);
-    const [pratos, setPratos] = useState<Produto[]>([])
+
+    const [restaurantes, setRestaurantes] = useState<RestauranteBanco[]>([]);
+    const [restauranteSelecionado, setRestauranteSelecionado] = useState<RestauranteBanco | null>(null);
 
     useEffect(() => {
-        api.get("/produtos")
+        api.get("/restaurantes")
             .then((resp) => {
-                setPratos(resp.data);
+                setRestaurantes(resp.data || []);
             })
             .catch((err) => {
-                console.error("Erro ao carregar o cardápio do json-server:", err);
+                console.error("Erro ao carregar restaurantes do json-server:", err);
             });
     }, []);
 
-
+     // 🟢 1. FILTRO DE RESTAURANTES DE ALTA INTELIGÊNCIA COM SUPORTE A SINÔNIMOS
     const restaurantesFiltrados = restaurantes.filter((restaurante) => {
-        const correspondeCategoria = categoria === "Todos" || restaurante.categoria === categoria;
         const correspondeBusca = restaurante.nome.toLowerCase().includes(busca.toLowerCase());
-        return correspondeCategoria && correspondeBusca;
+        if (!correspondeBusca) return false;
+
+        if (categoria === "Todos") return true;
+
+        const catLojaLimpa = restaurante.categoria 
+            ? restaurante.categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase() 
+            : "";
+        
+        const catBotaoLimpa = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
+
+        // Linha de defesa 1: Se o campo existir e bater textualmente
+        if (catLojaLimpa && (catLojaLimpa.includes(catBotaoLimpa) || catBotaoLimpa.includes(catLojaLimpa))) {
+            return true;
+        }
+
+        // Ajuste de Sinônimos para a Categoria da Loja (ex: Se a loja for Hamburgueria ou vender Lanches)
+        if (catBotaoLimpa.includes("hamb") && (catLojaLimpa.includes("lanche") || restaurante.nome.toLowerCase().includes("hamburguer"))) {
+            return true;
+        }
+
+        // Linha de defesa 2: Espiona o cardápio interno lendo o campo .tipo do produto
+        const listaPratosInternos = restaurante.produtos || [];
+        const vendeItemDaCategoria = listaPratosInternos.some((prato: any) => {
+            if (prato.ativo === false) return false;
+            
+            const tipoPratoLimpo = prato.tipo ? prato.tipo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase() : "";
+            
+            // 🔥 DICIONÁRIO DE SINÔNIMOS DA COZINHA: Casamento perfeito de "Lanches" com "Hambúrguer"
+            if (tipoPratoLimpo.includes("hamb") && (tipoPratoLimpo.includes("lanche") || tipoPratoLimpo.includes("hamb"))) {
+                return true;
+            }
+            if (tipoPratoLimpo.includes("beb") && (tipoPratoLimpo.includes("beb") || tipoPratoLimpo.includes("refri") || tipoPratoLimpo.includes("suco"))) {
+                return true;
+            }
+
+            return tipoPratoLimpo.includes(catBotaoLimpa) || catBotaoLimpa.includes(tipoPratoLimpo);
+        });
+
+        return vendeItemDaCategoria;
     });
 
+    // 🍕 2. FILTRO DE PRATOS UNIVERSAL COM COMPATIBILIDADE DE CATEGORIAS
+    const pratosDoCardapio = (() => {
+        let listaBrutaPratos: any[] = [];
 
-    const pratosFiltrados = pratos.filter((prato: any) => {
-        const correspondeCategoria = categoria === "Todos" || prato.categoria === categoria;
-        const correspondeBusca = prato.nome.toLowerCase().includes(busca.toLowerCase());
-        return correspondeCategoria && correspondeBusca;
-    });
+        if (restauranteSelecionado) {
+            listaBrutaPratos = (restauranteSelecionado.produtos || []).map(p => ({
+                ...p,
+                restauranteId: restauranteSelecionado.id,
+                nomeRestaurante: restauranteSelecionado.nome
+            }));
+        } else {
+            restaurantesFiltrados.forEach((loja) => {
+                const pratosDaLoja = (loja.produtos || []).map(p => ({
+                    ...p,
+                    restauranteId: loja.id,
+                    nomeRestaurante: loja.nome
+                }));
+                listaBrutaPratos.push(...pratosDaLoja);
+            });
+        }
 
-    const pratosDoRestaurante = pratosFiltrados.filter((prato: any) => {
-        if (!restauranteSelecionado) return true;
-        return prato.restaurante === restauranteSelecionado.nome;
-    });
+        return listaBrutaPratos.filter((prato: any) => {
+            if (prato.ativo === false) return false; 
+            
+            if (categoria !== "Todos") {
+                const tipoPratoLimpo = prato.tipo ? prato.tipo.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase() : "";
+                const filtroBotaoLimpo = categoria.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim().toLowerCase();
+
+                let bateuFiltro = tipoPratoLimpo.includes(filtroBotaoLimpo) || filtroBotaoLimpo.includes(filtroBotaoLimpo);
+
+                // 🔥 PROTEÇÃO ABSOLUTA: Força o botão Hambúrguer a aceitar e listar os pratos salvos como "Lanches"!
+                if (filtroBotaoLimpo.includes("hamb") && (tipoPratoLimpo.includes("lanche") || tipoPratoLimpo.includes("hamb"))) {
+                    bateuFiltro = true;
+                }
+                if (filtroBotaoLimpo.includes("beb") && (tipoPratoLimpo.includes("beb") || tipoPratoLimpo.includes("refri") || tipoPratoLimpo.includes("suco"))) {
+                    bateuFiltro = true;
+                }
+
+                if (!bateuFiltro) return false;
+            }
+
+            return prato.nome.toLowerCase().includes(busca.toLowerCase());
+        });
+    })();
+
 
     return (
         <div className="Pedir-page">
@@ -69,11 +131,7 @@ export default function PedirAgora() {
             {/* 📍 SEÇÃO ENDEREÇO */}
             <div className="endereço">
                 <FaLocationDot className="icone-localizacao" />
-                <input
-                    type="text"
-                    id="endereço"
-                    placeholder="Digite seu endereço de entrega..."
-                />
+                <input type="text" id="endereço" placeholder="Digite seu endereço de entrega..." />
                 <button type="submit">Adicionar</button>
             </div>
 
@@ -82,13 +140,13 @@ export default function PedirAgora() {
                 <input
                     type="text"
                     id="pratos"
-                    placeholder="Buscar pratos ou restaurantes..."
+                    placeholder="Buscar pratos ou restaurantes do cardápio..."
                     value={busca}
                     onChange={(e) => setBusca(e.target.value)}
                 />
 
                 <div id="filtro-pratos">
-                    {["Todos", "Pizza", "Hambúrguer", "Japonesa", "Bebida", "Mexicana", "Massas"].map((filtro) => (
+                    {["Todos", "Pizza", "Hambúrguer", "Japonesa", "Bebidas", "Sobremesas", "Salgados"].map((filtro) => (
                         <button
                             key={filtro}
                             className={categoria === filtro ? "filtro-ativo" : ""}
@@ -114,59 +172,85 @@ export default function PedirAgora() {
                 </div>
             </div>
 
-            {/* 🏛️ GRID DE RESTAURANTES */}
+            {/* 🏛️ GRID DE RESTAURANTES DISPONÍVEIS */}
             <div id="restaurantes2">
                 <section id="restaurantes3">
-                    <h1>Restaurantes</h1>
+                    <h1>Restaurantes Disponíveis ({categoria})</h1>
                     <div className="cards-restaurantes1">
-                        {restaurantesFiltrados.map((restaurante) => (
-                            <div
-                                className={`card-restaurante ${restauranteSelecionado?.id === restaurante.id ? "card-ativo" : ""}`}
-                                key={restaurante.id}
-                                onClick={() => setRestauranteSelecionado(restaurante)}
-                                style={{ cursor: "pointer" }}
-                            >
-                                <h1>{restaurante.letra}</h1>
-                                <p><strong>{restaurante.nome}</strong></p>
-                                <p>⭐ {restaurante.nota}</p>
-                                <p>{restaurante.categoria}</p>
-                                <p>◷ {restaurante.tempo}</p>
-                            </div>
-                        ))}
+                        {restaurantesFiltrados.length === 0 ? (
+                            <p className="aviso-vazio">Nenhum estabelecimento ativo nesta categoria. 🏪</p>
+                        ) : (
+                            restaurantesFiltrados.map((restaurante) => (
+                                <div
+                                    className={`card-restaurante ${restauranteSelecionado?.id === restaurante.id ? "card-ativo" : ""}`}
+                                    key={restaurante.id}
+                                    onClick={() => setRestauranteSelecionado(restaurante)}
+                                    style={{ cursor: "pointer" }} // Mantido apenas o cursor pointer interativo
+                                >
+                                    <h1>{restaurante.nome.charAt(0).toUpperCase()}</h1>
+                                    <p><strong>{restaurante.nome}</strong></p>
+                                    <p>⭐ 5.0</p>
+                                    <p>{restaurante.categoria}</p>
+                                    <p>◷ 20-30 min</p>
+                                </div>
+                            ))
+                        )}
                     </div>
                 </section>
             </div>
 
-            {/* 🍕 GRID DE PRATOS / CARDÁPIO */}
-            <div className="pratos-container" style={{ maxWidth: "1200px", margin: "40px auto", padding: "0 20px" }}>
-                <h2>{restauranteSelecionado ? `Cardápio: ${restauranteSelecionado.nome}` : "Pratos Disponíveis"}</h2>
+            {/* 🍕 GRID DE PRATOS DO CARDÁPIO UNIFICADO (100% LIMPO DE STYLES INLINE) */}
+            <div className="pratos-container">
+                <h2>{restactTituloCardapio(restauranteSelecionado, categoria)}</h2>
 
-                <div className="cards-pratos" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginTop: "20px" }}>
-                    {pratosDoRestaurante.map((prato) => (
-                        <div key={prato.id} className="card-prato" style={{ border: "1px solid #dfe4eb", borderRadius: "12px", padding: "20px", background: "#fff", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                            <div>
-                                <span style={{ fontSize: "32px" }}>{prato.imagem}</span>
-                                <h3 style={{ margin: "10px 0 6px", color: "#071d3b" }}>{prato.nome}</h3>
-                                <p style={{ fontSize: "14px", color: "#50627a", marginBottom: "12px" }}>{prato.descricao}</p>
-                            </div>
-                            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: "10px" }}>
-                                <span style={{ fontWeight: "700", color: "#ff6600", fontSize: "18px" }}>
-                                    R$ {prato.preco.toFixed(2)}
-                                </span>
-                                <button
-                                    onClick={() => {
-                                        adicionarAoCarrinho(prato);
-                                    }}
-                                    style={{ background: "#ff6600", color: "#fff", border: "none", padding: "8px 16px", borderRadius: "20px", fontWeight: "600", cursor: "pointer" }}
-                                >
-                                    + Adicionar
-                                </button>
-                            </div>
-                        </div>
-                    ))}
+                <div className="cards-pratos">
+                    {pratosDoCardapio.length === 0 ? (
+                        <p className="aviso-vazio">Nenhum prato disponível para os filtros selecionados. 🍽️</p>
+                    ) : (
+                        pratosDoCardapio.map((prato: any) => {
+                            const precoNumerico = typeof prato.preco === "string"
+                                ? Number(prato.preco.replace(",", "."))
+                                : prato.preco;
+
+                            return (
+                                <div key={prato.id} className="card-prato">
+                                    <div>
+                                        <span>🍔</span>
+                                        <h3>{prato.nome}</h3>
+                                        <p className="nome-restaurante-tag">🏪 {prato.nomeRestaurante}</p>
+                                        <p>{prato.descricao}</p>
+                                    </div>
+                                    <div className="rodape-prato">
+                                        <span className="preco-prato">
+                                            R\$ {isNaN(precoNumerico) ? "0,00" : precoNumerico.toFixed(2).replace(".", ",")}
+                                        </span>
+                                        <button
+                                            className="btn-adicionar-sacola"
+                                            onClick={() => {
+                                                adicionarAoCarrinho({
+                                                    ...prato,
+                                                    restauranteId: prato.restauranteId,
+                                                    nomeRestaurante: prato.nomeRestaurante
+                                                });
+                                                alert(`${prato.nome} adicionado ao seu carrinho! 🛒`);
+                                            }}
+                                        >
+                                            + Adicionar
+                                        </button>
+                                    </div>
+                                </div>
+                            );
+                        })
+                    )}
                 </div>
             </div>
 
         </div>
     );
+}
+
+function restactTituloCardapio(selecionado: any, categoriaAtiva: string) {
+    if (selecionado) return `Cardápio: ${selecionado.nome}`;
+    if (categoriaAtiva === "Todos") return "Destaques do Dia";
+    return `Pratos na Categoria: ${categoriaAtiva}`;
 }
