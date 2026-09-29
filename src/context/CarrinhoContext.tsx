@@ -7,9 +7,9 @@ export interface Produto {
     id: string;
     nome: string;
     descricao: string;
-    preco: number;
+    preco: number | string;
     categoria: string;
-    imagem: string;
+    imagem?: string;
     quantidade: number; // Campo dinâmico controlado pelo carrinho
     restaurante?: string;
 }
@@ -91,10 +91,15 @@ export function CarrinhoProvider({ children }: CarrinhoProviderProps) {
         0
     );
 
-    const valorTotal = carrinho.reduce(
-        (total, item) => total + item.preco * item.quantidade,
-        0
-    );
+    const valorTotal = carrinho.reduce((acc, item) => {
+        // Transforma o preço em número puro tirando a vírgula se for string
+        const precoNumerico = typeof item.preco === "string"
+            ? Number(item.preco.replace(",", "."))
+            : Number(item.preco || 0);
+
+        // Multiplica com a segurança que o TypeScript exige!
+        return acc + (precoNumerico * (item.quantidade || 1));
+    }, 0);
 
     return (
         <CarrinhoContext.Provider

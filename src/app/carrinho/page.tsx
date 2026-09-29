@@ -1,7 +1,7 @@
-'use client'; 
-import { useRouter } from "next/navigation"; 
-import { useCarrinho } from "@/context/CarrinhoContext"; 
-import { api } from "@/services/api"; 
+'use client';
+import { useRouter } from "next/navigation";
+import { useCarrinho } from "@/context/CarrinhoContext";
+import { api } from "@/services/api";
 import './carrinho.css'
 
 export default function Carrinho() {
@@ -13,10 +13,10 @@ export default function Carrinho() {
         diminuirQuantidade,
         removerDoCarrinho,
         valorTotal,
-        removerDoCarrinho: limparTudo 
+        removerDoCarrinho: limparTudo
     } = useCarrinho();
 
-   
+
     async function lidarComFinalizarPedido() {
         // 1. Segurança: Verifica se o usuário está de fato logado antes de comprar
         const sessao = localStorage.getItem("flashfoods:user");
@@ -51,10 +51,10 @@ export default function Carrinho() {
             await api.post("/pedidos", novoPedido);
 
             alert("Pedido finalizado com sucesso! 🍔🔥 Seu lanche começou a ser preparado.");
-            
+
             // 🪄 Faxina na memória: Remove os itens do carrinho um por um para esvaziar a sacola
             carrinho.forEach(item => removerDoCarrinho(item.id));
-            
+
             // Chuta o usuário para a Home ou para a tela onde ele acompanha o pedido
             router.push("/");
         } catch (error) {
@@ -65,7 +65,7 @@ export default function Carrinho() {
 
     return (
         <div className="carrinho-page" style={{ paddingTop: "90px" }}>
-            
+
             <div className="carrinho-titulo-secao" style={{ maxWidth: "1200px", margin: "20px auto 0", padding: "0 20px", display: "flex", alignItems: "center", gap: "16px" }}>
                 <button
                     onClick={() => router.push("/pedir-agora")}
@@ -83,7 +83,7 @@ export default function Carrinho() {
                         <div className="icone-vazio">🛒</div>
                         <h2>Seu carrinho está vazio</h2>
                         <p>Adicione alguns pratos para continuar.</p>
-                        
+
                         <button onClick={() => router.push("/pedir-agora")}>
                             Ver pratos
                         </button>
@@ -93,7 +93,7 @@ export default function Carrinho() {
                         <div className="lista-carrinho">
                             {carrinho.map((item) => (
                                 <div className="item-carrinho" key={item.id}>
-                                    
+
                                     <div className="item-imagem" style={{ fontSize: "36px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                                         {item.imagem || "🍔"}
                                     </div>
@@ -102,7 +102,10 @@ export default function Carrinho() {
                                         <h2>{item.nome}</h2>
                                         <p>{item.restaurante || "Flash Foods"}</p>
                                         <strong>
-                                            R$ {item.preco.toFixed(2).replace(".", ",")}
+                                            R$ {(typeof item.preco === "string"
+                                                ? Number(item.preco.replace(",", "."))
+                                                : Number(item.preco || 0)
+                                            ).toFixed(2).replace(".", ",")}
                                         </strong>
                                     </div>
 
@@ -118,7 +121,10 @@ export default function Carrinho() {
 
                                     <div className="item-subtotal">
                                         <strong>
-                                            R$ {(item.preco * item.quantidade).toFixed(2).replace(".", ",")}
+                                            R$ {(typeof item.preco === "string"
+                                                ? Number(item.preco.replace(",", "."))
+                                                : Number(item.preco || 0)
+                                            ).toFixed(2).replace(".", ",")}
                                         </strong>
                                         <button
                                             className="remover"

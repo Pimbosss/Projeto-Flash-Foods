@@ -148,6 +148,42 @@
       "distancia": "3,7 km",
       "tempo": "18 min",
       "valor": "R$ 17,10"
+    },
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Admin-Entregador",
+      "itens": [
+        {
+          "id": "1790515259960",
+          "nome": "Lanche",
+          "quantidade": 1,
+          "precoUnitario": "100"
+        }
+      ],
+      "subtotal": 100,
+      "taxaEntrega": 5,
+      "total": 105,
+      "status": "pendente",
+      "data": "29/09/2026, 18:23:50",
+      "id": "DT3NRE-BnRU"
+    },
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Admin-Entregador",
+      "itens": [
+        {
+          "id": "1790515259960",
+          "nome": "Lanche",
+          "quantidade": 2,
+          "precoUnitario": "100"
+        }
+      ],
+      "subtotal": 200,
+      "taxaEntrega": 5,
+      "total": 205,
+      "status": "pendente",
+      "data": "29/09/2026, 18:38:29",
+      "id": "4C5xAmiUl8o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

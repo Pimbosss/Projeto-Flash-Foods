@@ -9,8 +9,8 @@
   width: 100%;
   background-color: #000000; /* Fundo preto idêntico ao Figma do login */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  padding: 20px;
-  box-sizing: border-box;
+  padding: 100px;
+  box-sizing: border-box;  
 }
 
 /* ⬜ O Card Branco do Perfil (Mesmo padrão do Modal do Login) */
