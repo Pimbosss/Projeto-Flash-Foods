@@ -17,7 +17,6 @@
       "password": "admin"
     },
     {
- 
       "id": "G97BuN1KSC4",
       "email": "renan@gmail.com",
       "name": "Renan",
@@ -25,26 +24,22 @@
       "phone": "000000000000",
       "password": "admin"
     },
-
     {
       "id": "S-N1UKyfhUQ",
       "email": "heitor@gmail.com",
-      "name": "Heitor",
+      "name": "Heitor Mariottini",
       "cpf": "17723784918",
       "phone": "1699087678",
       "password": "12345678"
     },
-
     {
-
       "id": "ANKp_M_ABU0",
       "email": "gabriel@sexohot.gmail.com",
       "cpf": "558703487209847",
       "phone": "43567890132",
-      "password": "12345"
-
+      "password": "12345",
+      "name": "asdasdasd"
     }
   ]
-  
-}
 
+}
