@@ -50,9 +50,9 @@
         {
           "id": "1790441803208",
           "tipo": "Pizza",
-          "nome": "Pizza-teste",
+          "nome": "Pizza",
           "descricao": "teste",
-          "preco": "100",
+          "preco": "65",
           "vendidos": 0,
           "ativo": true
         }

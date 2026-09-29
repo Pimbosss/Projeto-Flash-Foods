@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import styles from "./restaurante.module.css";
 import { IoMdRestaurant } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
@@ -11,7 +10,6 @@ import Produtos from "./components/Produtos";
 import Pedidos from "./components/Pedidos";
 import Perfil from "./components/Perfil";
 import { api } from '@/services/api'
-import { error } from "console";
 
 export default function AreaRestaurante() {
     const [abaAtiva, setAbaAtiva] = useState<"visao-geral" | "produtos" | "pedidos" | "perfil">("visao-geral");
