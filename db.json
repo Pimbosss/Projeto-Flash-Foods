@@ -43,7 +43,7 @@
   "restaurantes": [
     {
       "id": "22BwIMONn34",
-      "nome": "VAI DAR CERTO?",
+      "nome": "Restaurante Teste",
       "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
       "usuarioId": "U0UKUZzRtRg",
       "produtos": [
@@ -65,7 +65,9 @@
           "vendidos": 0,
           "ativo": true
         }
-      ]
+      ],
+      "cnpj": "0000",
+      "categoria": "Pizza"
     }
   ],
   "pedidos": [

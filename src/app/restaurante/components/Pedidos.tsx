@@ -64,7 +64,7 @@ export default function Pedidos({ dadosLoja }: PedidosProps) {
 
     return (
         <div className={styles.produtosR}>
-            <h1>Gerenciar Pedidos (Esteira de Produção)</h1>
+            <h1>Gerenciar Pedidos</h1>
             
             {pedidos.length === 0 ? (
                 <p className={styles.avisoVazio}>
