@@ -29,33 +29,28 @@ export default function Carrinho() {
         const usuarioLogado = JSON.parse(sessao);
         const totalComTaxa = valorTotal + 5;
 
-        // 2. Monta o pacote de dados do pedido seguindo o padrão de mercado
+
+        const primeiroItem = carrinho[0]; 
+
         const novoPedido = {
             usuarioId: usuarioLogado.id,
-            usuarioNome: usuarioLogado.name || usuarioLogado.email.split("@")[0],
-            itens: carrinho.map(item => ({
-                id: item.id,
-                nome: item.nome,
-                quantidade: item.quantidade,
-                precoUnitario: item.preco
-            })),
+            usuarioNome: usuarioLogado.name,
+            itens: carrinho, // Toda a lista de compras do cliente
             subtotal: valorTotal,
             taxaEntrega: 5.00,
-            total: totalComTaxa,
-            status: "pendente", // Status inicial para o entregador conseguir pescar
-            data: new Date().toLocaleString("pt-BR") // Salva o dia e hora exatos do pedido
+            total: valorTotal + 5.00,
+            status: "pendente", // Inicia como pendente (Tag azul: Novo) na esteira da cozinha
+            data: new Date().toLocaleString("pt-BR"),
+            endereco: "Rua das Flores, 123 (Simulado)", // Ajuste com o estado do formulário de endereço se houver
+            // 🔥 AS DUAS LINHAS DE OURO QUE RECONECTAM O ECOSSISTEMA:
+            restauranteId: primeiroItem?.restauranteId || "rest_default",
+            restaurante: primeiroItem?.nomeRestaurante || primeiroItem?.restaurante || "Restaurante Parceiro"
         };
 
         try {
-            // 🚀 ENVIO REAL: Envia o pacote para a gaveta 'pedidos' do seu db.json
             await api.post("/pedidos", novoPedido);
-
             alert("Pedido finalizado com sucesso! 🍔🔥 Seu lanche começou a ser preparado.");
-
-            // 🪄 Faxina na memória: Remove os itens do carrinho um por um para esvaziar a sacola
             carrinho.forEach(item => removerDoCarrinho(item.id));
-
-            // Chuta o usuário para a Home ou para a tela onde ele acompanha o pedido
             router.push("/");
         } catch (error) {
             console.error("Erro ao enviar pedido para o servidor:", error);

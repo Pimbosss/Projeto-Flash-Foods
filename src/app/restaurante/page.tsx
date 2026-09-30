@@ -94,7 +94,7 @@ export default function AreaRestaurante() {
             <main className={styles.conteudoRestaurante}>
                 {abaAtiva === "visao-geral" && <VisaoGeral dadosLoja={dados} pedidos={pedidos} />}
                 {abaAtiva === "produtos" && <Produtos dadosLoja={dados} />}
-                {abaAtiva === "pedidos" && <Pedidos />}
+                {abaAtiva === "pedidos" && <Pedidos dadosLoja={dados}/>}
                 {abaAtiva === "perfil" && <Perfil dadosLoja={dados} />}
             </main>
         </div>

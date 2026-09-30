@@ -1,8 +1,5 @@
-'use client'; // ⚠️ OBRIGATÓRIO: Gerencia estados na memória do navegador!
-
+'use client';
 import { createContext, useContext, useState, ReactNode } from "react";
-
-// 1. 📐 INTERFACE DO PRODUTO: Define o que um lanche tem no db.json
 export interface Produto {
     id: string;
     nome: string;
@@ -10,11 +7,11 @@ export interface Produto {
     preco: number | string;
     categoria: string;
     imagem?: string;
-    quantidade: number; // Campo dinâmico controlado pelo carrinho
+    quantidade: number;
     restaurante?: string;
+    restauranteId?: string;
+    nomeRestaurante?: string;
 }
-
-// 2. 🎛️ INTERFACE DO CONTEXTO: Avisa ao TypeScript quais funções e variáveis estão disponíveis
 interface CarrinhoContextType {
     carrinho: Produto[];
     adicionarAoCarrinho: (produto: Omit<Produto, 'quantidade'>) => void;

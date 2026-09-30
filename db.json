@@ -55,21 +55,13 @@
           "preco": "65",
           "vendidos": 0,
           "ativo": true
-        }
-      ]
-    },
-    {
-      "id": "mmczuHNDs9M",
-      "nome": "Hamburgueria",
-      "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
-      "usuarioId": "T78yRR__yWQ",
-      "produtos": [
+        },
         {
-          "id": "1790515259960",
-          "tipo": "Lanches",
-          "nome": "Lanche",
-          "descricao": "000",
-          "preco": "100",
+          "id": "1790788119033",
+          "tipo": "Salgados",
+          "nome": "teste2",
+          "descricao": "teste",
+          "preco": "20",
           "vendidos": 0,
           "ativo": true
         }
@@ -78,112 +70,31 @@
   ],
   "pedidos": [
     {
-      "usuarioId": "1",
-      "usuarioNome": "Admin",
-      "itens": [
-        {
-          "id": "p2",
-          "nome": "Pizza Calabresa",
-          "quantidade": 1,
-          "precoUnitario": 45.9
-        }
-      ],
-      "subtotal": 45.9,
-      "taxaEntrega": 5,
-      "total": 50.9,
-      "status": "concluido",
-      "data": "20/09/2026, 12:25:50",
-      "id": "6LNIznGyd1o",
-      "restaurante": "Restaurante Pizza",
-      "endereco": "Rua das Flores, 123 (Simulado)",
-      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
-      "distancia": "4,0 km",
-      "tempo": "20 min",
-      "valor": "R$ 18,00"
-    },
-    {
-      "usuarioId": "1",
-      "usuarioNome": "Admin",
-      "itens": [
-        {
-          "id": "p2",
-          "nome": "Pizza Calabresa",
-          "quantidade": 1,
-          "precoUnitario": 45.9
-        }
-      ],
-      "subtotal": 45.9,
-      "taxaEntrega": 5,
-      "total": 50.9,
-      "status": "concluido",
-      "data": "20/09/2026, 12:26:41",
-      "id": "eX9DWo-5lcM",
-      "restaurante": "Restaurante Pizza",
-      "endereco": "Rua das Flores, 123 (Simulado)",
-      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
-      "distancia": "2,3 km",
-      "tempo": "11 min",
-      "valor": "R$ 12,90"
-    },
-    {
-      "usuarioId": "1",
-      "usuarioNome": "Admin",
-      "itens": [
-        {
-          "id": "p4",
-          "nome": "Combo Sushi",
-          "quantidade": 1,
-          "precoUnitario": 89.9
-        }
-      ],
-      "subtotal": 89.9,
-      "taxaEntrega": 5,
-      "total": 94.9,
-      "status": "concluido",
-      "data": "20/09/2026, 12:26:47",
-      "id": "XzBWjM-bYCI",
-      "restaurante": "Restaurante Combo",
-      "endereco": "Rua das Flores, 123 (Simulado)",
-      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
-      "distancia": "3,7 km",
-      "tempo": "18 min",
-      "valor": "R$ 17,10"
-    },
-    {
       "usuarioId": "1lgYPcqiJeg",
       "usuarioNome": "Admin-Entregador",
       "itens": [
         {
-          "id": "1790515259960",
-          "nome": "Lanche",
-          "quantidade": 1,
-          "precoUnitario": "100"
+          "id": "1790441803208",
+          "tipo": "Pizza",
+          "nome": "Pizza",
+          "descricao": "teste",
+          "preco": "65",
+          "vendidos": 0,
+          "ativo": true,
+          "restauranteId": "22BwIMONn34",
+          "nomeRestaurante": "VAI DAR CERTO?",
+          "quantidade": 1
         }
       ],
-      "subtotal": 100,
+      "subtotal": 65,
       "taxaEntrega": 5,
-      "total": 105,
-      "status": "pendente",
-      "data": "29/09/2026, 18:23:50",
-      "id": "DT3NRE-BnRU"
-    },
-    {
-      "usuarioId": "1lgYPcqiJeg",
-      "usuarioNome": "Admin-Entregador",
-      "itens": [
-        {
-          "id": "1790515259960",
-          "nome": "Lanche",
-          "quantidade": 2,
-          "precoUnitario": "100"
-        }
-      ],
-      "subtotal": 200,
-      "taxaEntrega": 5,
-      "total": 205,
-      "status": "pendente",
-      "data": "29/09/2026, 18:38:29",
-      "id": "4C5xAmiUl8o"
+      "total": 70,
+      "status": "concluido",
+      "data": "30/09/2026, 14:21:32",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "restauranteId": "22BwIMONn34",
+      "restaurante": "VAI DAR CERTO?",
+      "id": "mt9pOOCMTvg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
