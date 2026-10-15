@@ -20,7 +20,7 @@
       "id": "1lgYPcqiJeg"
     },
     {
-      "name": "PELO AMOR DE DEUS FUNCIONA!!!!",
+      "name": "Funcinando",
       "email": "restaurante@admin.com",
       "phone": "",
       "cpf": "",
@@ -28,16 +28,6 @@
       "tipo": "restaurante",
       "restauranteId": "rest_U0UKUZzRtRg",
       "id": "U0UKUZzRtRg"
-    },
-    {
-      "name": "Hamburguer-Teste",
-      "email": "hamburguer@admin.com",
-      "phone": "000",
-      "cpf": "",
-      "password": "admin",
-      "tipo": "restaurante",
-      "restauranteId": "mmczuHNDs9M",
-      "id": "T78yRR__yWQ"
     }
   ],
   "restaurantes": [
@@ -84,19 +74,19 @@
           "vendidos": 0,
           "ativo": true,
           "restauranteId": "22BwIMONn34",
-          "nomeRestaurante": "VAI DAR CERTO?",
+          "nomeRestaurante": "Restaurante Teste",
           "quantidade": 1
         }
       ],
       "subtotal": 65,
       "taxaEntrega": 5,
       "total": 70,
-      "status": "concluido",
-      "data": "30/09/2026, 14:21:32",
+      "status": "preparando",
+      "data": "12/10/2026, 11:04:25",
       "endereco": "Rua das Flores, 123 (Simulado)",
       "restauranteId": "22BwIMONn34",
-      "restaurante": "VAI DAR CERTO?",
-      "id": "mt9pOOCMTvg"
+      "restaurante": "Restaurante Teste",
+      "id": "sRIgQY8NsMk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

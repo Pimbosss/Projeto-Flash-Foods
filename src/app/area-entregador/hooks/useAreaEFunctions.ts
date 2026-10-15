@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { api } from "@/services/api";
 
-
 export interface PedidoReal {
     id: string;
     usuarioId: string;
@@ -17,9 +16,10 @@ export interface PedidoReal {
     subtotal: number;
     taxaEntrega: number;
     total: number;
-    status: "pendente" | "a caminho" | "concluido";
+    status: "pendente" | "preparando" | "a caminho" | "concluido"; //  ADICIONADO: status "preparando" no contrato
     data: string;
     restaurante?: string;
+    restauranteId?: string; //  Vinculo relacional
     endereco?: string;
     enderecoRestaurante?: string;
     distancia?: string;
@@ -36,7 +36,6 @@ export default function useAreaEFunctions() {
         return true;
     });
 
-    // 🟢 LISTA REAL: Guarda os pedidos vindos do db.json
     const [pedidosBanco, setPedidosBanco] = useState<PedidoReal[]>([]);
     const [entregaAtual, setEntregaAtual] = useState<PedidoReal | null>(null);
     const [gpsVisivel, setGpsVisivel] = useState(true);
@@ -48,6 +47,42 @@ export default function useAreaEFunctions() {
 
     const diferencaOntem = ganhosHoje - ganhosOntem;
 
+    const carregarCorridasDisponiveis = () => {
+        api.get("/pedidos")
+            .then((resp) => {
+                const listaGeral = resp.data || [];
+
+                // 🟢 Localize e ajuste INTEGRALMENTE o bloco da pedidosAdaptados dentro do seu useAreaEFunctions.ts:
+                const pedidosAdaptados = listaGeral.map((p: any) => {
+                    const kmCalculado = p.distancia
+                        ? Number(p.distancia.replace(" km", "").replace(",", "."))
+                        : Number((Math.random() * 4.3 + 1.2).toFixed(1));
+
+                    const ganhoCorrida = 6.00 + (kmCalculado * 3.00);
+                    const valorDinamic = `R$ ${ganhoCorrida.toFixed(2).replace(".", ",")}`;
+
+                    return {
+                        ...p, // Espelha tudo o que já veio do db.json
+                        status: p.status, //  LINHA DE OURO: Garante que o status original ("pendente", "preparando") passe para o filtro!
+                        restaurante: p.restaurante || (p.itens?.[0]?.nome ? `Restaurante ${p.itens[0].nome.split(' ')[0]}` : "Flash Foods Store"),
+                        endereco: p.endereco || "Rua das Flores, 123 (Simulado)",
+                        enderecoRestaurante: "Av. Paulista, 900 (Simulado)",
+                        distancia: p.distancia || `${kmCalculado.toFixed(1).replace(".", ",")} km`,
+                        tempo: p.tempo || `${Math.floor(kmCalculado * 5)} min`,
+                        valor: p.valor || valorDinamic
+                    };
+                });
+
+
+                // 🟢 FILTRO DE OURO: O entregador enxerga a corrida APENAS se a cozinha estiver "preparando" ou se o lanche já estiver "a caminho"!
+                const corridasFiltradas = pedidosAdaptados.filter((p: any) =>
+                    p.status === "preparando" || p.status === "a caminho"
+                );
+
+                setPedidosBanco(corridasFiltradas);
+            })
+            .catch((err) => console.error("Erro ao puxar pedidos:", err));
+    };
 
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -61,7 +96,6 @@ export default function useAreaEFunctions() {
 
             const usuarioLogado = JSON.parse(sessao);
 
-            // Se o tipo for diferente de entregador, bloqueia a entrada e chuta de volta para a Home!
             if (usuarioLogado.tipo !== "entregador") {
                 alert("⚠️ Acesso Negado! Esta área é exclusiva para entregadores parceiros cadastrados.");
                 window.location.href = "/";
@@ -69,34 +103,8 @@ export default function useAreaEFunctions() {
             }
         }
 
-        api.get("/pedidos")
-            .then((resp) => {
-                const pedidosAdaptados = resp.data.map((p: any) => {
-                    // 🟢 1. Se o pedido já tiver um valor gravado no banco, mantém. Se não, gera a matemática dinamicamente:
-                    const kmCalculado = p.distancia
-                        ? Number(p.distancia.replace(" km", "").replace(",", "."))
-                        : Number((Math.random() * 4.3 + 1.2).toFixed(1));
-
-                    // 🟢 2. Calcula o preço dinâmico real da corrida: R\$ 6,00 de taxa base + R\$ 3,00 por KM!
-                    const ganhoCorrida = 6.00 + (kmCalculado * 3.00);
-                    const valorDinamic = `R$ ${ganhoCorrida.toFixed(2).replace(".", ",")}`;
-
-                    return {
-                        ...p,
-                        restaurante: p.itens[0]?.nome ? `Restaurante ${p.itens[0].nome.split(' ')[0]}` : "Pizza Express",
-                        endereco: "Rua das Flores, 123 (Simulado)",
-                        enderecoRestaurante: "Av. Paulista, 900 (Simulado)",
-
-                        // 🟢 3. Garante que a distância gerada e o valor andem sempre de mãos dadas de forma proporcional!
-                        distancia: p.distancia || `${kmCalculado.toFixed(1).replace(".", ",")} km`,
-                        tempo: p.tempo || `${Math.floor(kmCalculado * 5)} min`,
-                        valor: p.valor || valorDinamic // 🔥 Salva o valor proporcional quebrado baseado na quilometragem!
-                    };
-                });
-                setPedidosBanco(pedidosAdaptados.filter((p: any) => p.status === "pendente"));
-            })
-            .catch((err) => console.error("Erro ao puxar pedidos:", err));
-    }, [entregaAtual]); // Recarrega a lista sempre que o entregador aceitar/finalizar uma corrida
+        carregarCorridasDisponiveis();
+    }, [entregaAtual]);
 
     useEffect(() => {
         if (!online) return;
@@ -132,24 +140,36 @@ export default function useAreaEFunctions() {
         return `${String(horas).padStart(2, "0")}:${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
     }
 
-    // 🟢 CONECTADO: Altera o status do pedido para "a caminho" no db.json
+    // 🟢 CONECTADO OPERACIONALMENTE: Força o status a travar como "a caminho" sinalizando que a moto aceitou o frete!
     function aceitarEntrega(entrega: PedidoReal) {
         if (!online || entregaAtual) return;
 
-        api.put(`/pedidos/${entrega.id}`, { ...entrega, status: "a caminho" })
+        const pacoteAtualizado = {
+            ...entrega,
+            status: "a caminho" as const // Mantém fixado que o motoca está se deslocando
+        };
+
+        api.put(`/pedidos/${entrega.id}`, pacoteAtualizado)
             .then(() => {
-                setEntregaAtual({ ...entrega, status: "a caminho" });
+                setEntregaAtual(pacoteAtualizado);
                 setGpsVisivel(true);
-                alert("Corrida aceita! Siga para o restaurante. 🏍️💨");
+                alert("Corrida aceita com sucesso! Dirija-se ao estabelecimento para coletar o lanche. 🏍️💨");
             })
-            .catch((err) => alert("Erro ao aceitar corrida no servidor."));
+            .catch((err) => {
+                console.error("Erro Axios ao aceitar corrida:", err);
+                alert("Erro ao aceitar corrida no servidor.");
+            });
     }
 
-    // 🟢 CONECTADO: Altera o status para "concluido" e soma os ganhos reais
     function finalizarEntrega() {
         if (!entregaAtual) return;
 
-        api.put(`/pedidos/${entregaAtual.id}`, { ...entregaAtual, status: "concluido" })
+        const pacoteFinalizado = {
+            ...entregaAtual,
+            status: "concluido" as const // Fecha a ordem de compra como entregue de vez!
+        };
+
+        api.put(`/pedidos/${entregaAtual.id}`, pacoteFinalizado)
             .then(() => {
                 const valorEntrega = Number(
                     (entregaAtual.valor || "R\$ 15,50")
@@ -178,7 +198,7 @@ export default function useAreaEFunctions() {
         diferencaOntem,
         tempoTotal,
         inicioOnline,
-        entregas: pedidosBanco, // Substitui a lista fixa pela lista real filtrada do banco!
+        entregas: pedidosBanco,
         setOnline,
         setGpsVisivel,
         alterarStatus,

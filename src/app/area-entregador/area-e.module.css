@@ -227,15 +227,160 @@
     box-shadow: 0 10px 20px rgba(7, 27, 58, 0.04);
 }
 
-.btnAccept {
-    color: #ffffff;
-    border: none;
-    padding: 14px;
-    border-radius: 12px;
-    font-size: 15px;
+/* ==========================================================================
+   🧱 PENTE FINO: ORGANIZAÇÃO VISUAL DA LISTA DE ENTREGAS DISPONÍVEIS
+   ========================================================================== */
+
+.tituloLista {
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.avisoListaVazia {
+    grid-column: span 2;
+    background: #ffffff;
+    padding: 60px 20px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    color: #64748b;
+}
+
+.avisoListaVazia span {
+    font-size: 40px;
+}
+
+.avisoListaVazia h3 {
+    margin-top: 16px;
+    color: #0f172a;
     font-weight: 700;
+}
+
+.avisoListaVazia p {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.topoCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.perfilLojaContainer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.iconeLoja {
+    width: 44px;
+    height: 44px;
+    background: #fff7ed;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
+    color: #f97316;
+}
+
+.nomeLojaSub {
+    font-size: 18px;
+    color: #0f172a;
+    font-weight: 700;
+    margin: 0;
+}
+
+.idPedidoSub {
+    font-size: 13px;
+    color: #64748b;
+    margin: 2px 0 0;
+}
+
+.valoresContainer {
+    text-align: right;
+}
+
+.precoGarantido {
+    font-size: 20px;
+    color: #10b981;
+    font-weight: 800;
+    display: block;
+}
+
+.tagGarantido {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.corpoCardItens {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
+    border-top: 1px dashed #e2e8f0;
+    border-bottom: 1px dashed #e2e8f0;
+    padding: 14px 0;
+}
+
+.enderecoTexto {
+    font-size: 14px;
+    color: #475569;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metricasCorrida {
+    display: flex;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+.itemMetrica {
+    font-size: 13px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.totalItensCorrida {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+.btnAccept {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ff7100 0%, #ff4b00 100%) !important; /* 🔥 Laranja Neon de alta visibilidade */
+    color: #ffffff !important;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 75, 0, 0.2);
+    transition: all 0.2s ease;
+    margin-top: 10px;
+}
+
+.btnAccept:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 75, 0, 0.3);
+}
+
+/* 🔴 Regra de segurança caso o painel mude para OFFLINE: fica cinza legível */
+.btnDisabled {
+    background: #e2e8f0 !important; 
+    color: #94a3b8 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    transform: none !important;
 }
