@@ -1,69 +1,11 @@
 'use client';
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import styles from './perfil.module.css'
-import { api } from '@/services/api'
-import Usuario from '@/core/Usuarios'
 import HistoricoPedido from "./components/HistoricoPedidos";
+import usePerfil from "./hooks/usePerfil";
 
 export default function Perfil() {
-    const router = useRouter()
-    const [userData, setUserData] = useState<Usuario | null>(null)
-
-    const updatedField = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = event.target
-        if(userData) {
-            setUserData({...userData, [name]: value})
-        }
-    }
-
-    useEffect( ()=> {
-        const session = localStorage.getItem("flashfoods:user")
-
-        if(!session) {
-            alert('Acesso negado, Faça login.')
-            router.push('/login')
-            return;
-        }
-
-        const loggedUser = JSON.parse(session)
-
-        api.get(`/users/${loggedUser.id}`)
-            .then(resp => {
-                setUserData(resp.data)
-            })
-            .catch(err => {
-                console.log('Erro na requisiçao:', err)
-            })
-    }, [router])
-
-    const save = () => {
-
-        const idUsuario = userData?.id
-        if(!idUsuario) return
-
-        api.put(`/users/${idUsuario}`, userData)
-            .then(resp => {
-                alert('Dados salvos com sucesso.')
-                const session = localStorage.getItem('flashfoods:user')
-
-                if(session) {
-                    const loggedUser = JSON.parse(session)
-                    const novaSessao = {
-                        ...loggedUser,
-                        email: resp.data.email,
-                        name: resp.data.name
-                    }
-                    localStorage.setItem('flashfoods:user', JSON.stringify(novaSessao))
-                }
-                window.dispatchEvent(new Event("perfilAtualizado"));    
-            })
-            .catch(err => {
-                console.error("Erro ao salvar:", err);
-                alert("Erro ao salvar os dados.");
-            });
-    }
+    const { userData, router, updatedField, save } = usePerfil();
 
     if(!userData) {
         return (
