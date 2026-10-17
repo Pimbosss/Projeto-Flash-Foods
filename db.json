@@ -81,12 +81,16 @@
       "subtotal": 65,
       "taxaEntrega": 5,
       "total": 70,
-      "status": "preparando",
+      "status": "concluido",
       "data": "12/10/2026, 11:04:25",
       "endereco": "Rua das Flores, 123 (Simulado)",
       "restauranteId": "22BwIMONn34",
       "restaurante": "Restaurante Teste",
-      "id": "sRIgQY8NsMk"
+      "id": "sRIgQY8NsMk",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "4,1 km",
+      "tempo": "20 min",
+      "valor": "R$ 18,30"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
