@@ -51,6 +51,14 @@ export default function useCadastroRestaurante() {
         }
 
         try {
+
+            const respCheck = await api.get(`/users?email=${restaurante.email.toLowerCase().trim()}`);
+            
+            if (respCheck.data && respCheck.data.length > 0) {
+                alert("Este e-mail comercial já está cadastrado no Flash Foods! Use outro e-mail. ⚠️");
+                return;
+            }
+            
             // 📦 PASSO 1: Cria o Perfil básico na gaveta /users
             const payloadUsuarioInicial = {
                 name: restaurante.name,
