@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "email": "admin@admin.com",
+      "name": "Admin",
+      "cpf": "00000000",
+      "phone": "19090209931",
+      "password": "admin",
+      "id": "1"
+    },
+    {
+      "name": "Admin-Entregador",
+      "email": "entregador@admin.com",
+      "phone": "0000000",
+      "cpf": "0000000",
+      "cnh": "00000000",
+      "placaVeiculo": "00000000",
+      "password": "admin",
+      "tipo": "entregador",
+      "id": "1lgYPcqiJeg"
+    },
+    {
+      "name": "Funcinando",
+      "email": "restaurante@admin.com",
+      "phone": "",
+      "cpf": "",
+      "password": "admin",
+      "tipo": "restaurante",
+      "restauranteId": "rest_U0UKUZzRtRg",
+      "id": "U0UKUZzRtRg"
+    }
+  ],
+  "restaurantes": [
+    {
+      "id": "22BwIMONn34",
+      "nome": "Restaurante Teste",
+      "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
+      "usuarioId": "U0UKUZzRtRg",
+      "produtos": [
+        {
+          "id": "1790441803208",
+          "tipo": "Pizza",
+          "nome": "Pizza",
+          "descricao": "teste",
+          "preco": "65",
+          "vendidos": 0,
+          "ativo": true
+        },
+        {
+          "id": "1790788119033",
+          "tipo": "Salgados",
+          "nome": "teste2",
+          "descricao": "teste",
+          "preco": "20",
+          "vendidos": 0,
+          "ativo": true
+        }
+      ],
+      "cnpj": "0000",
+      "categoria": "Pizza"
+    }
+  ],
+  "pedidos": [
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Admin-Entregador",
+      "itens": [
+        {
+          "id": "1790441803208",
+          "tipo": "Pizza",
+          "nome": "Pizza",
+          "descricao": "teste",
+          "preco": "65",
+          "vendidos": 0,
+          "ativo": true,
+          "restauranteId": "22BwIMONn34",
+          "nomeRestaurante": "Restaurante Teste",
+          "quantidade": 1
+        }
+      ],
+      "subtotal": 65,
+      "taxaEntrega": 5,
+      "total": 70,
+      "status": "concluido",
+      "data": "12/10/2026, 11:04:25",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "restauranteId": "22BwIMONn34",
+      "restaurante": "Restaurante Teste",
+      "id": "sRIgQY8NsMk",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "4,1 km",
+      "tempo": "20 min",
+      "valor": "R$ 18,30"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
