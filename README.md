@@ -10,10 +10,12 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 ## 🛠️ Infraestrutura Técnica
 
 ### **Backend**
-*   **Linguagem/Framework:** ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=plastic&logo=node.js&logoColor=white) com ![NestJS](https://img.shields.io/badge/nestjs-%23E0234E.svg?style=plastic&logo=nestjs&logoColor=white) (ou ![Python](https://img.shields.io/badge/python-3670A0?style=plastic&logo=python&logoColor=ffdd54) com ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=plastic&logo=fastapi)). 
+*   **Linguagem/Framework:** ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=plastic&logo=node.js&logoColor=white) com ![NextJs](https://img.shields.io/badge/next.js-%23E0234E.svg?style=plastic&logo=next.js&logoColor=white) 
 *   **Arquitetura:** RESTful API. 
 *   **Agendamento (Cron Jobs):** ![BullMQ](https://img.shields.io/badge/BullMQ-black?style=plastic&logo=BullMQ&logoColor=white) ou ![Celery](https://img.shields.io/badge/celery-%23a9cc54.svg?style=plastic&logo=celery&logoColor=ddf4a4). 
-*   **Web Scraping:** ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-3670A0?style=plastic&logo=beautifulsoup&logoColor=ffdd54). ou ![Cheerio](https://img.shields.io/badge/Cheerio-3670A0?style=plastic&logo=cheerio&logoColor=ffdd54). 
+*   **Web Scraping:** ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-3670A0?style=plastic&logo=beautifulsoup&logoColor=ffdd54). ou ![Cheerio](https://img.shields.io/badge/Cheerio-3670A0?style=plastic&logo=cheerio&logoColor=ffdd54).
+*   **Api de GPS:** ![Google Maps Platform](https://img.shields.io/badge/GoogleMapsPlatform-black?style=plastic&logo=beautifulsoup&logoColor=000000).
+*   **Api de Pagamento:** ![Mercado Pago API](https://img.shields.io/badge/MercadoPagoAPI-FFDB00?style=plastic&logo=beautifulsoup&logoColor=000000).
 
 ### **Frontend (Web)**
 *   **Framework:** ![Next JS](https://img.shields.io/badge/Next-black?style=plastic&logo=next.js&logoColor=white). 
@@ -21,7 +23,7 @@ apenas mediar vendas, mas otimizar o tempo e o lucro de quem faz o transporte.
 *   **Gerenciamento de Estado:** ![React](https://img.shields.io/badge/-React-FF4154?style=plastic&logo=react&logoColor=white).
 
 ### **Mobile**
-*   **Tecnologia:** ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) ou ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=plastic&logo=Flutter&logoColor=white). 
+*   **Tecnologia:** ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=plastic&logo=react&logoColor=%2361DAFB) 
 *   **Notificações:** ![Firebase](https://img.shields.io/badge/firebase-a08021?style=plastic&logo=firebase&logoColor=ffcd34). 
 
 ### **Banco de Dados**
