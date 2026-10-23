@@ -9,42 +9,6 @@
     box-sizing: border-box;
 }
 
-.carrinho-page .carrinho-header {
-    width: 100%;
-    min-height: 80px;
-    background: white;
-    border-bottom: 1px solid #ddd;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 max(calc((100% - 1216px) / 2), 20px);
-    gap: 25px;
-
-    position: relative;
-    top: auto;
-    left: auto;
-    right: auto;
-    z-index: 10;
-}
-
-.carrinho-page .carrinho-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #071b3a;
-}
-
-.carrinho-page .voltar {
-    border: none;
-    background: transparent;
-    color: #ff6500;
-
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
 .carrinho-page .carrinho-container {
     width: calc(100% - 40px);
     max-width: 1216px;
@@ -318,4 +282,48 @@
     .carrinho-page .item-subtotal {
         margin-left: auto;
     }
+}
+
+/* ==========================================================================
+   🧱 PENTE FINO: ORGANIZAÇÃO ESTÉTICA DO CARRINHO (SEM STYLES IN-line)
+   ========================================================================== */
+
+.carrinho-page-ajustada {
+    padding-top: 90px;
+}
+
+.carrinho-titulo-secao-ajustada {
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.carrinho-titulo-secao-ajustada .voltar-link {
+    background: none;
+    border: none;
+    color: #ff6600;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.carrinho-titulo-secao-ajustada .voltar-link:hover {
+    color: #e96300;
+}
+
+.carrinho-titulo-secao-ajustada h1 {
+    color: #071d3b;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.item-imagem-ajustada {
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

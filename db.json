@@ -34,7 +34,7 @@
     {
       "id": "22BwIMONn34",
       "nome": "Restaurante Teste",
-      "endereco": "Av. Paulista, 900 (Unidade Cadastrada)",
+      "endereco": "Av. Teste, 000 (Unidade Cadastrada)",
       "usuarioId": "U0UKUZzRtRg",
       "produtos": [
         {
@@ -53,11 +53,9 @@
           "descricao": "teste",
           "preco": "20",
           "vendidos": 0,
-          "ativo": true
+          "ativo": false
         }
-      ],
-      "cnpj": "0000",
-      "categoria": "Pizza"
+      ]
     }
   ],
   "pedidos": [

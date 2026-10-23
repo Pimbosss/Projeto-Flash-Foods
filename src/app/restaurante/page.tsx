@@ -44,7 +44,7 @@ export default function AreaRestaurante() {
                         setDados({
                             id: lojaDoBanco.id,
                             nome: lojaDoBanco.nome,
-                            endereco: "Av. Paulista, 900 (Unidade Cadastrada)",
+                            endereco: lojaDoBanco.endereco,
                             usuarioId: lojaDoBanco.usuarioId, // 🔥 PROTEÇÃO: Segura a hash do dono na memória!
                             produtos: iAjustarProdutos(lojaDoBanco.produtos)
                         });
