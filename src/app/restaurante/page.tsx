@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from "react";
 import styles from "./restaurante.module.css";
 import { IoMdRestaurant } from "react-icons/io";
 import { FaStar } from "react-icons/fa";
@@ -9,59 +8,13 @@ import VisaoGeral from "./components/VisaoGeral";
 import Produtos from "./components/Produtos";
 import Pedidos from "./components/Pedidos";
 import Perfil from "./components/Perfil";
-import { api } from '@/services/api'
+import useAreaRestaurante from "./hooks/useAreaRestaurante";
 
 export default function AreaRestaurante() {
-    const [abaAtiva, setAbaAtiva] = useState<"visao-geral" | "produtos" | "pedidos" | "perfil">("visao-geral");
-    const [dados, setDados] = useState({ id: "", nome: "", endereco: "", usuarioId: "", produtos: [] as any[] });
-    const [pedidos, setPedidos] = useState([])
 
-    // 🟢 SUBSTITUA INTEGRALMENTE O useEffect DO SEU src/app/area-restaurante/page.tsx:
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            const sessao = localStorage.getItem("flashfoods:user");
-
-            if (!sessao) {
-                alert("Acesso negado! Faça login para gerenciar o restaurante. 🔐");
-                window.location.href = "/login";
-                return;
-            }
-
-            const usuarioLogado = JSON.parse(sessao);
-            if (usuarioLogado.tipo !== "restaurante") {
-                alert("⚠️ Acesso Negado! Esta área é exclusiva para estabelecimentos parceiros.");
-                window.location.href = "/";
-                return;
-            }
-
-            // 1. 🔍 BUSCA POR USUÁRIO ID: Cruza os dados de forma infalível usando a hash do print!
-            api.get(`/restaurantes?usuarioId=${usuarioLogado.id}`)
-                .then(resLoja => {
-                    // Se encontrou a loja física vinculada ao dono
-                    if (resLoja.data && resLoja.data.length > 0) {
-                        const lojaDoBanco = resLoja.data[0]; // Captura a primeira loja da lista do filtro
-
-                        setDados({
-                            id: lojaDoBanco.id,
-                            nome: lojaDoBanco.nome,
-                            endereco: lojaDoBanco.endereco,
-                            usuarioId: lojaDoBanco.usuarioId, // 🔥 PROTEÇÃO: Segura a hash do dono na memória!
-                            produtos: iAjustarProdutos(lojaDoBanco.produtos)
-                        });
-                    }
-
-                    function iAjustarProdutos(produtos: any) {
-                        return produtos || [];
-                    }
-                })
-                .catch(err => {
-                    console.error("Erro ao sincronizar dados comerciais:", err);
-                });
-        }
-    }, []);
-
+    const { abaAtiva, setAbaAtiva, dados, pedidos } = useAreaRestaurante();
+    
     return (
-        // 🟢 Adicionamos um espaçamento extra em cima (pt-24) para compensar a altura do Header global fixo!
         <div className={`${styles.meuRestaurante}`}>
             {/* SEÇÃO DE INFOS DO ESTABELECIMENTO (O CARD DE APRESENTAÇÃO) */}
             <div className={styles.infos}>
