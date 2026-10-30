@@ -20,7 +20,6 @@ export default function usePedirAgora() {
     const [restaurantes, setRestaurantes] = useState<RestauranteBanco[]>([]);
     const [restauranteSelecionado, setRestauranteSelecionado] = useState<RestauranteBanco | null>(null);
 
-    // 📥 Carrega os estabelecimentos do servidor simulado
     useEffect(() => {
         api.get("/restaurantes")
             .then((resp) => {
@@ -31,7 +30,6 @@ export default function usePedirAgora() {
             });
     }, []);
 
-    // 🟢 1. FILTRO DE RESTAURANTES DE ALTA INTELIGÊNCIA COM SUPORTE A SINÔNIMOS
     const restaurantesFiltrados = restaurantes.filter((restaurante) => {
         const correspondeBusca = restaurante.nome.toLowerCase().includes(busca.toLowerCase());
         if (!correspondeBusca) return false;
@@ -71,7 +69,6 @@ export default function usePedirAgora() {
         return vendeItemDaCategoria;
     });
 
-    // 🍕 2. FILTRO DE PRATOS UNIVERSAL COM COMPATIBILIDADE DE CATEGORIAS
     const pratosDoCardapio = (() => {
         let listaBrutaPratos: any[] = [];
 

@@ -9,7 +9,6 @@ export default function usePerfil() {
     const router = useRouter();
     const [userData, setUserData] = useState<Usuario | null>(null);
 
-    // 🔄 Manipulador dinâmico de digitação nos inputs
     const updatedField = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         if (userData) {
@@ -17,7 +16,6 @@ export default function usePerfil() {
         }
     };
 
-    // 🔒 TRAVA DE SEGURANÇA E BUSCA DE DADOS INICIAL
     useEffect(() => {
         const session = localStorage.getItem("flashfoods:user");
 
@@ -38,7 +36,6 @@ export default function usePerfil() {
             });
     }, [router]);
 
-    // 📤 DISPARA A PERSISTÊNCIA DOS DADOS NO DB.JSON VIA PUT
     const save = () => {
         const idUsuario = userData?.id;
         if (!idUsuario) return;
@@ -55,10 +52,8 @@ export default function usePerfil() {
                         email: resp.data.email,
                         name: resp.data.name
                     };
-                    // Atualiza os dados vivos do cabeçalho no navegador
                     localStorage.setItem('flashfoods:user', JSON.stringify(novaSessao));
                 }
-                // Emite um aviso global para atualizar o Header em tempo real
                 window.dispatchEvent(new Event("perfilAtualizado"));    
             })
             .catch(err => {
