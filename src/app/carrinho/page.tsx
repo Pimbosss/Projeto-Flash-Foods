@@ -4,7 +4,7 @@ import useCarrinhoPage from "./hooks/useCarrinho";
 import './carrinho.css';
 
 export default function Carrinho() {
-    // 🎛️ Extrai toda a inteligência e estados operacionais do Custom Hook isolado
+    
     const {
         router,
         carrinho,

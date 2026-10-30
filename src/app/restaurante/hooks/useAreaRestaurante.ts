@@ -16,7 +16,6 @@ export default function useAreaRestaurante() {
     const [dados, setDados] = useState<DadosLoja>({ id: "", nome: "", endereco: "", usuarioId: "", produtos: [] });
     const [pedidos, setPedidos] = useState([]);
 
-    // 🔒 TRAVA DE SEGURANÇA E BUSCA RELACIONAL DA LOJA
     useEffect(() => {
         if (typeof window !== "undefined") {
             const sessao = localStorage.getItem("flashfoods:user");
@@ -34,7 +33,6 @@ export default function useAreaRestaurante() {
                 return;
             }
 
-            // 🔍 BUSCA POR USUÁRIO ID: Cruza os dados buscando a loja física vinculada ao dono
             api.get(`/restaurantes?usuarioId=${usuarioLogado.id}`)
                 .then(resLoja => {
                     if (resLoja.data && resLoja.data.length > 0) {

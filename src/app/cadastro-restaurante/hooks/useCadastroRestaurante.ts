@@ -6,25 +6,23 @@ import { api } from "@/services/api";
 import Usuario from "@/core/Usuarios";
 
 
-// 📐 CONTRATO LOCAL: Estende o Usuário global para incluir os dados comerciais da loja na tela
 interface CadastroRestauranteForm extends Usuario {
     nomeRestaurante: string;
     cnpj: string;
     categoria: string;
 }
 
-// 🟢 REGRA DE COESÃO: Estado inicial isolado fora do componente
 const formInitialState: CadastroRestauranteForm = {
-    name: "",          // Nome do Dono / Responsável
+    name: "",          
     email: "",
     phone: "",
     cpf: "",
     password: "",
     confirmPassword: "",
-    tipo: "restaurante", // Já nasce travado como tipo restaurante
-    nomeRestaurante: "", // Nome fantasia da loja
-    cnpj: "",            // CNPJ da empresa
-    categoria: "Pizza"   // Categoria padrão do select
+    tipo: "restaurante", 
+    nomeRestaurante: "", 
+    cnpj: "",            
+    categoria: "Pizza"  
 };
 
 export default function useCadastroRestaurante() {
@@ -36,7 +34,7 @@ export default function useCadastroRestaurante() {
         setRestaurante(prev => ({ ...prev, [name]: value }));
     };
 
-    // 🟢 SUBSTITUA INTEGRALMENTE A FUNÇÃO save POR ESTA NO SEU cadastro-restaurante/page.tsx:
+    
     const save = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -59,7 +57,6 @@ export default function useCadastroRestaurante() {
                 return;
             }
             
-            // 📦 PASSO 1: Cria o Perfil básico na gaveta /users
             const payloadUsuarioInicial = {
                 name: restaurante.name,
                 email: restaurante.email,
@@ -67,30 +64,26 @@ export default function useCadastroRestaurante() {
                 cpf: restaurante.cpf,
                 password: restaurante.password,
                 tipo: "restaurante" as const,
-                restauranteId: "" // Fica vazio para ser atualizado no final
+                restauranteId: "" 
             };
 
-            // 🔥 PRIMEIRO DISPARO: Cria o usuário e captura o ID dele
             const resUsuario = await api.post("/users", payloadUsuarioInicial);
             const idDoUsuarioOficial = resUsuario.data.id;
 
-            // 🏪 PASSO 2: Cria a Loja na gaveta /restaurantes (DEIXA O JSON-SERVER GERAR O ID DELA!)
             const payloadLoja = {
                 nome: restaurante.nomeRestaurante,
                 cnpj: restaurante.cnpj,
                 categoria: restaurante.categoria,
-                usuarioId: idDoUsuarioOficial, // Vincula o dono pelo ID oficial dele
+                usuarioId: idDoUsuarioOficial, 
                 produtos: []
             };
 
-            // 🔥 SEGUNDO DISPARO: Salva a loja e CAPTURA O ID REAL QUE O BANCO GEROU PARA A LOJA!
             const resLoja = await api.post("/restaurantes", payloadLoja);
-            const idDaLojaOficial = resLoja.data.id; // 👈 Pega a hash real gerada para a loja!
+            const idDaLojaOficial = resLoja.data.id; 
 
-            // 🔄 PASSO 3: Faz o PUT final no usuário amarrando a ID real da loja nele!
             const payloadUsuarioFinal = {
                 ...payloadUsuarioInicial,
-                restauranteId: idDaLojaOficial // 🔥 Salva a hash real e idêntica gerada pelo servidor!
+                restauranteId: idDaLojaOficial 
             };
             await api.put(`/users/${idDoUsuarioOficial}`, payloadUsuarioFinal);
 
