@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { api } from '@/services/api';
 import Usuario from '@/core/Usuarios';
 
 export default function usePerfil() {
@@ -16,50 +15,57 @@ export default function usePerfil() {
         }
     };
 
+    // 🔒 Trava de segurança e leitura do banco local do navegador
     useEffect(() => {
         const session = localStorage.getItem("flashfoods:user");
 
         if (!session) {
-            alert('Acesso negado, Faça login.');
+            alert('Acesso negado! Faça login para acessar o perfil. 🔐');
             router.push('/login');
             return;
         }
 
         const loggedUser = JSON.parse(session);
+        const bancoLocal = localStorage.getItem("flashfoods:users_db");
+        const listaUsuarios: Usuario[] = bancoLocal ? JSON.parse(bancoLocal) : [];
 
-        api.get(`/users/${loggedUser.id}`)
-            .then(resp => {
-                setUserData(resp.data);
-            })
-            .catch(err => {
-                console.log('Erro na requisição de perfil:', err);
-            });
+        const usuarioCompleto = listaUsuarios.find(u => String(u.id) === String(loggedUser.id));
+
+        if (usuarioCompleto) {
+            setUserData(usuarioCompleto);
+        } else {
+            // Fallback caso o usuário tenha sido logado antes de limpar o banco
+            setUserData(loggedUser);
+        }
     }, [router]);
 
+    // 💾 Salva as alterações diretamente no localStorage
     const save = () => {
-        const idUsuario = userData?.id;
-        if (!idUsuario) return;
+        if (!userData || !userData.id) return;
 
-        api.put(`/users/${idUsuario}`, userData)
-            .then(resp => {
-                alert('Dados salvos com sucesso.');
-                const session = localStorage.getItem('flashfoods:user');
+        const bancoLocal = localStorage.getItem("flashfoods:users_db");
+        const listaUsuarios: Usuario[] = bancoLocal ? JSON.parse(bancoLocal) : [];
 
-                if (session) {
-                    const loggedUser = JSON.parse(session);
-                    const novaSessao = {
-                        ...loggedUser,
-                        email: resp.data.email,
-                        name: resp.data.name
-                    };
-                    localStorage.setItem('flashfoods:user', JSON.stringify(novaSessao));
-                }
-                window.dispatchEvent(new Event("perfilAtualizado"));    
-            })
-            .catch(err => {
-                console.error("Erro ao salvar:", err);
-                alert("Erro ao salvar os dados.");
-            });
+        const listaAtualizada = listaUsuarios.map(u => 
+            String(u.id) === String(userData.id) ? userData : u
+        );
+
+        localStorage.setItem("flashfoods:users_db", JSON.stringify(listaAtualizada));
+
+        // Atualiza também a sessão ativa do cabeçalho
+        const session = localStorage.getItem('flashfoods:user');
+        if (session) {
+            const loggedUser = JSON.parse(session);
+            const novaSessao = {
+                ...loggedUser,
+                email: userData.email,
+                name: userData.name
+            };
+            localStorage.setItem('flashfoods:user', JSON.stringify(novaSessao));
+        }
+
+        window.dispatchEvent(new Event("perfilAtualizado"));
+        alert('Dados do perfil salvos com sucesso! ✨');
     };
 
     return {
