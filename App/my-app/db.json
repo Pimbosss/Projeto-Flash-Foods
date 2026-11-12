@@ -1,0 +1,33 @@
+{
+  "user": [
+    {
+      "nome": "Heitor",
+      "email": "heitor@gmail.com",
+      "endereco": "Cambuy",
+      "senha": "1234",
+      "id": "AntB58Wp7Uw"
+    },
+    {
+      "nome": "Renan",
+      "email": "renan@gmail.com",
+      "endereco": "Jardim Europa",
+      "senha": "123456",
+      "id": "p9aCQw10Ipg"
+    },
+    {
+      "nome": "heitor",
+      "email": "rena1n@gmail.com",
+      "endereco": "Vila",
+      "senha": "123456",
+      "id": "ebFQ43yvDYA"
+    },
+    {
+      "nome": "heitor",
+      "email": "heitor1@gmail.com",
+      "endereco": "Cambuy",
+      "senha": "1234",
+      "id": "J5byt8Y6ung"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
