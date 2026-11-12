@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { api } from '@/services/api';
 
 const initialState = {
     email: "",
@@ -18,9 +17,9 @@ export default function useLogin() {
         setCredentials({ ...credentials, [name]: value });
     };
 
-    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
-        
+
         if (document.activeElement instanceof HTMLElement) {
             document.activeElement.blur();
         }
@@ -30,41 +29,37 @@ export default function useLogin() {
             return;
         }
 
-        api.get(`/users?email=${credentials.email}`)
-            .then(resp => {
-                const usuarioEncontrado = resp.data;
-                
-                if (usuarioEncontrado.length === 0) {
-                    alert("Usuário não encontrado!");
-                    return;
-                }
+        // 📦 1. Busca a lista de usuários cadastrados no navegador
+        const bancoLocal = localStorage.getItem("flashfoods:users_db");
+        const listaUsuarios = bancoLocal ? JSON.parse(bancoLocal) : [];
 
-                const usuario = usuarioEncontrado[0];
+        // 🔍 2. Procura o usuário pelo e-mail
+        const emailLimpo = credentials.email.toLowerCase().trim();
+        const usuario = listaUsuarios.find((u: any) => u.email.toLowerCase() === emailLimpo);
 
-                if (usuario.password === credentials.password) {
-                    alert("Login realizado com sucesso!");
-                    
-                    localStorage.setItem("flashfoods:user", JSON.stringify({
-                        id: usuario.id,
-                        name: usuario.name,
-                        email: usuario.email,
-                        tipo: usuario.tipo || 'cliente',
-                        restauranteId: usuario.restauranteId
-                    }));
+        if (!usuario) {
+            alert("Usuário não encontrado! Crie uma conta primeiro.");
+            return;
+        }
 
-                    setCredentials(initialState);
-                    
-                    window.dispatchEvent(new Event("perfilAtualizado"));
-                    
-                    router.push("/", { scroll: true }); 
-                } else {
-                    alert("Senha incorreta!");
-                }
-            })
-            .catch(err => {
-                console.error("Erro ao realizar login:", err);
-                alert("Ocorreu um erro ao tentar fazer login. Por favor, tente novamente mais tarde.");
-            });
+        // 🔑 3. Valida a senha e salva a sessão ativa
+        if (usuario.password === credentials.password) {
+            alert("Login realizado com sucesso!");
+
+            localStorage.setItem("flashfoods:user", JSON.stringify({
+                id: usuario.id,
+                name: usuario.name,
+                email: usuario.email,
+                tipo: usuario.tipo || 'cliente',
+                restauranteId: usuario.restauranteId
+            }));
+
+            setCredentials(initialState);
+            window.dispatchEvent(new Event("perfilAtualizado"));
+            router.push("/", { scroll: true });
+        } else {
+            alert("Senha incorreta!");
+        }
     };
 
     return {
