@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { api } from '@/services/api';
 import Usuario from '@/core/Usuarios';
 
 const initialState: Usuario = {
@@ -26,7 +25,7 @@ export default function useCadastroEntregador() {
         setEntregador(prev => ({ ...prev, [name]: value }));
     };
 
-    const save = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    const save = (e: React.SubmitEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!entregador.email || !entregador.name || !entregador.password || !entregador.cnh) {
@@ -39,30 +38,31 @@ export default function useCadastroEntregador() {
             return;
         }
 
-        try {
+        const bancoLocal = localStorage.getItem("flashfoods:users_db");
+        const listaUsuarios: Usuario[] = bancoLocal ? JSON.parse(bancoLocal) : [];
 
-            const respCheck = await api.get(`/users?email=${entregador.email.toLowerCase().trim()}`);
-            
-            if (respCheck.data && respCheck.data.length > 0) {
-                alert("Este e-mail já está cadastrado no sistema! Por favor, use outro endereço. ⚠️");
-                return;
-            }
+        const emailLimpo = entregador.email.toLowerCase().trim();
+        const emailExiste = listaUsuarios.some(u => u.email.toLowerCase() === emailLimpo);
 
-            const dadosTratados = {
-                ...entregador,
-                email: entregador.email.toLowerCase().trim()
-            };
-            const { confirmPassword, ...dadosParaSalvar } = dadosTratados;
-
-            await api.post('/users', dadosParaSalvar);
-
-            alert("Cadastro de entregador realizado com sucesso! Boas corridas. 🎉🏍️");
-            setEntregador({ ...initialState });
-            router.push("/login");
-        } catch (error) {
-            console.error("Erro ao cadastrar perfil de entregador:", error);
-            alert("Erro ao conectar com o servidor simulado ao tentar salvar.");
+        if (emailExiste) {
+            alert("Este e-mail já está cadastrado no sistema! Por favor, use outro endereço. ⚠️");
+            return;
         }
+
+        const { confirmPassword, ...dadosSemConfirmacao } = entregador;
+        const novoEntregador: Usuario = {
+            ...dadosSemConfirmacao,
+            id: String(Date.now()),
+            email: emailLimpo,
+            tipo: "entregador"
+        };
+
+        listaUsuarios.push(novoEntregador);
+        localStorage.setItem("flashfoods:users_db", JSON.stringify(listaUsuarios));
+
+        alert("Cadastro de entregador realizado com sucesso! Boas corridas. 🎉🏍️");
+        setEntregador({ ...initialState });
+        router.push("/login");
     };
 
     return { entregador, updatedField, save, router };
