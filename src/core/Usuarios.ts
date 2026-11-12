@@ -6,6 +6,7 @@ export default interface Usuario {
     phone: string;
     password?: string;
     confirmPassword?: string;
+    restauranteId?: string;
     tipo?: "cliente" | "entregador" | "restaurante"; 
     cnh?: string;
     placaVeiculo?: string;
