@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { api } from "@/services/api"; 
 import Usuario from "@/core/Usuarios";
 
 const initialState: Usuario = {
@@ -12,7 +11,7 @@ const initialState: Usuario = {
     phone: "",
     password: "",
     confirmPassword: "",
-    tipo: "cliente" 
+    tipo: "cliente"
 };
 
 export default function useCadastro() {
@@ -24,7 +23,7 @@ export default function useCadastro() {
         setUser({ ...user, [name]: value });
     };
 
-    const save = async (event: React.FormEvent<HTMLFormElement>) => {
+    const save = (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         if (!user.email || !user.cpf || !user.phone || !user.password || !user.confirmPassword || !user.name) {
@@ -33,37 +32,41 @@ export default function useCadastro() {
         }
 
         if (user.password !== user.confirmPassword) {
-            alert("As senhas não coincidem! Por favor, digite a mesma senha nos campos de senha e confirmação. ❌");
+            alert("As senhas não coincidem! ❌");
             return;
         }
 
-        try {
-            const respCheck = await api.get(`/users?email=${user.email.toLowerCase().trim()}`);
-            
-            if (respCheck.data && respCheck.data.length > 0) {
-                alert("Este e-mail já está cadastrado no sistema! ⚠️");
-                return;
-            }
+        // 📦 1. Lê o "banco de dados" local do navegador
+        const bancoLocal = localStorage.getItem("flashfoods:users_db");
+        const listaUsuarios: Usuario[] = bancoLocal ? JSON.parse(bancoLocal) : [];
 
-            const userToSave: Usuario = {
-                email: user.email.toLowerCase().trim(),
-                name: user.name,
-                cpf: user.cpf,
-                phone: user.phone,
-                password: user.password,
-                tipo: "cliente"
-            };
+        // 🔍 2. Verifica duplicidade de e-mail
+        const emailLimpo = user.email.toLowerCase().trim();
+        const emailExiste = listaUsuarios.some(u => u.email.toLowerCase() === emailLimpo);
 
-            await api.post('/users', userToSave);
-            
-            alert("Cadastro realizado com sucesso! Bem-vindo ao Flash Foods. 🎉");
-            setUser(initialState);
-            router.push("/login");
-
-        } catch (error) {
-            console.error("Erro ao processar o cadastro de usuário:", error);
-            alert("Ocorreu um erro ao tentar realizar o cadastro. Por favor, tente novamente mais tarde.");
+        if (emailExiste) {
+            alert("Este e-mail já está cadastrado no sistema! ⚠️");
+            return;
         }
+
+        // 🆔 3. Monta o novo usuário gerando um ID único
+        const novoUsuario: Usuario = {
+            id: String(Date.now()),
+            email: emailLimpo,
+            name: user.name,
+            cpf: user.cpf,
+            phone: user.phone,
+            password: user.password,
+            tipo: "cliente"
+        };
+
+        // 💾 4. Salva a lista atualizada no localStorage
+        listaUsuarios.push(novoUsuario);
+        localStorage.setItem("flashfoods:users_db", JSON.stringify(listaUsuarios));
+
+        alert("Cadastro realizado com sucesso! Bem-vindo ao Flash Foods. 🎉");
+        setUser(initialState);
+        router.push("/login");
     };
 
     return {
