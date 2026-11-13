@@ -484,3 +484,162 @@
   font-weight: 600;
   color: #f97316;
 }
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE DA PÁGINA INICIAL (TABLETS E CELULARES)
+   ========================================================================== */
+
+/* Telas Médias e Tablets (Abaixo de 1024px) */
+@media (max-width: 1024px) {
+  .tituloPrincipal {
+    font-size: 44px;
+  }
+
+  /* Transforma as grades de 4 colunas em 2 colunas equilibradas */
+  .comoFunciona ol,
+  .infos,
+  .cardsRestaurantes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .cardsEntregadores {
+    flex-wrap: wrap;
+  }
+
+  .cardEntregador {
+    flex: 1 1 calc(50% - 25px);
+    min-height: auto;
+  }
+}
+
+/* Celulares (Abaixo de 768px) */
+@media (max-width: 768px) {
+  /* 1. Seção Principal (Hero) */
+  .conteudo {
+    padding: 40px 16px 50px;
+  }
+
+  .tituloPrincipal {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .info2 {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  /* Empilha os botões principais do topo */
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .buttons button {
+    width: 100%;
+    max-width: 340px;
+    height: 52px;
+    font-size: 15px;
+  }
+
+  /* 2. Seção Como Funciona */
+  .comoFunciona h1 {
+    font-size: 28px;
+  }
+
+  .comoFunciona section > p {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .comoFunciona ol {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  /* 3. Seção Para Entregadores */
+  .infoEntregador {
+    padding: 50px 16px;
+  }
+
+  .tituloEntregadores {
+    font-size: 28px;
+  }
+
+  .paraEntregadores > p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .cardsEntregadores {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cardEntregador {
+    flex: 1 1 100%;
+    padding: 24px;
+  }
+
+  /* Banner Laranja de Flexibilidade */
+  .flexibilidade {
+    padding: 35px 20px;
+    min-height: auto;
+  }
+
+  .flexibilidade h1 {
+    font-size: 24px;
+  }
+
+  .flexibilidade > p:nth-of-type(2) {
+    font-size: 15px;
+  }
+
+  .entregadorBtn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* 4. Seção de Métricas / Números */
+  .infos {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .infoItem {
+    justify-content: flex-start;
+    max-width: 260px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .infoItem h1 {
+    font-size: 34px;
+  }
+
+  /* 5. Seção de Restaurantes Parceiros */
+  .restaurantes1 {
+    padding: 60px 16px 50px;
+  }
+
+  .restaurantes1 > h1 {
+    font-size: 28px;
+  }
+
+  .restaurantes1 > p {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .cardsRestaurantes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cardsRestaurantes > div {
+    height: auto;
+    padding: 24px 16px;
+  }
+}
