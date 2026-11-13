@@ -137,3 +137,39 @@ form button[type="submit"]:hover {
 .cadastro a:hover {
     text-decoration: underline;
 }
+
+/* ==========================================================================
+   📱 AJUSTE FINO DE RESPONSIVIDADE (LOGIN E CADASTRO NO CELULAR)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  .login-page {
+    padding: 20px 14px;
+    align-items: flex-start; /* Evita que formulários longos (como cadastro) cortem o topo no celular */
+  }
+
+  .login-box {
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .fechar {
+    top: 18px;
+    right: 18px;
+    font-size: 18px;
+  }
+
+  .login-box h1 {
+    font-size: 21px;
+  }
+
+  .login-box p {
+    margin-bottom: 18px;
+  }
+
+  form input {
+    padding: 11px 14px;
+    margin-bottom: 14px;
+    font-size: 16px; /* Evita que o iPhone/Android dê zoom automático ao clicar no campo */
+  }
+}
