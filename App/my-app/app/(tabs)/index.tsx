@@ -60,7 +60,7 @@ export default function HomeScreen() {
       <Endereco/>
 
       <View style={styles.welcomeContainer}>
-        <Text style={styles.title}>Olá, {user ? user.nome: 'Visitante!'}!</Text>
+        <Text style={styles.title}>Olá!!, {user ? user.nome: 'Visitante!'}!</Text>
         <Text style={styles.subtitle}>
           O que você deseja pedir <Text style={styles.span}>hoje?</Text>
         </Text>
