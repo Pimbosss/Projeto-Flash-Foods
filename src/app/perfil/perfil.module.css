@@ -181,3 +181,50 @@
   font-size: 18px;
   font-weight: 500;
 }
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE DO PERFIL DO USUÁRIO (CELULARES)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+  /* Remove o padding gigante de 100px que espremia o card no celular */
+  .perfilPage {
+    padding: 24px 16px;
+    align-items: flex-start;
+  }
+
+  .perfilBox {
+    padding: 28px 20px;
+    border-radius: 14px;
+  }
+
+  .fechar {
+    top: 16px;
+    right: 16px;
+    font-size: 18px;
+  }
+
+  .avatarHeader {
+    margin-bottom: 24px;
+  }
+
+  .avatar {
+    width: 68px;
+    height: 68px;
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .avatarHeader h1 {
+    font-size: 21px;
+  }
+
+  .infoGroup {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .infoField {
+    padding: 10px 14px;
+  }
+}
