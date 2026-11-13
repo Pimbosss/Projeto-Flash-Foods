@@ -89,6 +89,37 @@
       "distancia": "4,1 km",
       "tempo": "20 min",
       "valor": "R$ 18,30"
+    },
+    {
+      "usuarioId": "1lgYPcqiJeg",
+      "usuarioNome": "Admin-Entregador",
+      "itens": [
+        {
+          "id": "1790441803208",
+          "tipo": "Pizza",
+          "nome": "Pizza",
+          "descricao": "teste",
+          "preco": "65",
+          "vendidos": 0,
+          "ativo": true,
+          "restauranteId": "22BwIMONn34",
+          "nomeRestaurante": "Restaurante Teste",
+          "quantidade": 1
+        }
+      ],
+      "subtotal": 65,
+      "taxaEntrega": 5,
+      "total": 70,
+      "status": "a caminho",
+      "data": "06/11/2026, 14:39:05",
+      "endereco": "Rua das Flores, 123 (Simulado)",
+      "restauranteId": "22BwIMONn34",
+      "restaurante": "Restaurante Teste",
+      "id": "lL0c_ADcpRM",
+      "enderecoRestaurante": "Av. Paulista, 900 (Simulado)",
+      "distancia": "2,7 km",
+      "tempo": "13 min",
+      "valor": "R$ 14,10"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
