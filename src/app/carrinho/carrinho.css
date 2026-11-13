@@ -327,3 +327,70 @@
     align-items: center;
     justify-content: center;
 }
+
+/* ==========================================================================
+   📱 AJUSTE FINO DE RESPONSIVIDADE DO CARRINHO (CELULARES)
+   ========================================================================== */
+
+@media (max-width: 600px) {
+    /* Remove o espaço vazio excessivo no topo no celular */
+    .carrinho-page-ajustada {
+        padding-top: 20px;
+    }
+
+    /* Empilha o botão "Voltar" acima do título "Meu Carrinho" */
+    .carrinho-titulo-secao-ajustada {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+
+    .carrinho-titulo-secao-ajustada h1 {
+        font-size: 24px;
+    }
+
+    .carrinho-page .carrinho-container {
+        width: calc(100% - 30px);
+        margin: 16px 15px 40px;
+        gap: 20px;
+    }
+
+    /* Organiza cada item da sacola de forma limpa no celular */
+    .carrinho-page .item-carrinho {
+        padding: 14px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .carrinho-page .item-info {
+        flex: 1 1 calc(100% - 60px);
+        min-width: 0;
+    }
+
+    .carrinho-page .item-info h2 {
+        font-size: 16px;
+    }
+
+    .carrinho-page .quantidade {
+        margin-top: 4px;
+    }
+
+    .carrinho-page .item-subtotal {
+        margin-left: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 14px;
+        margin-top: 4px;
+    }
+
+    .carrinho-page .resumo-carrinho {
+        padding: 20px 16px;
+    }
+
+    .carrinho-page .linha-total {
+        font-size: 19px;
+    }
+}
+
