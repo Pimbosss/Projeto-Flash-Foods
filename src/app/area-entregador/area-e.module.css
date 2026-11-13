@@ -384,3 +384,138 @@
     box-shadow: none !important;
     transform: none !important;
 }
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE DA ÁREA DO ENTREGADOR (TABLETS E CELULARES)
+   ========================================================================== */
+
+/* Tablets (Abaixo de 950px) */
+@media (max-width: 950px) {
+    .metricsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .runningGrid,
+    .cardsGrid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .avisoListaVazia {
+        grid-column: span 1;
+    }
+}
+
+/* Celulares (Abaixo de 600px) */
+@media (max-width: 600px) {
+    .container {
+        padding-top: 20px; /* Como o Header no mobile não é fixo, reduzimos o espaço vazio no topo */
+        padding-bottom: 30px;
+    }
+
+    /* 1. Métricas Superiores em grade compacta 2x2 */
+    .metricsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 15px;
+        margin: 16px auto;
+    }
+
+    .metricCard {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .metricCard span {
+        font-size: 12px;
+    }
+
+    .metricCard h2 {
+        font-size: 20px;
+        margin: 6px 0 2px;
+    }
+
+    .statusContainer {
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .mainLayout {
+        padding: 0 15px;
+    }
+
+    /* 2. Card Laranja da Corrida em Andamento */
+    .orangeCard {
+        padding: 24px 20px;
+        min-height: auto;
+        border-radius: 20px;
+    }
+
+    .infoBlock {
+        gap: 18px;
+    }
+
+    .infoBlock h2 {
+        font-size: 20px;
+    }
+
+    .miniPills {
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .pill {
+        padding: 10px 6px;
+    }
+
+    /* 3. Painel do Mapa GPS e Botões */
+    .mapCanvas {
+        height: 180px;
+    }
+
+    .directionBanner {
+        padding: 14px 16px;
+        font-size: 14px;
+    }
+
+    .actionsContainer {
+        padding: 16px;
+    }
+
+    .utilButtons {
+        grid-template-columns: 1fr; /* Empilha os botões utilitários no celular */
+    }
+
+    /* 4. Cards de Entregas Disponíveis */
+    .tituloLista {
+        font-size: 19px;
+        margin-bottom: 16px;
+    }
+
+    .cardAvailable {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .topoCard {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .valoresContainer {
+        text-align: left;
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+    }
+
+    .precoGarantido {
+        font-size: 18px;
+    }
+
+    .metricasCorrida {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
