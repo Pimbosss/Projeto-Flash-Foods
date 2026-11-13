@@ -603,43 +603,77 @@
   }
 
   /* 4. Seção de Métricas / Números */
+  /* 4. Seção de Métricas / Números (Grade Compacta 2x2 no celular) */
+  .infosMentiras {
+    padding: 35px 16px;
+    min-height: auto;
+  }
+
   .infos {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas lado a lado em vez de 4 empilhadas */
+    gap: 20px 12px;
   }
 
   .infoItem {
-    justify-content: flex-start;
-    max-width: 260px;
-    margin: 0 auto;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    max-width: 100%;
+  }
+
+  .badgesInfo {
+    font-size: 26px;
   }
 
   .infoItem h1 {
-    font-size: 34px;
-  }
-
-  /* 5. Seção de Restaurantes Parceiros */
-  .restaurantes1 {
-    padding: 60px 16px 50px;
-  }
-
-  .restaurantes1 > h1 {
     font-size: 28px;
   }
 
+  .infoItem > div > p {
+    font-size: 13px;
+    margin-top: 4px;
+    white-space: normal; /* Permite quebrar linha se o texto for longo */
+  }
+
+  /* 5. Seção de Restaurantes Parceiros (Carrossel Horizontal estilo iFood) */
+  .restaurantes1 {
+    padding: 50px 16px 40px;
+  }
+
+  .restaurantes1 > h1 {
+    font-size: 26px;
+  }
+
   .restaurantes1 > p {
-    font-size: 16px;
-    margin-bottom: 40px;
+    font-size: 15px;
+    margin-bottom: 24px;
   }
 
   .cardsRestaurantes {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    overflow-x: auto; /* Permite deslizar com o dedo para o lado */
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Esconde a barra de rolagem feia no celular mantendo o deslize */
+  .cardsRestaurantes::-webkit-scrollbar {
+    display: none;
   }
 
   .cardsRestaurantes > div {
-    height: auto;
-    padding: 24px 16px;
+    flex: 0 0 210px; /* Largura fixa de cada card no carrossel */
+    height: 190px;
+    padding: 18px 14px;
+    scroll-snap-align: start;
   }
+
+  .cardsRestaurantes h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+  }
+
 }
