@@ -82,34 +82,57 @@ footer a:hover {
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+/* ==========================================================================
+   📱 RESPONSIVIDADE DO FOOTER (TABLETS E CELULARES)
+   ========================================================================== */
+
+/* Tablet (Abaixo de 900px) */
+@media (max-width: 900px) {
     footer {
         grid-template-columns: 1fr 1fr;
         gap: 35px;
-
         padding: 35px 8% 0;
     }
 
-    #titulo {
-        grid-column: 1 / -1;
-    }
-
+    #titulo2,
     #direitos {
         grid-column: 1 / -1;
     }
 }
 
-
-@media (max-width: 480px) {
+/* Celular (Abaixo de 600px): Esconde as colunas de links e centraliza a marca */
+@media (max-width: 600px) {
     footer {
         grid-template-columns: 1fr;
-        gap: 28px;
-
-        padding: 35px 25px 0;
+        gap: 16px;
+        padding: 32px 20px 0;
+        text-align: center;
     }
 
-    #titulo,
+    /* Esconde todos os blocos filhos do footer, EXCETO o título (#titulo2) e o copyright (#direitos) */
+    footer > *:not(#titulo2):not(#direitos) {
+        display: none;
+    }
+
+    #titulo2 h1 {
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    #titulo2 p {
+        max-width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 14px;
+    }
+
     #direitos {
-        grid-column: auto;
+        margin-top: 16px;
+        padding: 24px 0 30px;
+    }
+
+    #direitos p {
+        font-size: 13px;
     }
 }
