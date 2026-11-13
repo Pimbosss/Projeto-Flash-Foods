@@ -247,50 +247,16 @@ header {
 
 
 
-@media (max-width: 1000px) {
-
-    #links {
-        gap: 15px;
-    }
-
-    #links a {
-        font-size: 13px;
-    }
-
-    #buttons1 {
-        gap: 5px;
-    }
-
-}
-
-@media (max-width: 800px) {
-
-    header {
-        height: auto;
-    }
-
-    #cabeçalho {
-        min-height: 72px;
-        flex-wrap: wrap;
-        padding: 15px 20px;
-    }
-
-    #links {
-        position: static;
-        transform: none;
-
-        width: 100%;
-        justify-content: center;
-
-        order: 3;
-        margin-top: 15px;
-    }
-
+.user-greeting {
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0b1b3a;
+    white-space: nowrap;
 }
 
 #buttons1 #btn-logout {
     border: 1px solid #d9dce3;
-    
     color: #18233b;
     border-radius: 25px;
     padding: 11px 20px;
@@ -302,8 +268,90 @@ header {
 }
 
 #buttons1 #btn-logout:hover {
-     color: #ff6500;
+    color: #ff6500;
     border-color: gray;
     transform: translateY(-2px);
 }
 
+/* Telas médias (Notebooks pequenos e Tablets) */
+@media (max-width: 1050px) {
+    #cabeçalho {
+        padding: 0 20px;
+    }
+
+    #links {
+        margin-left: 20px;
+        transform: none;
+        gap: 15px;
+    }
+
+    #links a {
+        font-size: 14px;
+    }
+
+    #buttons1 {
+        gap: 8px;
+    }
+
+    #buttons1 button {
+        padding: 0 14px;
+        font-size: 13px;
+        height: 40px;
+    }
+}
+
+/* Celulares e Tablets em pé (Abaixo de 800px) */
+@media (max-width: 800px) {
+    header {
+        height: auto;
+        position: relative; /* Evita que o menu gigante cubra metade da tela do celular ao rolar */
+    }
+
+    #cabeçalho {
+        min-height: auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 16px;
+        gap: 12px;
+    }
+
+    #titulo h1 {
+        font-size: 22px;
+    }
+
+    /* Centraliza perfeitamente os links de navegação */
+    #links {
+        position: static;
+        transform: none;
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 8px 0;
+        border-top: 1px solid #f1f5f9;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    /* Organiza os botões de ação sem vazar da tela */
+    #buttons1 {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #buttons1 button {
+        height: 38px;
+        padding: 0 14px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    /* Remove o ícone extra do botão Entrar no mobile para economizar espaço */
+    #buttons1 button:nth-child(3)::before {
+        display: none;
+    }
+}
